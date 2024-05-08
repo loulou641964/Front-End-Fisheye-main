@@ -10,7 +10,7 @@ function photographerTemplate(data) {
         h2.textContent = name;
         const location = document.createElement("h3");
         location.textContent = `${city}, ${country}`;
-        const p = document.createElement("p");
+        const p = document.createElement("h4");
         p.textContent = price + "€/jour";
         const taglineElt = document.createElement("p");
         taglineElt.textContent = tagline;
