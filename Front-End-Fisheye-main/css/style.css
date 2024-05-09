@@ -78,13 +78,12 @@ h3 {
  }
  h4{ 
     color: #757575;
-    margin-top: -15px;
+    margin-top: -12px;
     font-size: 0.7rem;
     font-weight: lighter;
     
  }
- p{ 
+ p.tagline{ 
     margin-top: -15px;
-    font-weight:lighter;
+    font-weight:500;
 }
-
