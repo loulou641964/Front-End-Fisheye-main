@@ -1,1 +1,3 @@
-//Mettre le code JavaScript lié à la page photographer.html
+const urlParams = new URLSearchParams(window.location.search);
+const id = urlParams.get('id');
+
