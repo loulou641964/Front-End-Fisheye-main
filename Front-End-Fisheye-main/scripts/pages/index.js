@@ -1,14 +1,6 @@
-// Fonction asynchrone pour récupérer les données des photographes
-async function getPhotographers() {
-    // Utilise fetch pour récupérer les données du fichier photographers.json
-    const response = await fetch("./data/photographers.json");
-    // Convertit les données récupérées en objet JavaScript
-    const data = await response.json();
-    // Affiche les données dans la console (peut être retiré dans la version finale)
-    console.log(data);
-    // Renvoie les données récupérées
-    return data;
-}
+import { getPhotographers } from "../utils/datahandling.js";
+import { photographerTemplate } from "../templates/photographer.js";
+
 
 // Fonction asynchrone pour afficher les données des photographes sur la page
 async function displayData(photographers) {
