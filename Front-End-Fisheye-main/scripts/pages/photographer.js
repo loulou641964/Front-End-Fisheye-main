@@ -16,7 +16,7 @@ async function getPhotographers() {
 }
 
 function findPhotographerById(photographers, id) {
-    return photographers.find(photographer => photographer.id == id);
+    return photographers.find(photographer => photographer.id === parseInt(id));
 }
 
 function displayPhotographerDetails(photographer) {
@@ -25,7 +25,6 @@ function displayPhotographerDetails(photographer) {
         return;
     }
 
-    const photographerHeader = document.querySelector(".photographer-header");
     const photographerName = document.querySelector(".photographer-name");
     const photographerLocation = document.querySelector(".photographer-location");
     const photographerTagline = document.querySelector(".photographer-tagline");
