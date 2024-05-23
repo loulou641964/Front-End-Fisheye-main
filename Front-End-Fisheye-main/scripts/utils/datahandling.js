@@ -12,4 +12,24 @@ async function getPhotographers() {
     }
 }
 
-export {getPhotographers}
+async function getMediaByPhotographer(id){
+    const data = await getPhotographers()
+    const medias = data.media.filter(elt => elt.photographerId === id)
+    return medias
+
+}
+
+export {getPhotographers, getMediaByPhotographer}
+
+
+export async function getPhotographerIds() {
+    try {
+        const data = await getPhotographers();
+        const ids = data.photographers.map(photographer => photographer.id);
+        return ids;
+    } catch (error) {
+        console.error("Erreur lors de l'extraction des identifiants des photographes:", error);
+        return [];
+    }
+}
+

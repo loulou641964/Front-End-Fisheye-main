@@ -34,3 +34,5 @@ function photographerTemplate(data) {
     return { name, picture, getUserCardDOM };
 }
   export {photographerTemplate}
+
+  
