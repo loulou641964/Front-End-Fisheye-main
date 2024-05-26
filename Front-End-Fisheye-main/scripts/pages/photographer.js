@@ -1,5 +1,6 @@
 import { getMediaByPhotographer, getPhotographers } from "../utils/datahandling.js";
 import { displayModal, closeModal } from "../utils/contactForm.js";
+
 const urlParams = new URLSearchParams(window.location.search);
 
 const id = parseInt( urlParams.get('id') );
