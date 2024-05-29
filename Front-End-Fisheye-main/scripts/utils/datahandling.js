@@ -22,16 +22,6 @@ async function getMediaByPhotographer(id){
 export {getPhotographers, getMediaByPhotographer}
 
 
-export async function getPhotographerIds() {
-    try {
-        const data = await getPhotographers();
-        const ids = data.photographers.map(photographer => photographer.id);
-        return ids;
-    } catch (error) {
-        console.error("Erreur lors de l'extraction des identifiants des photographes:", error);
-        return [];
-    }
-}
 
 
 
