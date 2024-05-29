@@ -1,12 +1,33 @@
 #contact_modal {
     display: none;
 }
-
 .photograph-header {
     background-color: #FAFAFA;
     height: 300px;
     margin: 0 100px;
 }
+
+
+
+img {
+    max-width: 100%; 
+    height: auto;
+  }
+.photographer-header img {
+    width: 150px; 
+    height: 150px; 
+    border-radius: 50%; 
+    object-fit: cover;
+    position: absolute;
+    top: 21%; 
+    right: 10%;
+    cursor: pointer;
+    
+}
+
+
+
+
 
 .contact_button {
     font-size: 20px;
