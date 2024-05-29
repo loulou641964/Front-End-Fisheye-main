@@ -5,8 +5,12 @@
     background-color: #FAFAFA;
     height: 300px;
     margin: 0 100px;
-}
+   }
 
+   .photographer-details{ 
+    position: absolute;
+
+   }
 
 
 img {
@@ -19,7 +23,7 @@ img {
     border-radius: 50%; 
     object-fit: cover;
     position: absolute;
-    top: 30%; 
+    top: 25%; 
     right: 10%;
     cursor: pointer;
     
