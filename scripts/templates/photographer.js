@@ -28,7 +28,7 @@ function photographerTemplate(data) {
         link.appendChild(article);
         
 
-        return link;
+         return link;
     }
 
     return { name, picture, getUserCardDOM };
