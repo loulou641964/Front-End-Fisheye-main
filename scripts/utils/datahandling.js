@@ -21,8 +21,3 @@ async function getMediaByPhotographer(id){
 
 export {getPhotographers, getMediaByPhotographer}
 
-
-
-
-
-

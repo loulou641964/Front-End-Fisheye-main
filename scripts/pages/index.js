@@ -28,5 +28,4 @@ async function init() {
 
 // Appelle la fonction init pour démarrer le processus dès que le script est chargé
 init();
-
     
