@@ -1,7 +1,6 @@
 import { getPhotographers } from "../utils/datahandling.js";
 import { photographerTemplate } from "../templates/photographer.js";
 
-
 // Fonction asynchrone pour afficher les données des photographes sur la page
 async function displayData(photographers) {
     // Sélectionne l'élément HTML avec la classe "photographer_section"

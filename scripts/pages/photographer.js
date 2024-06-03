@@ -1,5 +1,6 @@
 import { getMediaByPhotographer, getPhotographers } from "../utils/datahandling.js";
-import { displayModal, closeModal } from "../utils/contactForm.js";
+import { displayModal, closeModal } from '../utils/contactForm.js';
+import { displayPhotographerMedia } from "../templates/media.js";
 
 const urlParams = new URLSearchParams(window.location.search);
 
@@ -44,6 +45,10 @@ async function init() {
     displayPhotographerDetails(photographer);
     const medias = await getMediaByPhotographer(id)
     console.log (medias)
+    const firstName = photographer.name.split(" ")[0]
+    displayPhotographerMedia(id,medias,firstName)
 }
 
 init();
+
+ 
