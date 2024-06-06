@@ -14,23 +14,24 @@
    #media-container {
     display: grid;
     grid-template-columns: repeat(3, 1fr);
-    gap: 10px; /* Espacement entre les éléments */
+    gap: 80px 0px; /* Espacement entre les éléments */
     justify-items: center; /* Centrer les éléments dans la grille */
 }
 
 #media-container img,
 #media-container video {
-    width: 350px; /* Taille plus petite */
-    height: 300px; /* Maintenir un carré */
+    width: 300px; /* Taille plus petite */
+    height: 250px; /* Maintenir un carré */
     object-fit: cover; /* Recadrage pour remplir la boîte sans déformation */
     box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1); /* Optionnel : ombre pour un effet visuel */
     transition: transform 0.3s ease; /* Transition pour l'animation */
+    margin-top: 4rem
 }
 #media-container img:hover,
 #media-container video:hover,
 #media-container img:focus,
 #media-container video:focus {
-    transform: scale(1.1); /* Zoom avant */
+    transform: scale(1.5); /* Zoom avant */
 }
 
 
@@ -41,16 +42,6 @@
     grid-column: span 3;
     justify-self: center;
 }
-.media-title {
-    flex-grow: 1;
-}
-
-.media-likes {
-    display: flex;
-    align-items: center;
-}
-
-
 
 
 .photographer-header img {
