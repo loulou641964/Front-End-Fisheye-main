@@ -1,6 +1,3 @@
-
-
-
 // Factory pour les médias
 function mediaFactory(media,firstName) {
     let mediaElement;
@@ -41,3 +38,5 @@ export function displayPhotographerMedia(photographerId, mediaArray,firstName) {
 
    
 }
+
+  

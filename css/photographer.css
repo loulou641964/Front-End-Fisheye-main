@@ -11,12 +11,31 @@
     position: absolute;
 
    }
-
-
-img {
-    max-width: 100%; 
+   .container {
+    flex-direction: column;
+    width: 100%;
     height: auto;
-  }
+    padding: 0;
+    margin-top: 20px;
+    border-radius: 0px;
+}
+#media-container {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 10px; /* Espacement entre les éléments */
+}
+
+#media-container img,
+#media-container video {
+    width: 300px; /* Largeur fixe */
+    height: 200px; /* Hauteur fixe */
+    object-fit: cover; /* Recadrage pour remplir la boîte sans déformation */
+    border-radius: 8px; /* Optionnel : coins arrondis */
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1); /* Optionnel : ombre pour un effet visuel */
+}
+
+
+
 .photographer-header img {
     width: 150px; 
     height: 150px; 
