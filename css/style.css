@@ -1,9 +1,10 @@
 @import url("photographer.css");
 
 body {
+    width: auto;
     font-family: "DM Sans", sans-serif;
     max-width: 1440px;
-    margin: 0 auto;
+    margin:  auto;
     box-sizing: border-box;
 }
 

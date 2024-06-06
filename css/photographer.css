@@ -4,18 +4,26 @@
 .photograph-header {
     background-color: #FAFAFA;
     height: 300px;
-    margin: 0 100px;
+    margin: 0 80px;
    }
+
 
    .photographer-details{ 
     position: absolute;
 
    }
-   #media-container {
+   body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+}
+#media-container {
     display: grid;
     grid-template-columns: repeat(3, 1fr);
     gap: 80px 0px; /* Espacement entre les éléments */
     justify-items: center; /* Centrer les éléments dans la grille */
+    cursor: pointer;
+    
 }
 
 #media-container img,
@@ -26,7 +34,10 @@
     box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1); /* Optionnel : ombre pour un effet visuel */
     transition: transform 0.3s ease; /* Transition pour l'animation */
     margin-top: 4rem
+    
 }
+
+
 #media-container img:hover,
 #media-container video:hover,
 #media-container img:focus,
@@ -34,24 +45,24 @@
     transform: scale(1.5); /* Zoom avant */
 }
 
+.media-item figcaption {
+    margin-top: 10px;
+    font-size: 1rem;
+    color: #555;
+}
 
-
-/* Centrer la dernière image */
 #media-container img:last-child,
 #media-container video:last-child {
     grid-column: span 3;
     justify-self: center;
+    margin-bottom: 50px;
+    margin-top: 0;
 }
 
 
 
 
-.photographer-header img {
-    width: 150px; 
-    height: 150px; 
-    border-radius: 50%; 
-    object-fit: cover; 
-}
+
 
 
 .photographer-header img {
