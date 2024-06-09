@@ -64,19 +64,24 @@ body {
     margin-right: 15px; /* Marge entre le cœur et le compteur de likes */
 }
 .heart-icon {
-    width: 16px;
-    height: 16px;
+    width: 20px;
+    height: 20px;
     fill: none; /* Couleur initiale du cœur */
     stroke: currentColor;
     stroke-width: 2;
     cursor: pointer;
-    animation: heartBeat 1s infinite; /* Appliquer l'animation */
 }
+.hearted {
+    animation: heartBeat 0.3s; /* Appliquer l'animation lorsqu'on clique */
+    fill: red; /* Couleur du cœur lorsqu'il est liké */
+}
+
 @keyframes heartBeat {
     0% { transform: scale(1); }
-    50% { transform: scale(1.2); }
+    50% { transform: scale(1.5); }
     100% { transform: scale(1); }
 }
+
 .hearted path {
     fill: rgb(185, 73, 32); /* Couleur du cœur lorsqu'il est rempli */
 }
@@ -88,11 +93,6 @@ body {
     font-size: 2rem;
     color: gray;
 }
-
-.heart.liked {
-    color: red;
-}
-
 .heart::before {
     content: "♥";
 }
