@@ -74,15 +74,30 @@ body {
 }
 @keyframes heartBeat {
     0% { transform: scale(1); }
-    50% { transform: scale(1.5); }
+    50% { transform: scale(1.2); }
     100% { transform: scale(1); }
 }
-
-
-
 .hearted path {
     fill: rgb(185, 73, 32); /* Couleur du cœur lorsqu'il est rempli */
 }
+.heart {
+    background-color: transparent;
+    border: none;
+    cursor: pointer;
+    outline: none;
+    font-size: 2rem;
+    color: gray;
+}
+
+.heart.liked {
+    color: red;
+}
+
+.heart::before {
+    content: "♥";
+}
+
+
 
 #media-container img:last-child,
 #media-container video:last-child {

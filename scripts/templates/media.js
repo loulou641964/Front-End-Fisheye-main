@@ -66,14 +66,13 @@ document.addEventListener('click', (event) => {
         const likeCount = likeContainer.querySelector('.like-count');
         
         const currentLikes = parseInt(likeCount.textContent);
-        const newLikes = currentLikes + 1;
-        likeCount.textContent = newLikes;
         
-        heartIcon.classList.add('hearted');
-
-        // Retirer la classe après un certain délai
-        setTimeout(() => {
+        if (heartIcon.classList.contains('hearted')) {
+            likeCount.textContent = currentLikes - 1;
             heartIcon.classList.remove('hearted');
-        }, 500); // 500ms delay before removing the class
+        } else {
+            likeCount.textContent = currentLikes + 1;
+            heartIcon.classList.add('hearted');
+        }
     }
 });
