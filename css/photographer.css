@@ -64,12 +64,18 @@ body {
     margin-right: 15px; /* Marge entre le cœur et le compteur de likes */
 }
 .heart-icon {
-    width: 24px;
-    height: 24px;
+    width: 16px;
+    height: 16px;
     fill: none; /* Couleur initiale du cœur */
     stroke: currentColor;
     stroke-width: 2;
     cursor: pointer;
+    animation: heartBeat 1s infinite; /* Appliquer l'animation */
+}
+@keyframes heartBeat {
+    0% { transform: scale(1); }
+    50% { transform: scale(1.1); }
+    100% { transform: scale(1); }
 }
 
 
