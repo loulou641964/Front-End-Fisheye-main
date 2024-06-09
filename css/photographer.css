@@ -96,6 +96,30 @@ body {
 .heart::before {
     content: "♥";
 }
+.photograph-media {
+    top: 300px;
+    position: absolute
+}
+
+
+
+.media-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    column-gap: 90px;
+    row-gap: 15px;
+    margin-top: 50px;
+}
+
+.media-grid article .thumbnail-container {
+    cursor: pointer;
+    transition: transform 300ms;
+}
+
+.media-grid article .thumbnail-container:hover,
+.media-grid article .thumbnail-container:focus {
+    transform: scale(1.05);
+}
 
 
 

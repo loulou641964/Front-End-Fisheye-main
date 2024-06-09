@@ -22,10 +22,32 @@
                     <p class="photographer-tagline"></p>
                     <p class="photographer-price"></p>
                 </div>
+
                 <div>
                     <img class="photographer-img" src="" alt="Portrait du photographe">
                     <button class="contact_button" aria-haspopup="dialog" aria-controls="contact_modal">Contactez-moi</button>
                 </div>
+                <section class="photograph-media">
+                    <div>
+                        <label for="order-by" id="order-by-label">Trier par</label>
+                        <select
+                            name="order-by"
+                            id="order-by"
+                            aria-labelledby="order-by-label">
+                            <option value="popularity-asc">
+                                Popularité - croissant
+                            </option>
+                            <option value="popularity-desc">
+                                Popularité - décroissant
+                            </option>
+                            <option value="date-asc">Date - croissant</option>
+                            <option value="date-desc">Date - décroissant</option>
+                            <option value="title">Titre - alphabétique</option>
+                        </select>
+                    </div>
+    
+                    <div class="media-grid"></div>
+                </section>
             </div>
         </div>
         <div id="media-container"></div>
