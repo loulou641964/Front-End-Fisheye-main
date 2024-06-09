@@ -2,9 +2,12 @@
     display: none;
 }
 .photograph-header {
+    width: auto;
+    max-width: 1440px;
     background-color: #FAFAFA;
     height: 300px;
-    margin: 0 80px;
+    margin: 0 80px
+    
    }
 
 
@@ -17,13 +20,17 @@
     margin: 0;
     padding: 0;
 }
+
 #media-container {
     display: grid;
     grid-template-columns: repeat(3, 1fr);
-    gap: 80px 0px; /* Espacement entre les éléments */
-    justify-items: center; /* Centrer les éléments dans la grille */
-    cursor: pointer;
-    
+    gap: 20px; /* Espacement uniforme entre les éléments */
+    padding: 20px; /* Espacement autour du conteneur */
+}
+
+.media-item-container {
+    text-align: center;
+    position: relative;
 }
 
 #media-container img,
@@ -37,18 +44,48 @@
     
 }
 
-
 #media-container img:hover,
 #media-container video:hover,
 #media-container img:focus,
 #media-container video:focus {
-    transform: scale(1.5); /* Zoom avant */
+    transform: scale(1.5) 
+   
 }
 
-.media-item figcaption {
+.cards-media-footer {
     margin-top: 10px;
     font-size: 1rem;
     color: #555;
+    display: flex;
+    justify-content: space-between; /* Aligner les éléments sur les côtés */
+    align-items: center;
+}
+
+.description {
+    flex-grow: 1;
+    text-align: left; /* Aligner la description à gauche */
+
+    }
+
+.like {
+    flex-direction: row-reverse;
+    display: flex;
+    align-items: center;
+    cursor: pointer;
+}
+
+.like-count {
+    font-size: 1rem;
+    margin:15px; /* Marge entre le cœur et le compteur de likes */
+}
+.heart-icon path {
+    fill: none; /* Couleur initiale du cœur */
+    stroke: currentColor;
+   
+}
+
+.hearted path {
+    fill: red; /* Couleur du cœur lorsqu'il est rempli */
 }
 
 #media-container img:last-child,
@@ -58,7 +95,6 @@
     margin-bottom: 50px;
     margin-top: 0;
 }
-
 
 
 
