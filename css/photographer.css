@@ -287,7 +287,7 @@ form input
 	border-radius: 5px;
 }
 footer {
-    background-color: #444; /* Couleur de fond du footer */
+    background-color: transparent; /* Couleur de fond du footer */
     color: #fff; /* Couleur du texte */
     padding: 10px 20px; /* Ajustez les valeurs de padding selon vos besoins */
     box-sizing: border-box; /* Inclut le padding dans la largeur totale */
@@ -303,9 +303,20 @@ footer {
 
 #priceLikes > span {
     padding: 5px 10px; /* Ajustez les valeurs de padding selon vos besoins */
-    background-color: #666; /* Couleur de fond des éléments */
+    background-color: #901C1C; /* Couleur de fond des éléments */
     border-radius: 5px; /* Coins arrondis */
     display: inline-block; /* Assure que les éléments s'affichent en ligne */
+	
 }
 
-
+#priceLikes .heart-icon {
+    width: 14px; /* Taille du cœur */
+    height: 14px; /* Taille du cœur */
+    fill: #312E2E; /* Couleur de remplissage du cœur */
+    stroke: #000; /* Couleur de la bordure du cœur */
+    stroke-width: 1; /* Largeur de la bordure du cœur */
+}
+.daily-price {
+    font-size: 14px;
+    color: #fff;
+}
