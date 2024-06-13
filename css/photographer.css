@@ -245,14 +245,19 @@ form input {
 }
 
 footer {
-    background-color: transparent;
-    color: #fff;
-    padding: 10px 20px;
-    box-sizing: border-box;
+    background-color: transparent; 
+    color: #fff; 
+    box-sizing: border-box; 
     display: flex;
     justify-content: flex-end;
     align-items: center;
+    position: fixed; 
+    bottom: 0; 
+    left: 0; 
+    width: 100%; 
+    z-index: 1000; 
 }
+
 
 #priceLikes {
     display: flex;
@@ -266,7 +271,6 @@ footer {
 	flex-direction: row-reverse;
     gap: 10px;
     background-color: #db8876;
-    border-radius: 5px;
     padding: 5px 10px;
     color: #030000;
     font-size: 1.2rem;
