@@ -300,6 +300,16 @@ footer {
     display: flex;
     gap: 10px; /* Espace entre les éléments */
 }
+#priceLikes .combined-info {
+    display: flex;
+    align-items: center;
+    gap: 10px; /* Espace entre les éléments internes */
+    background-color:#db8876; ; /* Couleur de fond */
+    border-radius: 5px; /* Coins arrondis */
+    padding: 5px 10px; /* Ajustez les valeurs de padding selon vos besoins */
+    color: #030000; /* Couleur du texte */
+	
+}
 
 #priceLikes > span {
     padding: 5px 10px; /* Ajustez les valeurs de padding selon vos besoins */
