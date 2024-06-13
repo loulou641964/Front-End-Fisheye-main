@@ -303,9 +303,12 @@ footer {
 
 #priceLikes > span {
     padding: 5px 10px; /* Ajustez les valeurs de padding selon vos besoins */
-    background-color: #901C1C; /* Couleur de fond des éléments */
+    background-color: #db8876; /* Couleur de fond des éléments */
     border-radius: 5px; /* Coins arrondis */
     display: inline-block; /* Assure que les éléments s'affichent en ligne */
+	font-size: 1.2rem;
+	
+	
 	
 }
 
@@ -315,8 +318,14 @@ footer {
     fill: #312E2E; /* Couleur de remplissage du cœur */
     stroke: #000; /* Couleur de la bordure du cœur */
     stroke-width: 1; /* Largeur de la bordure du cœur */
+	font-weight: 500;
+	
+
 }
 .daily-price {
     font-size: 14px;
-    color: #fff;
+   
+}
+#priceLikes{ 
+	color: #040100;
 }
