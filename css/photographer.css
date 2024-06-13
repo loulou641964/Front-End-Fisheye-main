@@ -6,6 +6,9 @@ body
 	max-width: 1440px;
 	margin: auto;
 }
+#contact_modal {
+    display: none;
+}
 
 #media-container
 {
@@ -94,6 +97,7 @@ body
 .hearted
 {
 	animation: heartBeat 0.3s;
+	animation-iteration-count: 3;
 	/* Appliquer l'animation lorsqu'on clique */
 	fill: red;
 	/* Couleur du cœur lorsqu'il est liké */
@@ -282,3 +286,26 @@ form input
 	border: none;
 	border-radius: 5px;
 }
+footer {
+    background-color: #444; /* Couleur de fond du footer */
+    color: #fff; /* Couleur du texte */
+    padding: 10px 20px; /* Ajustez les valeurs de padding selon vos besoins */
+    box-sizing: border-box; /* Inclut le padding dans la largeur totale */
+    display: flex;
+    justify-content: flex-end; /* Aligne les éléments à droite */
+    align-items: center;
+}
+
+#priceLikes {
+    display: flex;
+    gap: 10px; /* Espace entre les éléments */
+}
+
+#priceLikes > span {
+    padding: 5px 10px; /* Ajustez les valeurs de padding selon vos besoins */
+    background-color: #666; /* Couleur de fond des éléments */
+    border-radius: 5px; /* Coins arrondis */
+    display: inline-block; /* Assure que les éléments s'affichent en ligne */
+}
+
+

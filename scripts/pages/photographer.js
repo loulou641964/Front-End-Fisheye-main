@@ -5,6 +5,8 @@ import { displayPhotographerMedia } from "../templates/media.js";
 const urlParams = new URLSearchParams(window.location.search);
 
 const id = parseInt( urlParams.get('id') );
+const btnContact =document.querySelector(".contact_button")
+btnContact.addEventListener("click",displayModal)
 
 
 
