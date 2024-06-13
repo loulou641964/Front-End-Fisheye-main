@@ -307,6 +307,9 @@ footer {
     border-radius: 5px; /* Coins arrondis */
     display: inline-block; /* Assure que les éléments s'affichent en ligne */
 	font-size: 1.2rem;
+	display: flex;
+	flex-direction: row-reverse;
+	color: #040100;
 	
 	
 	
@@ -320,12 +323,11 @@ footer {
     stroke-width: 1; /* Largeur de la bordure du cœur */
 	font-weight: 500;
 	
+	
+	
 
 }
 .daily-price {
     font-size: 14px;
    
-}
-#priceLikes{ 
-	color: #040100;
 }
