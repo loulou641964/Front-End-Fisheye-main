@@ -1,343 +1,292 @@
-body
-{
-	font-family: Arial, sans-serif;
-	margin: 0;
-	padding: 0;
-	max-width: 1440px;
-	margin: auto;
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+    max-width: 1440px;
+    margin: auto;
 }
+
 #contact_modal {
     display: none;
 }
 
-#media-container
-{
-	display: grid;
-	grid-template-columns: repeat(3, 1fr);
-	gap: 20px;
-	/* Espacement uniforme entre les éléments */
-	padding: 20px;
-	/* Espacement autour du conteneur */
+#media-container {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 20px;
+    padding: 20px;
 }
 
-.media-item-container
-{
-	text-align: center;
-	position: relative;
+.media-item-container {
+    text-align: center;
+    position: relative;
 }
 
-#media-container img,#media-container video
-{
-	width: 300px;
-	/* Taille plus petite */
-	height: 250px;
-	/* Maintenir un carré */
-	object-fit: cover;
-	/* Recadrage pour remplir la boîte sans déformation */
-	box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
-	/* Optionnel : ombre pour un effet visuel */
-	transition: transform 0.3s ease;
-	/* Transition pour l'animation */
-	margin-top: 4rem;
+#media-container img,
+#media-container video {
+    width: 300px;
+    height: 250px;
+    object-fit: cover;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    transition: transform 0.3s ease;
+    margin-top: 4rem;
 }
 
-#media-container img:hover,#media-container video:hover,#media-container img:focus,#media-container video:focus
-{
-	transform: scale(1.5);
+#media-container img:hover,
+#media-container video:hover,
+#media-container img:focus,
+#media-container video:focus {
+    transform: scale(1.5);
 }
 
-.cards-media-footer
-{
-	margin-top: 10px;
-	font-size: 1rem;
-	color: #555;
-	display: flex;
-	justify-content: space-between;
-	/* Aligner les éléments sur les côtés */
-	align-items: center;
-}
-
-.description
-{
-	text-align: left;
-	/* Aligner la description à gauche */
-	margin-left: 22px;
-	color: #901c1c;
-}
-
-.like
-{
-	display: flex;
-	flex-direction: row-reverse;
-	align-items: center;
-	cursor: pointer;
-	margin-right: 24px;
-	color: #901c1c;
-	;
-}
-
-.like-count
-{
-	font-size: 1rem;
-	margin-right: 15px;
-	/* Marge entre le cœur et le compteur de likes */
-}
-
-.heart-icon
-{
-	width: 20px;
-	height: 20px;
-	fill: none;
-	/* Couleur initiale du cœur */
-	stroke: currentColor;
-	stroke-width: 2;
-	cursor: pointer;
-}
-
-.hearted
-{
-	animation: heartBeat 0.3s;
-	animation-iteration-count: 3;
-	/* Appliquer l'animation lorsqu'on clique */
-	fill: red;
-	/* Couleur du cœur lorsqu'il est liké */
-}
-
-@keyframes heartBeat
-{
-	0%
-	{
-		transform: scale(1);
-	}
-
-	50%
-	{
-		transform: scale(1.5);
-	}
-
-	100%
-	{
-		transform: scale(1);
-	}
-}
-
-.hearted path
-{
-	fill: rgb(185, 73, 32);
-	/* Couleur du cœur lorsqu'il est rempli */
-}
-
-.heart
-{
-	background-color: transparent;
-	border: none;
-	cursor: pointer;
-	outline: none;
-	font-size: 2rem;
-	color: gray;
-}
-
-.heart::before
-{
-	content: "♥";
-}
-
-.photograph-media
-{
-	top: 300px;
-position: absolute}
-
-.media-grid
-{
-	display: grid;
-	grid-template-columns: 1fr 1fr 1fr;
-	column-gap: 90px;
-	row-gap: 15px;
-	margin-top: 50px;
-}
-
-.media-grid article .thumbnail-container
-{
-	cursor: pointer;
-	transition: transform 300ms;
-}
-
-.media-grid article .thumbnail-container:hover,.media-grid article .thumbnail-container:focus
-{
-	transform: scale(1.05);
-}
-
-#media-container img:last-child,#media-container video:last-child
-{
-	grid-column: span 3;
-	justify-self: center;
-	margin-bottom: 50px;
-	margin-top: 0;
-}
-
-.photograph-header
-{
-	width: 90%;
-	max-width: 1440px;
-	background-color: #FAFAFA;
-	height: 300px;
-	margin: 0 auto;
-	position: relative;
-}
-
-.photographer-details
-{
-	position: absolute;
-}
-
-.photograph-header img
-{
-	width: 150px;
-	height: 150px;
-	border-radius: 50%;
-	object-fit: cover;
-	position: absolute;
-	top: 25%;
-	right: 10%;
-	cursor: pointer;
-}
-
-.contact_button
-{
-	font-size: 1em;
-	font-weight: bold;
-	color: white;
-	padding: 11px;
-	min-width: 170px;
-	min-height: 50px;
-	border: none;
-	background-color: #901C1C;
-	border-radius: 5px;
-	position: absolute;
-	top: 200px;
-	left: 50%;
-	transform: translateX(-50%);
-	cursor: pointer;
-}
-
-.contact_button:hover,.contact_button:focus-visible
-{
-	background-color: #D3573C;
-}
-
-.modal
-{
-	border-radius: 5px;
-	background-color: #DB8876;
-	width: 50%;
-	display: flex;
-	flex-direction: column;
-	align-items: center;
-	justify-content: space-between;
-	padding: 35px;
-	margin: auto;
-}
-
-.modal header
-{
-	justify-content: space-between;
-	width: 100%;
-}
-
-.modal header img
-{
-	cursor: pointer;
-}
-
-.modal header h2
-{
-	font-size: 64px;
-	font-weight: normal;
-	text-align: center;
-}
-
-form
-{
-	display: flex;
-	width: 100%;
-	flex-direction: column;
-	align-items: flex-start;
-}
-
-form label
-{
-	color: #312E2E;
-	font-size: 36px;
-}
-
-form div
-{
-	display: flex;
-	flex-direction: column;
-	width: 100%;
-	align-items: self-start;
-	margin-bottom: 26px;
-}
-
-form input
-{
-	width: 100%;
-	height: 68px;
-	border: none;
-	border-radius: 5px;
-}
-footer {
-    background-color: transparent; /* Couleur de fond du footer */
-    color: #fff; /* Couleur du texte */
-    padding: 10px 20px; /* Ajustez les valeurs de padding selon vos besoins */
-    box-sizing: border-box; /* Inclut le padding dans la largeur totale */
+.cards-media-footer {
+    margin-top: 10px;
+    font-size: 1rem;
+    color: #555;
     display: flex;
-    justify-content: flex-end; /* Aligne les éléments à droite */
+    justify-content: space-between;
+    align-items: center;
+}
+
+.description {
+    text-align: left;
+    margin-left: 22px;
+    color: #901c1c;
+}
+
+.like {
+    display: flex;
+    flex-direction: row-reverse;
+    align-items: center;
+    cursor: pointer;
+    margin-right: 24px;
+    font-size: 14px;
+    color: #d3573c;
+}
+
+.like-count {
+    font-size: 1rem;
+    margin-right: 15px;
+}
+
+.heart-icon {
+    width: 20px;
+    height: 20px;
+    fill: none;
+    stroke: currentColor;
+    stroke-width: 2;
+    cursor: pointer;
+}
+
+.hearted {
+    animation: heartBeat 0.3s;
+    animation-iteration-count: 3;
+    fill: red;
+}
+
+@keyframes heartBeat {
+    0% {
+        transform: scale(1);
+    }
+    50% {
+        transform: scale(1.5);
+    }
+    100% {
+        transform: scale(1);
+    }
+}
+
+.hearted path {
+    fill: rgb(185, 73, 32);
+}
+
+.heart {
+    background-color: transparent;
+    border: none;
+    cursor: pointer;
+    outline: none;
+    font-size: 2rem;
+    color: gray;
+}
+
+.heart::before {
+    content: "♥";
+}
+
+.photograph-media {
+    top: 300px;
+    position: absolute;
+}
+
+.media-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    column-gap: 90px;
+    row-gap: 15px;
+    margin-top: 50px;
+}
+
+.media-grid article .thumbnail-container {
+    cursor: pointer;
+    transition: transform 300ms;
+}
+
+.media-grid article .thumbnail-container:hover,
+.media-grid article .thumbnail-container:focus {
+    transform: scale(1.05);
+}
+
+#media-container img:last-child,
+#media-container video:last-child {
+    grid-column: span 3;
+    justify-self: center;
+    margin-bottom: 50px;
+    margin-top: 0;
+}
+
+.photograph-header {
+    width: 90%;
+    max-width: 1440px;
+    background-color: #fafafa;
+    height: 300px;
+    margin: 0 auto;
+    position: relative;
+}
+
+.photographer-details {
+    position: absolute;
+}
+
+.photograph-header img {
+    width: 150px;
+    height: 150px;
+    border-radius: 50%;
+    object-fit: cover;
+    position: absolute;
+    top: 25%;
+    right: 10%;
+    cursor: pointer;
+}
+
+.contact_button {
+    font-size: 1em;
+    font-weight: bold;
+    color: white;
+    padding: 11px;
+    min-width: 170px;
+    min-height: 50px;
+    border: none;
+    background-color: #901c1c;
+    border-radius: 5px;
+    position: absolute;
+    top: 200px;
+    left: 50%;
+    transform: translateX(-50%);
+    cursor: pointer;
+}
+
+.contact_button:hover,
+.contact_button:focus-visible {
+    background-color: #d3573c;
+}
+
+.modal {
+    border-radius: 5px;
+    background-color: #db8876;
+    width: 50%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-between;
+    padding: 35px;
+    margin: auto;
+}
+
+.modal header {
+    justify-content: space-between;
+    width: 100%;
+}
+
+.modal header img {
+    cursor: pointer;
+}
+
+.modal header h2 {
+    font-size: 64px;
+    font-weight: normal;
+    text-align: center;
+}
+
+form {
+    display: flex;
+    width: 100%;
+    flex-direction: column;
+    align-items: flex-start;
+}
+
+form label {
+    color: #312e2e;
+    font-size: 36px;
+}
+
+form div {
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    align-items: self-start;
+    margin-bottom: 26px;
+}
+
+form input {
+    width: 100%;
+    height: 68px;
+    border: none;
+    border-radius: 5px;
+}
+
+footer {
+    background-color: transparent;
+    color: #fff;
+    padding: 10px 20px;
+    box-sizing: border-box;
+    display: flex;
+    justify-content: flex-end;
     align-items: center;
 }
 
 #priceLikes {
     display: flex;
-    gap: 10px; /* Espace entre les éléments */
+    gap: 10px;
+    align-items: center;
 }
+
 #priceLikes .combined-info {
     display: flex;
     align-items: center;
-    gap: 10px; /* Espace entre les éléments internes */
-    background-color:#db8876; ; /* Couleur de fond */
-    border-radius: 5px; /* Coins arrondis */
-    padding: 5px 10px; /* Ajustez les valeurs de padding selon vos besoins */
-    color: #030000; /* Couleur du texte */
-	
-}
-
-#priceLikes > span {
-    padding: 5px 10px; /* Ajustez les valeurs de padding selon vos besoins */
-    background-color: #db8876; /* Couleur de fond des éléments */
-    border-radius: 5px; /* Coins arrondis */
-    display: inline-block; /* Assure que les éléments s'affichent en ligne */
-	font-size: 1.2rem;
-	display: flex;
 	flex-direction: row-reverse;
-	color: #040100;
-	
-	
-	
+    gap: 10px;
+    background-color: #db8876;
+    border-radius: 5px;
+    padding: 5px 10px;
+    color: #030000;
+    font-size: 1.2rem;
 }
 
 #priceLikes .heart-icon {
-    width: 14px; /* Taille du cœur */
-    height: 14px; /* Taille du cœur */
-    fill: #312E2E; /* Couleur de remplissage du cœur */
-    stroke: #000; /* Couleur de la bordure du cœur */
-    stroke-width: 1; /* Largeur de la bordure du cœur */
-	font-weight: 500;
-	
-	
-	
-
+    width: 14px;
+    height: 14px;
+    fill: #312e2e;
+    stroke: #000;
+    stroke-width: 1;
+	margin-left: 5px;
 }
+
 .daily-price {
     font-size: 14px;
-   
+    margin-right: 5px;
 }
+
+.total-likes {
+    color: #000;
+}
+
