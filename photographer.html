@@ -44,14 +44,13 @@
     </main>
     <footer>
         <div id="priceLikes"></div>
-        
-
     </footer>
-    
+
     <div id="contact_modal" class="modal" aria-hidden="true" aria-labelledby="contact_modal_title">
         <div class="modal-content">
             <header>
                 <h2 id="contact_modal_title">Contactez-moi</h2>
+                <p id="photographer-name-contact"></p>
                 <button aria-label="Fermer le formulaire de contact" onclick="closeModal()">
                     <img src="assets/icons/close.svg" alt="Fermer">
                 </button>
@@ -59,17 +58,31 @@
             <div id="contact-form">
                 <form>
                     <div>
-                        <label for="prenom">Prénom</label>
-                        <input type="text" id="prenom" name="prenom" required>
+                        <label for="prenom" class="form-label">Prénom</label>
+                        <input class="text-control" type="text" id="prenom" name="prenom" required>
+                    </div>
+                    <div>
+                        <label for="last" class="form-label">Nom</label>
+                        <input class="text-control" type="text" id="last" name="last" minlength="2" required>
+                    </div>
+                    <div>
+                        <label for="email" class="form-label">Email</label>
+                        <input class="text-control" type="email" id="email" name="email" required>
+                    </div>
+                    <div>
+                        <label for="message" class="form-label">Message</label>
+                        <textarea class="text-control" id="message" name="message" rows="4" required></textarea>
                     </div>
                     <!-- Ajoutez d'autres champs de formulaire ici si nécessaire -->
+                    <p class="errorField" id="error-lastName"></p>
                     <button class="contact_button" type="submit">Envoyer</button>
                 </form>
             </div>
         </div>
     </div>
-    
+
     <script type="module" src="scripts/pages/photographer.js"></script>
     <script type="module" src="scripts/utils/contactForm.js"></script>
 </body>
 </html>
+
