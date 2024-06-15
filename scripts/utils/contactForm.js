@@ -1,5 +1,3 @@
-// scripts/utils/contactForm.js
-
 // Fonction pour afficher le modal de contact
 function displayModal() {
     const modal = document.getElementById("contact_modal");
