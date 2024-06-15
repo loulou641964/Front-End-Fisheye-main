@@ -59,7 +59,7 @@
                 <form>
                     <div>
                         <label for="prenom" class="form-label">Prénom</label>
-                        <input class="text-control" type="text" id="prenom" name="prenom" required>
+                        <input class="text-control" type="text" id="prenom" name="prenom" minlength="2"required>
                     </div>
                     <div>
                         <label for="last" class="form-label">Nom</label>
@@ -73,8 +73,7 @@
                         <label for="message" class="form-label">Message</label>
                         <textarea class="text-control" id="message" name="message" rows="4" required></textarea>
                     </div>
-                    <!-- Ajoutez d'autres champs de formulaire ici si nécessaire -->
-                    <p class="errorField" id="error-lastName"></p>
+                   
                     <button class="contact_button" type="submit">Envoyer</button>
                 </form>
             </div>
