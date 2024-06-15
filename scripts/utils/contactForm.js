@@ -1,7 +1,10 @@
 // Fonction pour afficher le modal de contact
 function displayModal() {
-    const modal = document.getElementById("contact_modal");
-    modal.style.display = "block";
+    const modal = document.getElementById('contact_modal');
+    const modalBackground = document.getElementById('modal-background');
+    modal.style.display = 'block';
+    modal.setAttribute('aria-hidden', 'false');
+    modalBackground.style.display = 'block';
 
     // Récupérer le nom du photographe depuis la page
     const photographerNameElement = document.querySelector('.photographer-name');
@@ -11,8 +14,11 @@ function displayModal() {
 
 // Fonction pour fermer le modal de contact
 function closeModal() {
-    const modal = document.getElementById("contact_modal");
-    modal.style.display = "none";
+    const modal = document.getElementById('contact_modal');
+    const modalBackground = document.getElementById('modal-background');
+    modal.style.display = 'none';
+    modal.setAttribute('aria-hidden', 'true');
+    modalBackground.style.display = 'none';
 }
 
 // Attacher les événements de clic aux boutons appropriés lors du chargement du DOM
@@ -29,4 +35,5 @@ document.addEventListener('DOMContentLoaded', () => {
         closeButton.addEventListener('click', closeModal);
     }
 });
+
 export { displayModal, closeModal };
