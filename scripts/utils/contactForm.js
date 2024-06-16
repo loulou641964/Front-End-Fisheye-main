@@ -10,9 +10,6 @@ function displayModal() {
     const photographerName = document.querySelector('.photographer-name').textContent.trim();
     const photographerNameContact = document.getElementById('photographer-name-contact');
     photographerNameContact.textContent = `Contactez ${photographerName}`;
-
-    // Empêcher le défilement de la page principale lors de l'affichage du modal
-    document.body.style.overflow = 'hidden';
 }
 
 // Fonction pour fermer le modal de contact
@@ -22,9 +19,6 @@ function closeModal() {
     modal.style.display = 'none';
     modal.setAttribute('aria-hidden', 'true');
     modalBackground.style.display = 'none';
-
-    // Activer à nouveau le défilement de la page principale
-    document.body.style.overflow = 'auto';
 }
 
 // Attacher les événements de clic aux boutons appropriés lors du chargement du DOM
