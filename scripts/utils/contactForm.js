@@ -9,7 +9,7 @@ function displayModal() {
     // Récupérer le nom du photographe depuis la page
     const photographerName = document.querySelector('.photographer-name').textContent.trim();
     const photographerNameContact = document.getElementById('photographer-name-contact');
-    photographerNameContact.textContent = `Contactez ${photographerName}`;
+    photographerNameContact.textContent = ` ${photographerName}`;
 }
 
 // Fonction pour fermer le modal de contact
