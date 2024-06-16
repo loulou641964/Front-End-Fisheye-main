@@ -7,9 +7,12 @@ function displayModal() {
     modalBackground.style.display = 'block';
 
     // Récupérer le nom du photographe depuis la page
-    const photographerNameElement = document.querySelector('.photographer-name');
+    const photographerName = document.querySelector('.photographer-name').textContent.trim();
     const photographerNameContact = document.getElementById('photographer-name-contact');
-    photographerNameContact.textContent = photographerNameElement.textContent;
+    photographerNameContact.textContent = `Contactez ${photographerName}`;
+
+    // Empêcher le défilement de la page principale lors de l'affichage du modal
+    document.body.style.overflow = 'hidden';
 }
 
 // Fonction pour fermer le modal de contact
@@ -19,6 +22,9 @@ function closeModal() {
     modal.style.display = 'none';
     modal.setAttribute('aria-hidden', 'true');
     modalBackground.style.display = 'none';
+
+    // Activer à nouveau le défilement de la page principale
+    document.body.style.overflow = 'auto';
 }
 
 // Attacher les événements de clic aux boutons appropriés lors du chargement du DOM
@@ -33,6 +39,18 @@ document.addEventListener('DOMContentLoaded', () => {
     const closeButton = document.querySelector('.modal-content header button');
     if (closeButton) {
         closeButton.addEventListener('click', closeModal);
+    }
+
+    // Gestion de l'envoi du formulaire de contact
+    const contactForm = document.getElementById('contactForm');
+    if (contactForm) {
+        contactForm.addEventListener('submit', (event) => {
+            event.preventDefault(); // Empêche l'envoi réel du formulaire
+            closeModal(); // Ferme le modal
+            // Optionnel: Redirection ou message de confirmation
+            alert('Formulaire envoyé avec succès!');
+            window.location.href = 'index.html'; // Redirige vers la page du photographe
+        });
     }
 });
 

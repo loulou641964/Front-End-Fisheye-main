@@ -50,13 +50,13 @@
         <div class="modal-content">
             <header>
                 <h2 id="contact_modal_title">Contactez-moi</h2>
-                <p id="photographer-name-contact">Ellie-Rose Wilkens</p>
+                <p id="photographer-name-contact">nom du photographe</p>
                 <button aria-label="Fermer le formulaire de contact" onclick="closeModal()">
                     <img src="assets/icons/close.svg" alt="Fermer">
                 </button>
             </header>
             <div id="contact-form">
-                <form>
+                <form id="contactForm">
                     <div>
                         <label for="prenom">Prénom</label>
                         <input class="text-control" type="text" id="prenom" name="prenom" minlength="2" required><br>
@@ -77,7 +77,9 @@
                         <textarea class="text-control inputMessage" id="message" name="message" required></textarea><br>
                     </div>
                     <p class="errorField" id="error-message"></p>
-                    <button class="contact_button" type="submit">Envoyer</button>
+                    <div class="form-actions">
+                        <button class="contact_button" type="submit">Envoyer</button>
+                    </div>
                 </form>
             </div>
         </div>
