@@ -234,16 +234,26 @@ body {
     width: 100%;
 }
 
+#contact_modal .modal-content {
+    position: relative; /* Assure que les éléments enfants peuvent utiliser position: absolute */
+}
+
 #contact_modal header button {
+    position: absolute; /* Permet de positionner le bouton de fermeture */
+    top: 10px; /* Ajuste cette valeur en fonction de l'espacement désiré */
+    right: 10px; /* Ajuste cette valeur en fonction de l'espacement désiré */
+    background: none; /* Enlève tout fond si nécessaire */
+    border: none; /* Enlève toute bordure si nécessaire */
     cursor: pointer;
-    background: none;
-    border: none;
 }
 
 #contact_modal header button img {
     width: 24px;
     height: 24px;
+    margin-top: 20px;
+    margin-right: -40px;
 }
+
 
 form {
     display: flex;
@@ -448,20 +458,45 @@ footer {
 .modal-content .form-actions {
     display: flex;
     justify-content: flex-end;
-    margin-top: 20px;
+   
 }
 
-.contact_button {
-    padding: 10px 20px;
-    background-color: #0055ff;
+/* Styles pour le bouton "Contactez-moi" et "Envoyer" */
+.contact_button{  
+
+    font-size: 1em;
+    font-weight: bold;
     color: white;
+    padding: 11px;
+    min-width: 170px;
+    min-height: 50px;
     border: none;
-    border-radius: 4px;
+    background-color: #901c1c; /* Couleur de fond commune */
+    border-radius: 5px;
     cursor: pointer;
 }
 
-.contact_button:hover {
-    background-color: #003bb5;
+
+.send_button {
+    background-color: #901c1c;
+      color: white;
+      padding: 1rem;
+      border: none;
+      border-radius: 0.3rem;
+      margin-top: 0.5rem;
+      width: 40%;
+      align-self: flex-start;
+      cursor: pointer;
+      transition: all 0.3s ease-in-out;
+    
+      }
+    
+
+.contact_button:hover,
+.contact_button:focus-visible,
+.send_button:hover,
+.send_button:focus-visible {
+    background-color: #d3573c; /* Couleur de fond commune au survol */
 }
 #photographer-name-contact {
     font-size: 1.5rem; /* Taille de la police */
