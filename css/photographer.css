@@ -199,8 +199,8 @@ body {
     height: 100%;
     background-color: rgba(0, 0, 0, 0.5);
     z-index: 1000;
-    display: none; /* Initially hidden */
-}
+    display: none; 
+ }
 
 /* Centrer le formulaire */
 #contact_modal {
@@ -209,7 +209,7 @@ body {
     top: 50%;
     left: 50%;
     transform: translate(-50%, -50%);
-    z-index: 1001; /* Above the background overlay */
+    z-index: 1001;
     border-radius: 5px;
     background-color: #db8876;
     width: 50%;
