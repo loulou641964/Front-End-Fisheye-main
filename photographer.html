@@ -2,7 +2,6 @@
 <html lang="fr">
 <head>
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Fisheye - Photographe</title>
     <link rel="icon" type="image/png" href="assets/favicon.png">
     <link href="https://fonts.googleapis.com/css?family=DM+Sans&display=swap" rel="stylesheet">
@@ -10,8 +9,8 @@
 </head>
 <body>
     <header id="header">
-        <a href="index.html" aria-label="Fisheye Accueil">
-            <img class="logo" src="assets/images/logo.png" alt="Logo Fisheye">
+        <a href="index.html" aria-label="Fisheye Home page">
+            <img class="logo" src="assets/images/logo.png" alt="Fisheye Home page">
         </a>
     </header>
     <main id="main">
@@ -24,8 +23,8 @@
                     <p class="photographer-price"></p>
                 </div>
                 <div>
-                    <img class="photographer-img" src="assets/images/ellie-rose-wilkens.jpg" alt="Portrait d'Ellie-Rose Wilkens, photographe professionnelle">
-                    <button class="contact_button" aria-haspopup="dialog" aria-controls="contact_modal" onclick="displayModal()" aria-label="Ouvrir la fenêtre de contact">Contactez-moi</button>
+                    <img class="photographer-img" src="" alt="Portrait du photographe">
+                    <button class="contact_button" aria-haspopup="dialog" aria-controls="contact_modal" onclick="displayModal()">Contactez-moi</button>
                 </div>
                 <section class="photograph-media">
                     <div class="order-container">
@@ -51,12 +50,11 @@
         <div class="modal-content">
             <header>
                 <div class="modal-header-content">
-                    <h2 id="contact_modal_title" class="modal-title">Contactez-moi</h2>
-                    <p id="photographer-name-contact" class="photographer-name-contact">nom du photographe</p>
+                    <h2 id="contact_modal_title">Contactez-moi</h2>
+                    <p id="photographer-name-contact">nom du photographe</p>
                 </div>
-                <button class="close-modal-button" aria-label="Fermer le formulaire de contact" onclick="closeModal()">
-                    <img src="assets/icons/close.svg" alt="Fermer">
-                </button>
+                <div><button aria-label="Fermer le formulaire de contact" onclick="closeModal()">
+                    <img src="assets/icons/close.svg" alt="Fermer"></button></div>
             </header>
             <div id="contact-form">
                 <form id="contactForm">
@@ -94,3 +92,6 @@
     <script type="module" src="scripts/utils/contactForm.js"></script>
 </body>
 </html>
+
+
+    
