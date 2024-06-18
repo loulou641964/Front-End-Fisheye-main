@@ -230,6 +230,8 @@ body {
     margin: 0;
     text-align: center;
     width: 100%;
+    margin-top: 30px;
+   
 }
 
 #contact_modal header button {
@@ -241,6 +243,7 @@ body {
 #contact_modal header button img {
     width: 24px;
     height: 24px;
+    margin-bottom:20px ;
 }
 
 form {
@@ -253,6 +256,7 @@ form label {
     color: #312E2E;
     font-size: 1.5em;
     margin-bottom: -5px;
+    margin-left: 10px;
    
    
 }
@@ -275,6 +279,7 @@ form textarea {
     padding: 10px;
     margin-top: 5px;
     margin-bottom: -20px;
+    margin-left: 10px;
     
 }
 
@@ -428,6 +433,13 @@ footer {
     border-radius: 8px;
     max-width: 500px;
     margin: 0 auto;
+    position: fixed;
+    left: 50%;
+    top: 50%;
+    -webkit-transform: translate(-50%, -50%);
+    transform: translate(-50%, -50%);
+    z-index: 150;
+    width: 100%;
     
 }
 
@@ -483,10 +495,11 @@ footer {
     border: none;
     border-radius: 0.3rem;
     margin-top: -15px;
-    width: 40%;
+    width: 30%;
     align-self: flex-start;
     cursor: pointer;
     transition: all 0.3s ease-in-out;
+    margin-left: 10px;
 }
 
 .contact_button:hover,
@@ -497,10 +510,13 @@ footer {
 }
 
 #photographer-name-contact {
-    font-size: 1.5rem; 
-    font-weight: bold; 
-    color: #333; 
+    font-size: 1.6rem; 
+    font-weight: bolder; 
     margin-bottom: 1rem; 
-    text-align: center; 
+    text-align: center;
+    margin-top: 2px;
+    margin-right: 70px; 
+    margin-left: 10px;
 }
+
 
