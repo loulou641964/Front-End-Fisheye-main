@@ -179,7 +179,7 @@ body {
     background-color: #901c1c;
     border-radius: 5px;
     position: absolute;
-    top: 200px;
+    top: 100px;
     left: 50%;
     transform: translateX(-50%);
     cursor: pointer;
