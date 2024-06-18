@@ -2,6 +2,7 @@
 function displayModal() {
     const modal = document.getElementById('contact_modal');
     const modalBackground = document.getElementById('modal-background');
+    
     modal.style.display = 'block';
     modal.setAttribute('aria-hidden', 'false');
     modalBackground.style.display = 'block';
@@ -16,6 +17,7 @@ function displayModal() {
 function closeModal() {
     const modal = document.getElementById('contact_modal');
     const modalBackground = document.getElementById('modal-background');
+    
     modal.style.display = 'none';
     modal.setAttribute('aria-hidden', 'true');
     modalBackground.style.display = 'none';
@@ -48,4 +50,5 @@ document.addEventListener('DOMContentLoaded', () => {
     }
 });
 
+// Export des fonctions pour utilisation externe si nécessaire
 export { displayModal, closeModal };
