@@ -52,5 +52,9 @@ async function init() {
 }
 
 init();
+document.querySelector("select").addEventListener("change",e =>{
+    console .log (e.target.value)
+})
+
 
  

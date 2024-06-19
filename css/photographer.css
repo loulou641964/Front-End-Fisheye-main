@@ -1,3 +1,6 @@
+* {  
+box-sizing: border-box;
+}
 body {
     font-family: Arial, sans-serif;
     margin: 0;
@@ -225,12 +228,8 @@ body {
 }
 
 #contact_modal header h2 {
-    font-size: 2.6em;
-    font-weight: normal;
-    margin: 0;
-    text-align: center;
-    width: 100%;
-    margin-top: 30px;
+    font-size: 2em;
+   
    
 }
 
@@ -239,7 +238,10 @@ body {
     background: none;
     border: none;
 }
+.modal-header-content{
+    width: 100%; 
 
+}
 #contact_modal header button img {
     width: 24px;
     height: 24px;
@@ -254,7 +256,7 @@ form {
 
 form label {
     color: #312E2E;
-    font-size: 1.5em;
+    font-size: 1.4em;
     margin-bottom: -5px;
     margin-left: 10px;
    
@@ -513,9 +515,6 @@ footer {
     font-size: 1.6rem; 
     font-weight: bolder; 
     margin-bottom: 1rem; 
-    text-align: center;
-    margin-top: 2px;
-    margin-right: 70px; 
     margin-left: 10px;
 }
 

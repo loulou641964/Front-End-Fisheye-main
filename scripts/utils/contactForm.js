@@ -45,7 +45,7 @@ document.addEventListener('DOMContentLoaded', () => {
             closeModal(); // Ferme le modal
             // Optionnel: Redirection ou message de confirmation
             alert('Formulaire envoyé avec succès!');
-            window.location.href = 'index.html'; // Redirige vers la page du photographe
+            
         });
     }
 });
