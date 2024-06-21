@@ -53,11 +53,8 @@ async function init() {
 
 init();
 
-
-
-
- // scripts/menuFilter.js
- document.addEventListener("DOMContentLoaded", function() {
+// scripts/menuFilter.js
+document.addEventListener("DOMContentLoaded", function() {
     const arrowDown = document.getElementById("arrowDown");
     const arrowUp = document.getElementById("arrowUp");
     const secondSort = document.getElementById("secondSort");
@@ -77,14 +74,6 @@ init();
         arrowUp.classList.add("hidden");
     });
 });
-// Récupérez les éléments nécessaires
-const menuFilter = document.querySelector('.menuFilter');
-const menuList = document.querySelector('.menuFilter ul');
 
-// Écoutez les clics sur le label pour ouvrir/fermer le menu
-menuFilter.addEventListener('click', function() {
-    menuFilter.classList.toggle('open');
-});
 
  
-
