@@ -6,6 +6,7 @@
     <link rel="icon" type="image/png" href="assets/favicon.png">
     <link href="https://fonts.googleapis.com/css?family=DM+Sans&display=swap" rel="stylesheet">
     <link href="css/style.css" rel="stylesheet" type="text/css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
 </head>
 <body>
     <header id="header">
@@ -27,13 +28,34 @@
                     <button class="contact_button" aria-haspopup="dialog" aria-controls="contact_modal" onclick="displayModal()">Contactez-moi</button>
                 </div>
                 <section class="photograph-media">
-                    <div class="order-container">
-                        <label for="order-by" id="order-by-label">Trier par</label>
-                        <select name="order-by" id="order-by" aria-labelledby="order-by-label">
-                            <option value="popularity-asc">Popularité</option>
-                            <option value="date-asc">Date</option>
-                            <option value="title">Titre</option>
-                        </select>
+                    <div class="menuFilter">
+                        <label id="labelTri">Trier par</label>
+                        <ul id="listFilters" role="listbox" aria-label="Menu de trie">
+                            <!--premier option de trie-->
+                            <li id="firstSort" role="option">
+                                <button class="listButton" id="btnSortLikes" aria-labelledby="labelTri btnSortLikes">Popularité</button>          
+                            </li>
+                            <li role="option">
+                                <!-- Flèche bas pour développer les options -->
+                                <span id="arrowDown" class="visible" aria-label="Flèche bas pour dérouler menu" tabindex="0" role="button" aria-haspopup="listbox" aria-expanded="false">
+                                    <!--icône fontawesome flèche bas-->
+                                    <i class="fa-solid fa-angle-down fa-lg"></i> 
+                                </span>
+                                <!-- Flèche haut pour réduire les options -->
+                                <span id="arrowUp" class="hidden" tabindex="0" role="button" aria-haspopup="listbox" aria-expanded="true">
+                                    <!--icône fontawesome flèche haut-->
+                                    <i class="fa-solid fa-angle-up fa-lg"></i>
+                                </span>
+                            </li>   
+                            <!--deuxième option de trie-->         
+                            <li role="option" class="hidden" id="secondSort">
+                                <button class="listButton" id="btnSortDate" aria-labelledby="labelTri btnSortDate">Date</button>
+                            </li>
+                            <!--troisième option de trie-->
+                            <li role="option" class="hidden" id="thirdSort">
+                                <button class="listButton" id="btnSortTitle" aria-labelledby="labelTri btnSortTitle">Titre</button>
+                            </li>
+                        </ul>
                     </div>
                     <div class="media-grid"></div>
                 </section>
@@ -93,8 +115,3 @@
     <script type="module" src="scripts/utils/contactForm.js"></script>
 </body>
 </html>
-
-
-
-
-

@@ -52,9 +52,32 @@ async function init() {
 }
 
 init();
-document.querySelector("select").addEventListener("change",e =>{
-    console .log (e.target.value)
-})
+
+
+
+
+ // scripts/menuFilter.js
+ document.addEventListener("DOMContentLoaded", function() {
+    const arrowDown = document.getElementById("arrowDown");
+    const arrowUp = document.getElementById("arrowUp");
+    const secondSort = document.getElementById("secondSort");
+    const thirdSort = document.getElementById("thirdSort");
+
+    arrowDown.addEventListener("click", function() {
+        secondSort.classList.remove("hidden");
+        thirdSort.classList.remove("hidden");
+        arrowDown.classList.add("hidden");
+        arrowUp.classList.remove("hidden");
+    });
+
+    arrowUp.addEventListener("click", function() {
+        secondSort.classList.add("hidden");
+        thirdSort.classList.add("hidden");
+        arrowDown.classList.remove("hidden");
+        arrowUp.classList.add("hidden");
+    });
+});
 
 
  
+
