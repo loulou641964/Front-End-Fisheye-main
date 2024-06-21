@@ -77,7 +77,14 @@ init();
         arrowUp.classList.add("hidden");
     });
 });
+// Récupérez les éléments nécessaires
+const menuFilter = document.querySelector('.menuFilter');
+const menuList = document.querySelector('.menuFilter ul');
 
+// Écoutez les clics sur le label pour ouvrir/fermer le menu
+menuFilter.addEventListener('click', function() {
+    menuFilter.classList.toggle('open');
+});
 
  
 

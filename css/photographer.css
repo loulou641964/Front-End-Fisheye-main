@@ -520,53 +520,44 @@
         background-color: #d3573c; /* Couleur de fond commune au survol */
     }
     
-  /*  menu tri */
-.menuFilter{
-    display: -webkit-box;
-    display: -webkit-flex;
-    display: -ms-flexbox;
+ /* Menu tri */
+.menuFilter {
     display: flex;
-    -webkit-box-orient: horizontal;
-    -webkit-box-direction: normal;
-    -webkit-flex-direction: row;
-        -ms-flex-direction: row;
-            flex-direction: row;
-    -webkit-column-gap: 20px;
-       -moz-column-gap: 20px;
-            column-gap: 20px;
-    height: -webkit-fit-content;
-    height: -moz-fit-content;
+    flex-direction: row;
+    column-gap: 20px;
     height: fit-content;
+    align-items: center; /* Assurez-vous que les éléments sont alignés verticalement au centre */
+    position: relative;
 }
-.menuFilter label{
+
+.menuFilter label {
     font-weight: 700;
     font-size: 1.1em;
     padding-top: 10px;
 }
+
 /* Éléments de la liste de tri */
-ul{
+ul {
     list-style-type: none;
-    width: -webkit-fit-content;
-    width: -moz-fit-content;
     width: fit-content;
     margin: 0;
-    background-color: #901C1C;
     border-radius: 5px;
     min-width: 150px;
-    padding: 0px 10px;   
-    height: -webkit-fit-content;   
-    height: -moz-fit-content;   
-    height: fit-content; 
-    -webkit-user-select: none; 
-       -moz-user-select: none; 
-        -ms-user-select: none; 
-            user-select: none;
-    position: relative;
+    padding: 0px 10px;
+    height: fit-content;
+    position: absolute; /* Positionnez les éléments du menu de tri */
+    top: 25%; /* Place le menu juste en dessous du conteneur */
+    left: 40%;
+    z-index: 10; /* Assurez-vous que le menu a un z-index supérieur */
+    color: transparent;
 }
-li{
+
+li {
     display: block;
+    z-index: 12; /* Assurez-vous que les éléments du menu ont un z-index supérieur */
 }
-.listButton{
+
+.listButton {
     border-radius: 5px;
     overflow: hidden;
     font-size: 1.1em;
@@ -579,30 +570,45 @@ li{
     text-align: left;
     width: 100%;
 }
-ul:hover, .listButton:hover,ul:focus, .listButton:focus{
+
+ul:hover, .listButton:hover, ul:focus, .listButton:focus {
     background-color: #D3573C;
 }
-span#arrowDown, span#arrowUp{
+
+/* Flèches pour développer et réduire les options */
+span#arrowDown, span#arrowUp {
     color: white;
     position: absolute;
     top: 15px;
     right: 20px;
+    cursor: pointer;
+    z-index: 11; /* Assurez-vous que les flèches sont au-dessus du menu */
 }
+
 span#arrowDown:hover, span#arrowUp:hover,
-span#arrowDown:focus, span#arrowUp:focus{
+span#arrowDown:focus, span#arrowUp:focus {
     background-color: #D3573C;
 }
-#arrowDown i, #arrowUp i{
+
+#arrowDown i, #arrowUp i {
     cursor: pointer;
 }
-/* pour afficher les 2 lignes blanches du menu */
+
+/* Pour afficher les 2 lignes blanches du menu */
 #thirdSort, #secondSort {
     border-top: solid 1px white;
 }
+
 /* Gestion de l'affichage des éléments (flèches et boutons) */
-.hidden{
+.hidden {
     display: none;
 }
-.visible{
-    display: block;  
+
+.visible {
+    display: block;
+}
+
+.photographer-img {
+    position: relative;
+    z-index: 1; /* Plus bas que le menu déroulant */
 }
