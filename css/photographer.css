@@ -386,33 +386,6 @@
         border-radius: 8px;
     }
     
-    /* Styles pour le conteneur d'ordre */
-    .order-container {
-        display: flex;
-        align-items: center;
-        margin-bottom: 20px;
-        background-color: #fff;
-        border-radius: 8px;
-        padding: 10px; /* Ajout de padding pour un meilleur espacement */
-    }
-    
-    /* Styles pour le label */
-    #order-by-label {
-        margin-right: 10px;
-        font-size: 20px;
-        color: #070101;
-    }
-    
-    /* Styles pour le select */
-    #order-by {
-        padding: 8px;
-        border-radius: 0.6rem;
-        border: 1px solid #ccc;
-        font-size: 16px;
-        color: #fefefe;
-        background: #901c1c;
-    }
-    
     /* Styles pour la grille de médias */
     .media-grid {
         display: grid;
@@ -571,9 +544,6 @@ li {
     width: 100%;
 }
 
-ul:hover, .listButton:hover, ul:focus, .listButton:focus {
-    background-color: #D3573C;
-}
 
 /* Flèches pour développer et réduire les options */
 span#arrowDown, span#arrowUp {
@@ -585,10 +555,7 @@ span#arrowDown, span#arrowUp {
     z-index: 11; /* Assurez-vous que les flèches sont au-dessus du menu */
 }
 
-span#arrowDown:hover, span#arrowUp:hover,
-span#arrowDown:focus, span#arrowUp:focus {
-    background-color: #D3573C;
-}
+
 
 #arrowDown i, #arrowUp i {
     cursor: pointer;

@@ -52,28 +52,62 @@ async function init() {
 }
 
 init();
+// Importez ou définissez votre fonction displayMenuFilters dans votre fichier JavaScript
 
-// scripts/menuFilter.js
-document.addEventListener("DOMContentLoaded", function() {
-    const arrowDown = document.getElementById("arrowDown");
+// Écoutez le clic sur les flèches pour ouvrir et fermer le menu
+document.getElementById("arrowDown").addEventListener("click", function() {
+    displayMenuFilters();
+});
+
+document.getElementById("arrowUp").addEventListener("click", function() {
+    displayMenuFilters();
+});
+
+// Fonction pour afficher ou masquer les options de tri et changer les flèches
+export function displayMenuFilters() {
     const arrowUp = document.getElementById("arrowUp");
+    const arrowDown = document.getElementById("arrowDown");
     const secondSort = document.getElementById("secondSort");
     const thirdSort = document.getElementById("thirdSort");
 
-    arrowDown.addEventListener("click", function() {
-        secondSort.classList.remove("hidden");
-        thirdSort.classList.remove("hidden");
-        arrowDown.classList.add("hidden");
-        arrowUp.classList.remove("hidden");
+    arrowUp.classList.toggle('visible');
+    arrowUp.classList.toggle('hidden');
+
+    arrowDown.classList.toggle('visible');
+    arrowDown.classList.toggle('hidden');
+
+    if (arrowDown.classList.contains("visible")) {
+        arrowDown.focus();
+    } else {
+        arrowUp.focus();
+    }
+
+    secondSort.classList.toggle('visible');
+    secondSort.classList.toggle('hidden');
+
+    thirdSort.classList.toggle('visible');
+    thirdSort.classList.toggle('hidden');
+}
+
+
+
+
+document.addEventListener("DOMContentLoaded", function() {
+    const btnSortLikes = document.getElementById("btnSortLikes");
+    const btnSortDate = document.getElementById("btnSortDate");
+    const btnSortTitle = document.getElementById("btnSortTitle");
+
+    btnSortLikes.addEventListener("click", function() {
+        console.log("Popularité");
     });
 
-    arrowUp.addEventListener("click", function() {
-        secondSort.classList.add("hidden");
-        thirdSort.classList.add("hidden");
-        arrowDown.classList.remove("hidden");
-        arrowUp.classList.add("hidden");
+    btnSortDate.addEventListener("click", function() {
+        console.log("Date");
+    });
+
+    btnSortTitle.addEventListener("click", function() {
+        console.log("Titre");
     });
 });
-
 
  
