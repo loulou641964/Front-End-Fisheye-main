@@ -31,34 +31,37 @@
                     <div class="menuFilter">
                         <label id="labelTri"><p>Trier par</p></label>
                         <ul id="listFilters" role="listbox" aria-label="Menu de trie">
-                            <!--premier option de trie-->
+                            <!-- Premier option de tri -->
                             <li id="firstSort" role="option">
                                 <button class="listButton" id="btnSortLikes" aria-labelledby="labelTri btnSortLikes">Popularité</button>          
                             </li>
                             <li role="option">
                                 <!-- Flèche bas pour développer les options -->
                                 <span id="arrowDown" class="visible" aria-label="Flèche bas pour dérouler menu" tabindex="0" role="button" aria-haspopup="listbox" aria-expanded="false">
-                                    <!--icône fontawesome flèche bas-->
+                                    <!-- Icône fontawesome flèche bas -->
                                     <i class="fa-solid fa-angle-down fa-lg"></i> 
                                 </span>
                                 <!-- Flèche haut pour réduire les options -->
                                 <span id="arrowUp" class="hidden" tabindex="0" role="button" aria-haspopup="listbox" aria-expanded="true">
-                                    <!--icône fontawesome flèche haut-->
+                                    <!-- Icône fontawesome flèche haut -->
                                     <i class="fa-solid fa-angle-up fa-lg"></i>
                                 </span>
                             </li>   
-                            <!--deuxième option de trie-->         
+                            <!-- Deuxième option de tri -->         
                             <li role="option" class="hidden" id="secondSort">
                                 <button class="listButton" id="btnSortDate" aria-labelledby="labelTri btnSortDate">Date</button>
                             </li>
-                            <!--troisième option de trie-->
+                            <!-- Troisième option de tri -->
                             <li role="option" class="hidden" id="thirdSort">
                                 <button class="listButton" id="btnSortTitle" aria-labelledby="labelTri btnSortTitle">Titre</button>
                             </li>
                         </ul>
                     </div>
-                    <div class="media-grid"></div>
+                    <div class="media-grid" id="mediaGrid">
+                       
+                    </div>
                 </section>
+                
             </div>
         </div>
         <div id="media-container"></div>

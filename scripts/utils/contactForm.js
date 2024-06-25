@@ -49,6 +49,5 @@ document.addEventListener('DOMContentLoaded', () => {
         });
     }
 });
-
 // Export des fonctions pour utilisation externe si nécessaire
 export { displayModal, closeModal };

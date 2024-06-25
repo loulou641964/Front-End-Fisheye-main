@@ -52,7 +52,7 @@ async function init() {
 }
 
 init();
-// Importez ou définissez votre fonction displayMenuFilters dans votre fichier JavaScript
+
 
 // Écoutez le clic sur les flèches pour ouvrir et fermer le menu
 document.getElementById("arrowDown").addEventListener("click", function() {
