@@ -90,24 +90,49 @@ export function displayMenuFilters() {
 }
 
 
+async function displayGallery(medias) {
+    const { photographers } = await getPhotographers();
+    const photographer = findPhotographerById(photographers, id);
+    const firstName = photographer.name.split(" ")[0]
+    document.querySelector ("#media-container").innerHTML = ''
+    displayPhotographerMedia(id,medias,firstName)
+}
 
 
-document.addEventListener("DOMContentLoaded", function() {
-    const btnSortLikes = document.getElementById("btnSortLikes");
-    const btnSortDate = document.getElementById("btnSortDate");
-    const btnSortTitle = document.getElementById("btnSortTitle");
+document.addEventListener("DOMContentLoaded", async function() {
+    const photographers = await getPhotographers();
+    displayGallery(photographers);
+});
+const btnSortLikes = document.getElementById("btnSortLikes");
+const btnSortDate = document.getElementById("btnSortDate");
+const btnSortTitle = document.getElementById("btnSortTitle");
 
-    btnSortLikes.addEventListener("click", function() {
-        console.log("Popularité");
-    });
-
-    btnSortDate.addEventListener("click", function() {
-        console.log("Date");
-    });
-
-    btnSortTitle.addEventListener("click", function() {
-        console.log("Titre");
-    });
+btnSortLikes.addEventListener("click", async function() {
+    console.log("Popularité");
+    const medias = await getMediaByPhotographer(id);
+    medias.sort((a, b) => b.likes - a.likes);
+    displayGallery(medias);
 });
 
- 
+btnSortDate.addEventListener("click", async function() {
+    console.log("Date");
+    const medias = await getMediaByPhotographer(id);
+    medias.sort((a, b) => new Date(b.date) - new Date(a.date));
+    displayGallery(medias);
+});
+
+btnSortTitle.addEventListener("click", async function() {
+    console.log("Titre");
+    const medias = await getMediaByPhotographer(id);
+    medias.sort((a, b) => {
+        if (a.title < b.title) return -1;
+        if (a.title > b.title) return 1;
+        return 0;
+    });
+    displayGallery(medias);
+});
+
+
+
+
+
