@@ -34,13 +34,14 @@ body {
     box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
     transition: transform 0.3s ease;
     margin-top: 4rem;
+    cursor: pointer;
 }
 
 #media-container img:hover,
 #media-container video:hover,
 #media-container img:focus,
 #media-container video:focus {
-    transform: scale(1.5);
+    transform: scale(1.3);
 }
 
 .cards-media-footer {
@@ -543,5 +544,3 @@ span#arrowDown, span#arrowUp{
 .send_button:focus-visible {
     background-color: #d3573c; /* Couleur de fond commune au survol */
 }
-
-   
