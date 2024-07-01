@@ -24,26 +24,26 @@
                     <p class="photographer-price"></p>
                 </div>
                 <div>
-                    <img class="photographer-img" src="" alt="Portrait du photographe">
+                    <img class="photographer-img" src="images/photographer.jpg" alt="Portrait du photographe">
                     <button class="contact_button" aria-haspopup="dialog" aria-controls="contact_modal" onclick="displayModal()">Contactez-moi</button>
                 </div>
                 <section class="photograph-media">
                     <div class="menuFilter">
-                        <label id="labelTri"><p>Trier par</p></label>
-                        <ul id="listFilters" role="listbox" aria-label="Menu de trie">
-                            <!-- Premier option de tri -->
+                        <label id="labelTri" for="sortOptions">Trier par :</label>
+                        <ul id="listFilters" role="listbox" aria-label="Menu de tri">
+                            <!-- Première option de tri -->
                             <li id="firstSort" role="option">
                                 <button class="listButton" id="btnSortLikes" aria-labelledby="labelTri btnSortLikes">Popularité</button>          
                             </li>
                             <li role="option">
                                 <!-- Flèche bas pour développer les options -->
                                 <span id="arrowDown" class="visible" aria-label="Flèche bas pour dérouler menu" tabindex="0" role="button" aria-haspopup="listbox" aria-expanded="false">
-                                    <!-- Icône fontawesome flèche bas -->
+                                    <!-- Icône FontAwesome flèche bas -->
                                     <i class="fa-solid fa-angle-down fa-lg"></i> 
                                 </span>
                                 <!-- Flèche haut pour réduire les options -->
                                 <span id="arrowUp" class="hidden" tabindex="0" role="button" aria-haspopup="listbox" aria-expanded="true">
-                                    <!-- Icône fontawesome flèche haut -->
+                                    <!-- Icône FontAwesome flèche haut -->
                                     <i class="fa-solid fa-angle-up fa-lg"></i>
                                 </span>
                             </li>   
@@ -58,10 +58,9 @@
                         </ul>
                     </div>
                     <div class="media-grid" id="mediaGrid">
-                       
+                        <!-- Contenu multimédia ici -->
                     </div>
                 </section>
-                
             </div>
         </div>
         <div id="media-container"></div>
@@ -76,7 +75,7 @@
             <header>
                 <div class="modal-header-content">
                     <h2 id="contact_modal_title">Contactez-moi</h2>
-                    <p id="photographer-name-contact">nom du photographe</p>
+                    <p id="photographer-name-contact">Nom du photographe</p>
                 </div>
                 <button aria-label="Fermer le formulaire de contact" onclick="closeModal()">
                     <img src="assets/icons/close.svg" alt="Fermer">
@@ -114,6 +113,7 @@
 
     <div id="modal-background" class="modal-background"></div>
 
+    <!-- Assurez-vous que les chemins des fichiers JS sont corrects -->
     <script type="module" src="scripts/pages/photographer.js"></script>
     <script type="module" src="scripts/utils/contactForm.js"></script>
 </body>
