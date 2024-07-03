@@ -42,13 +42,15 @@ function toggleMenuFilters() {
     });
 }
 
-["arrowDown", "arrowUp"].forEach(id => {
-    document.getElementById(id).addEventListener("click", toggleMenuFilters);
-});
+function moveToTop(buttonId) {
+    const button = document.getElementById(buttonId).parentElement;
+    const list = document.getElementById("listFilters");
+    list.insertBefore(button, list.firstChild);
+}
 
-async function sortAndDisplayGallery(criteria) {
+async function sortAndDisplayGallery(sortFunction) {
     const medias = await getMediaByPhotographer(id);
-    medias.sort(criteria);
+    medias.sort(sortFunction);
     displayGallery(medias);
 }
 
@@ -62,13 +64,20 @@ async function displayGallery(medias) {
 }
 
 document.getElementById("btnSortLikes").addEventListener("click", () => {
+    moveToTop("btnSortLikes");
     sortAndDisplayGallery((a, b) => b.likes - a.likes);
 });
 
 document.getElementById("btnSortDate").addEventListener("click", () => {
+    moveToTop("btnSortDate");
     sortAndDisplayGallery((a, b) => new Date(b.date) - new Date(a.date));
 });
 
 document.getElementById("btnSortTitle").addEventListener("click", () => {
+    moveToTop("btnSortTitle");
     sortAndDisplayGallery((a, b) => a.title.localeCompare(b.title));
+});
+
+["arrowDown", "arrowUp"].forEach(id => {
+    document.getElementById(id).addEventListener("click", toggleMenuFilters);
 });
