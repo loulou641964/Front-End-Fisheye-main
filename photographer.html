@@ -25,7 +25,7 @@
                 </div>
                 <div>
                     <img class="photographer-img" src="images/photographer.jpg" alt="Portrait du photographe">
-                    <button class="contact_button" aria-haspopup="dialog" aria-controls="contact_modal" onclick="displayModal()">Contactez-moi</button>
+                    <button class="contact_button" aria-haspopup="dialog" aria-controls="contact_modal" >Contactez-moi</button>
                 </div>
                 <section class="photograph-media">
                     <div class="menuFilter">
@@ -77,7 +77,7 @@
                     <h2 id="contact_modal_title">Contactez-moi</h2>
                     <p id="photographer-name-contact">Nom du photographe</p>
                 </div>
-                <button aria-label="Fermer le formulaire de contact" onclick="closeModal()">
+                <button aria-label="Fermer le formulaire de contact" >
                     <img src="assets/icons/close.svg" alt="Fermer">
                 </button>
             </header>
@@ -110,11 +110,15 @@
             </div>
         </div>
     </div>
-
+    <div id="gallery_modal" class="modal" aria-hidden="true" aria-labelledby="contact_modal_title">
+        <div class="modal-content"><button aria-label="Fermer la gallery" >
+            <img src="assets/icons/close.svg" alt="Fermer"></div>
+    </div>
     <div id="modal-background" class="modal-background"></div>
 
     <!-- Assurez-vous que les chemins des fichiers JS sont corrects -->
     <script type="module" src="scripts/pages/photographer.js"></script>
     <script type="module" src="scripts/utils/contactForm.js"></script>
+    <script type="module"src=" scripts/utils/lightbox.js" ></script>
 </body>
-</html>
+</html>   
