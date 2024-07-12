@@ -545,4 +545,16 @@ span#arrowDown, span#arrowUp{
     background-color: #d3573c; /* Couleur de fond commune au survol */
 }
 
- 
+ /* Mise en page pour mobile */
+@media (max-width: 480px) {  
+   #media-container {  
+    height: 100px;
+    grid-template-columns: auto;
+   }
+}
+
+/* Mise en page pour tablettes */
+@media (max-width: 767px) {  }
+
+/* Mise en page pour les grands écrans */
+@media (min-width: 1200px) {  }

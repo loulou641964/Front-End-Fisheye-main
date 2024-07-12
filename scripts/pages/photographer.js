@@ -1,10 +1,10 @@
 import { getMediaByPhotographer, getPhotographers } from "../utils/datahandling.js";
 import { displayModal, closeModal } from '../utils/contactForm.js';
 import { displayPhotographerMedia } from "../templates/media.js";
-
+import { displayLightbox,addListenersToGallery,closeLightbox} from '../utils/lightbox.js'
 const id = parseInt(new URLSearchParams(window.location.search).get('id'));
 document.querySelector(".contact_button").addEventListener("click", displayModal);
-
+closeLightbox()
 async function displayPhotographerDetails(photographer) {
     if (!photographer) {
         console.error("Photographe non trouvé");
@@ -30,6 +30,7 @@ async function init() {
     const medias = await getMediaByPhotographer(id);
     const firstName = photographer.name.split(" ")[0];
     displayPhotographerMedia(id, medias, firstName);
+    addListenersToGallery()
 }
 
 document.addEventListener("DOMContentLoaded", init);
