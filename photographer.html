@@ -111,10 +111,21 @@
             </div>
         </div>
     </div>
-    <div id="gallery_modal" class="modal" aria-hidden="true" aria-labelledby="contact_modal_title">
-        <div class="modal-content"><button aria-label="Fermer la gallery" >
-            <img src="assets/icons/close.svg" alt="Fermer"></div>
+     <!-- Lightbox -->
+<div id="lightbox" tabindex="-1" role="dialog" aria-hidden="true" aria-modal="true" aria-label="image closeup view">
+    <div id="contentLightbox">
+        <button class="previousMedia lightboxIcon" id="previousMedia" aria-label="previous image">
+            <i class="fa-solid fa-angle-left fa-4x"></i>
+        </button>
+        <div id="divMediaLightbox"></div>
+        <button class="nextMedia lightboxIcon" id="nextMedia" aria-label="next image">
+            <i class="fa-solid fa-angle-right fa-4x"></i>
+        </button>
+        <button class="closeLightbox lightboxIcon" id="closeLightbox" aria-label="close dialog">
+            <i class="fa-solid fa-xmark fa-4x"></i>
+        </button>
     </div>
+</div>
     <div id="modal-background" class="modal-background"></div>
 
     

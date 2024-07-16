@@ -558,3 +558,63 @@ span#arrowDown, span#arrowUp{
 
 /* Mise en page pour les grands écrans */
 @media (min-width: 1200px) {  }
+
+/* Styles pour le lightbox */
+#lightbox {
+    display: none;
+    position: fixed;
+    z-index: 9999;
+    width: 100%;
+    height: 100%;
+    top: 0;
+    left: 0;
+    background-color: rgba(0, 0, 0, 0.8);
+}
+
+#contentLightbox {
+    position: relative;
+    width: 70%;
+    height: 90%;
+    margin: auto;
+    top: 50%;
+    transform: translateY(-50%);
+    background-color: white;
+    padding: 20px;
+    border-radius: 10px;
+    overflow: hidden;
+}
+
+.lightboxIcon {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    background-color: transparent;
+    border: none;
+    color: #d3573c;
+    cursor: pointer;
+    padding: 10px;
+    border-radius: 50%;
+    font-weight: bold;
+}
+
+#previousMedia {
+    left: 10px;
+    font-size: 10px; /* Taille de l'icône en pixels */
+}
+
+#nextMedia {
+    right: 10px;
+    font-size: 10px; /* Taille de l'icône en pixels */
+    
+}
+
+
+#closeLightbox {
+    top: 10px;
+    right: 10px;
+    transform: none;
+    font-size: 10px; /* Taille de l'icône en pixels */
+    font-weight: lighter;
+}
+
+ 
