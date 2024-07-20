@@ -1,7 +1,11 @@
 
 
-function displayLightbox() {
-    const modal = document.getElementById('lightbox');
+function displayLightbox(event,element) {
+    console.log(event)
+    console.log (element)
+   // document.querySelector ("#divMediaLightbox").appendChild  ( element )
+   document.querySelector ("#divMediaLightbox").innerHTML = `<img src = "${element.src } " alt = "${element.alt }" class ="lightbox-image"><p class ="lightbox-paragraphe">${element.alt}</p> `
+    const modal= document.getElementById('lightbox');
     modal.style.display = 'block';
     modal.setAttribute('aria-hidden', 'false');
 }
@@ -16,7 +20,7 @@ function closeLightbox() {
 function addListenersToGallery() {
     const galleryElements = document.querySelectorAll(".media-item");
     galleryElements.forEach(element => {
-        element.addEventListener("click", displayLightbox);
+        element.addEventListener("click", e=>{ displayLightbox(e,element) });
     });
 }
 
