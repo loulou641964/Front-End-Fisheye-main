@@ -1,10 +1,12 @@
 import { getMediaByPhotographer, getPhotographers } from "../utils/datahandling.js";
 import { displayModal, closeModal } from '../utils/contactForm.js';
 import { displayPhotographerMedia } from "../templates/media.js";
-import { displayLightbox,addListenersToGallery,closeLightbox} from '../utils/lightbox.js'
+import { displayLightbox, addListenersToGallery, closeLightbox } from '../utils/lightbox.js';
+
 const id = parseInt(new URLSearchParams(window.location.search).get('id'));
 document.querySelector(".contact_button").addEventListener("click", displayModal);
-closeLightbox()
+closeLightbox();
+
 async function displayPhotographerDetails(photographer) {
     if (!photographer) {
         console.error("Photographe non trouvé");
@@ -30,7 +32,8 @@ async function init() {
     const medias = await getMediaByPhotographer(id);
     const firstName = photographer.name.split(" ")[0];
     displayPhotographerMedia(id, medias, firstName);
-    addListenersToGallery()
+    addListenersToGallery();
+    addKeyboardNavigation();
 }
 
 document.addEventListener("DOMContentLoaded", init);
@@ -82,3 +85,43 @@ document.getElementById("btnSortTitle").addEventListener("click", () => {
 ["arrowDown", "arrowUp"].forEach(id => {
     document.getElementById(id).addEventListener("click", toggleMenuFilters);
 });
+
+function addKeyboardNavigation() {
+    const mediaItems = document.querySelectorAll(".media-item");
+    let currentIndex = 0;
+
+    function focusMediaItem(index) {
+        if (mediaItems[index]) {
+            mediaItems[index].focus();
+        }
+    }
+
+    mediaItems.forEach((item, index) => {
+        item.setAttribute("tabindex", "0");
+        item.addEventListener("click", () => {
+            currentIndex = index;
+            focusMediaItem(currentIndex);
+        });
+    });
+
+    document.addEventListener("keydown", (event) => {
+        switch (event.key) {
+            case "ArrowRight":
+                currentIndex = (currentIndex + 1) % mediaItems.length;
+                focusMediaItem(currentIndex);
+                break;
+            case "ArrowLeft":
+                currentIndex = (currentIndex - 1 + mediaItems.length) % mediaItems.length;
+                focusMediaItem(currentIndex);
+                break;
+            case "Escape":
+                closeLightbox();
+                break;
+            case "Enter":
+                mediaItems[currentIndex].click();
+                break;
+            default:
+                break;
+        }
+    });
+}

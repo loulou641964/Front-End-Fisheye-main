@@ -8,6 +8,8 @@ function displayLightbox(event, element) {
     const modal = document.getElementById('lightbox'); // Récupère l'élément de la lightbox
     modal.style.display = 'block'; // Affiche la lightbox
     modal.setAttribute('aria-hidden', 'false'); // Met à jour l'attribut aria-hidden pour l'accessibilité
+    document.addEventListener('keydown', handleKeydown); // Ajoute l'écouteur pour les touches de navigation
+    modal.focus(); // Met le focus sur la lightbox pour capter les événements clavier
 }
 
 // Fonction pour fermer la lightbox
@@ -15,6 +17,7 @@ function closeLightbox() {
     const modal = document.getElementById('lightbox'); // Récupère l'élément de la lightbox
     modal.style.display = 'none'; // Cache la lightbox
     modal.setAttribute('aria-hidden', 'true'); // Met à jour l'attribut aria-hidden pour l'accessibilité
+    document.removeEventListener('keydown', handleKeydown); // Retire l'écouteur pour les touches de navigation
 }
 
 // Fonction pour mettre à jour le contenu de la lightbox
@@ -28,9 +31,7 @@ function updateLightbox() {
     } 
     // Vérifie si l'élément est une vidéo
     else if (element.tagName === 'VIDEO') {
-        
-        const source = element.querySelector("source")
-        console.log(source)
+        const source = element.querySelector("source");
         mediaHTML = `
             <video controls class="lightbox-video">
                 <source src="${source.src}" type="${source.type}">
@@ -52,6 +53,21 @@ function showPreviousMedia() {
 function showNextMedia() {
     currentMediaIndex = (currentMediaIndex < galleryElements.length - 1) ? currentMediaIndex + 1 : 0; // Met à jour l'index du média suivant
     updateLightbox(); // Met à jour le contenu de la lightbox
+}
+
+// Fonction pour gérer les événements clavier pour la navigation
+function handleKeydown(event) {
+    switch (event.key) {
+        case 'ArrowLeft':
+            showPreviousMedia();
+            break;
+        case 'ArrowRight':
+            showNextMedia();
+            break;
+        case 'Escape':
+            closeLightbox();
+            break;
+    }
 }
 
 // Fonction pour ajouter des écouteurs d'événements à chaque élément de la galerie
