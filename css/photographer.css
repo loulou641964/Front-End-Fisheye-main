@@ -558,7 +558,7 @@ span#arrowDown, span#arrowUp{
 
 /* Mise en page pour les grands écrans */
 @media (min-width: 1200px) {  }
-/*  partie lightbox */
+
 /* Styles pour le lightbox */
 #lightbox {
     display: none;
@@ -568,7 +568,7 @@ span#arrowDown, span#arrowUp{
     height: 100%;
     top: 0;
     left: 0;
-    background-color: rgba(0, 0, 0, 0.8);
+    background-color: #fffffb;
 }
 
 
@@ -595,6 +595,7 @@ span#arrowDown, span#arrowUp{
     padding: 10px;
     border-radius: 50%;
     font-weight: bolder;
+    
 }
 
 #previousMedia {
@@ -622,15 +623,32 @@ span#arrowDown, span#arrowUp{
 
 .lightbox-image { 
     display: block;
-    margin-top:20px;
+    margin-top:-6px;
     width: 600px;
-    height: 550px;
+    height: 600px;
     object-fit: cover;
     margin-left: auto;
     margin-right: auto
 
   } 
-.lightbox-paragraphe{ 
+.lightbox-paragraphe{
+    position: absolute;
+	left: 0;
+	transition: left 1s, transform 1s;
+	white-space: nowrap;
+
     color: #d3573c;
 }
- 
+ .lightbox-video {
+    display: block;
+    margin-top: -6px;
+    width: 600px;
+    height: 600px;
+    object-fit: cover;
+    margin-left: auto;
+    margin-right: auto
+
+}
+.fa-4x  { 
+    font-weight: lighter;
+}
