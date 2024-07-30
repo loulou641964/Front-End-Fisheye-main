@@ -114,11 +114,24 @@ function addKeyboardNavigation() {
                 currentIndex = (currentIndex - 1 + mediaItems.length) % mediaItems.length;
                 focusMediaItem(currentIndex);
                 break;
+            case "ArrowUp":
+                currentIndex = (currentIndex - 1 + mediaItems.length) % mediaItems.length;
+                focusMediaItem(currentIndex);
+                break;
+            case "ArrowDown":
+                currentIndex = (currentIndex + 1) % mediaItems.length;
+                focusMediaItem(currentIndex);
+                break;
             case "Escape":
                 closeLightbox();
                 break;
             case "Enter":
                 mediaItems[currentIndex].click();
+                break;
+            case "Tab":
+                event.preventDefault();
+                currentIndex = (currentIndex + 1) % mediaItems.length;
+                focusMediaItem(currentIndex);
                 break;
             default:
                 break;
