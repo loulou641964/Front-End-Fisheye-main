@@ -105,34 +105,26 @@ function addKeyboardNavigation() {
     });
 
     document.addEventListener("keydown", (event) => {
+        const lightbox = document.querySelector("#lightbox")
         switch (event.key) {
             case "ArrowRight":
+                if (lightbox.style.display==="none"){ return }
                 currentIndex = (currentIndex + 1) % mediaItems.length;
                 focusMediaItem(currentIndex);
                 break;
             case "ArrowLeft":
-                currentIndex = (currentIndex - 1 + mediaItems.length) % mediaItems.length;
+                currentIndex = (currentIndex - 1 + mediaItems.length) % mediaItems.length;g
                 focusMediaItem(currentIndex);
                 break;
-            case "ArrowUp":
-                currentIndex = (currentIndex - 1 + mediaItems.length) % mediaItems.length;
-                focusMediaItem(currentIndex);
-                break;
-            case "ArrowDown":
-                currentIndex = (currentIndex + 1) % mediaItems.length;
-                focusMediaItem(currentIndex);
-                break;
+           
             case "Escape":
                 closeLightbox();
                 break;
             case "Enter":
-                mediaItems[currentIndex].click();
+                event.target.dispatchEvent(new Event("click"))
                 break;
-            case "Tab":
-                event.preventDefault();
-                currentIndex = (currentIndex + 1) % mediaItems.length;
-                focusMediaItem(currentIndex);
-                break;
+           
+                
             default:
                 break;
         }

@@ -23,40 +23,6 @@ function closeModal() {
     modalBackground.style.display = 'none';
 }
 
-// Fonction pour gérer la navigation au clavier dans le formulaire
-function addKeyboardNavigationToForm() {
-    const focusableElements = 'input, textarea, button';
-    const modal = document.getElementById('contact_modal');
-    const focusableContent = modal.querySelectorAll(focusableElements);
-    let currentIndex = 0;
-
-    focusableContent[currentIndex].focus();
-
-    document.addEventListener('keydown', handleFormKeyDown);
-
-    function handleFormKeyDown(e) {
-        switch (e.key) {
-            case 'ArrowDown':
-            case 'ArrowRight':
-                currentIndex = (currentIndex + 1) % focusableContent.length;
-                focusableContent[currentIndex].focus();
-                e.preventDefault();
-                break;
-            case 'ArrowUp':
-            case 'ArrowLeft':
-                currentIndex = (currentIndex - 1 + focusableContent.length) % focusableContent.length;
-                focusableContent[currentIndex].focus();
-                e.preventDefault();
-                break;
-            case 'Escape':
-                closeModal();
-                break;
-            default:
-                break;
-        }
-    }
-}
-
 // Attacher les événements de clic aux boutons appropriés lors du chargement du DOM
 document.addEventListener('DOMContentLoaded', () => {
     // Bouton "Contactez-moi" dans la page principale
@@ -79,12 +45,9 @@ document.addEventListener('DOMContentLoaded', () => {
             closeModal(); // Ferme le modal
             // Optionnel: Redirection ou message de confirmation
             alert('Formulaire envoyé avec succès!');
+            
         });
     }
-
-    // Ajouter la navigation au clavier pour le formulaire
-    addKeyboardNavigationToForm();
 });
-
 // Export des fonctions pour utilisation externe si nécessaire
 export { displayModal, closeModal };
