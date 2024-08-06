@@ -87,44 +87,46 @@ document.getElementById("btnSortTitle").addEventListener("click", () => {
 });
 
 function addKeyboardNavigation() {
-    const mediaItems = document.querySelectorAll(".media-item");
+    const focusableElements = document.querySelectorAll(".contact_button, .photographer-name, .photographer-location, .photographer-tagline, .photographer-price, .media-item");
     let currentIndex = 0;
 
-    function focusMediaItem(index) {
-        if (mediaItems[index]) {
-            mediaItems[index].focus();
+    function focusElement(index) {
+        if (focusableElements[index]) {
+            focusableElements[index].focus();
         }
     }
 
-    mediaItems.forEach((item, index) => {
+    focusableElements.forEach((item, index) => {
         item.setAttribute("tabindex", "0");
+        item.setAttribute("role", "button");
+        item.setAttribute("aria-label", `Element ${index + 1}`);
         item.addEventListener("click", () => {
             currentIndex = index;
-            focusMediaItem(currentIndex);
+            focusElement(currentIndex);
         });
     });
 
     document.addEventListener("keydown", (event) => {
-        const lightbox = document.querySelector("#lightbox")
+        const lightbox = document.querySelector("#lightbox");
         switch (event.key) {
             case "ArrowRight":
-                if (lightbox.style.display==="none"){ return }
-                currentIndex = (currentIndex + 1) % mediaItems.length;
-                focusMediaItem(currentIndex);
+                if (lightbox.style.display === "none") { return; }
+                currentIndex = (currentIndex + 1) % focusableElements.length;
+                focusElement(currentIndex);
                 break;
             case "ArrowLeft":
-                currentIndex = (currentIndex - 1 + mediaItems.length) % mediaItems.length;g
-                focusMediaItem(currentIndex);
+                currentIndex = (currentIndex - 1 + focusableElements.length) % focusableElements.length;
+                focusElement(currentIndex);
                 break;
-           
+            
             case "Escape":
                 closeLightbox();
                 break;
             case "Enter":
-                event.target.dispatchEvent(new Event("click"))
+                if (document.activeElement.classList.contains('media-item')) {
+                    document.activeElement.click();
+                }
                 break;
-           
-                
             default:
                 break;
         }

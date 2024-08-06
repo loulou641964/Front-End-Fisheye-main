@@ -58,13 +58,16 @@ function showNextMedia() {
 // Fonction pour gérer les événements clavier pour la navigation
 function handleKeydown(event) {
     switch (event.key) {
-        case 'ArrowLeft':
+        case "ArrowLeft":
+            event.preventDefault();
             showPreviousMedia();
             break;
-        case 'ArrowRight':
+        case "ArrowRight":
+            event.preventDefault();
             showNextMedia();
             break;
-        case 'Escape':
+        case "Escape":
+            event.preventDefault();
             closeLightbox();
             break;
     }

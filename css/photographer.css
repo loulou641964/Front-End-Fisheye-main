@@ -514,9 +514,7 @@ span#arrowDown, span#arrowUp{
 .hidden{
     display: none;
 }
-.visible{
-    display: block;
-}
+
 
 .visible {
     display: block;
