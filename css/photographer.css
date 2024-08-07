@@ -569,7 +569,6 @@ span#arrowDown, span#arrowUp{
     background-color: #fffffb;
 }
 
-
 #contentLightbox {
     position: relative;
     width: 100%;
@@ -593,60 +592,53 @@ span#arrowDown, span#arrowUp{
     padding: 10px;
     border-radius: 50%;
     font-weight: bolder;
-    
 }
 
 #previousMedia {
-    display: block;
-   margin-left:  40px;
+    left: calc(47% - 320px); /* Ajustez cette valeur en fonction de la taille et des marges de votre image/vidéo */
     font-size: 10px; /* Taille de l'icône en pixels */
+    
 }
 
 #nextMedia {
-    display: block;
-    right: 40px;
+    right: calc(47% - 320px); /* Ajustez cette valeur en fonction de la taille et des marges de votre image/vidéo */
     font-size: 10px; /* Taille de l'icône en pixels */
     
 }
-
 
 #closeLightbox {
-    top: 30px;
-    right: 20px;
+    top: calc(51% - 320px); /* Ajustez cette valeur en fonction de la taille et des marges de votre image/vidéo */
+    right: calc(47% - 320px); /* Ajustez cette valeur en fonction de la taille et des marges de votre image/vidéo */
     transform: none;
     font-size: 10px; /* Taille de l'icône en pixels */
-    
 }
-
 
 .lightbox-image { 
     display: block;
-    margin-top:-6px;
     width: 600px;
     height: 600px;
     object-fit: cover;
     margin-left: auto;
-    margin-right: auto
+    margin-right: auto;
+} 
 
-  } 
-.lightbox-paragraphe{
+.lightbox-paragraphe {
     position: absolute;
-	left: 0;
-	transition: left 1s, transform 1s;
-	white-space: nowrap;
-
+    left: 0;
+    transition: left 1s, transform 1s;
+    white-space: nowrap;
     color: #d3573c;
 }
- .lightbox-video {
+
+.lightbox-video {
     display: block;
-    margin-top: -6px;
     width: 600px;
     height: 600px;
     object-fit: cover;
     margin-left: auto;
-    margin-right: auto
-
+    margin-right: auto;
 }
-.fa-4x  { 
+
+.fa-4x { 
     font-weight: lighter;
 }

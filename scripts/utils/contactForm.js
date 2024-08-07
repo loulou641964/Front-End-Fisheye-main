@@ -2,7 +2,7 @@
 function displayModal() {
     const modal = document.getElementById('contact_modal');
     const modalBackground = document.getElementById('modal-background');
-    
+
     modal.style.display = 'block';
     modal.setAttribute('aria-hidden', 'false');
     modalBackground.style.display = 'block';
@@ -11,13 +11,14 @@ function displayModal() {
     const photographerName = document.querySelector('.photographer-name').textContent.trim();
     const photographerNameContact = document.getElementById('photographer-name-contact');
     photographerNameContact.textContent = ` ${photographerName}`;
+    modal.querySelector('input').focus();
 }
 
 // Fonction pour fermer le modal de contact
 function closeModal() {
     const modal = document.getElementById('contact_modal');
     const modalBackground = document.getElementById('modal-background');
-    
+
     modal.style.display = 'none';
     modal.setAttribute('aria-hidden', 'true');
     modalBackground.style.display = 'none';
@@ -45,7 +46,7 @@ document.addEventListener('DOMContentLoaded', () => {
             closeModal(); // Ferme le modal
             // Optionnel: Redirection ou message de confirmation
             alert('Formulaire envoyé avec succès!');
-            
+
         });
     }
 });

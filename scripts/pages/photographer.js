@@ -1,6 +1,7 @@
 import { getMediaByPhotographer, getPhotographers } from "../utils/datahandling.js";
 import { displayModal, closeModal } from '../utils/contactForm.js';
 import { displayPhotographerMedia } from "../templates/media.js";
+import {addKeyboardNavigation } from "../utils/eventsHandling.js";
 import { displayLightbox, addListenersToGallery, closeLightbox } from '../utils/lightbox.js';
 
 const id = parseInt(new URLSearchParams(window.location.search).get('id'));
@@ -25,7 +26,7 @@ async function displayPhotographerDetails(photographer) {
 }
 
 async function init() {
-    const { photographers } = await getPhotographers();
+    const {photographers} = await getPhotographers();
     const photographer = photographers.find(p => p.id === id);
     displayPhotographerDetails(photographer);
 
@@ -33,7 +34,8 @@ async function init() {
     const firstName = photographer.name.split(" ")[0];
     displayPhotographerMedia(id, medias, firstName);
     addListenersToGallery();
-    addKeyboardNavigation();
+    addKeyboardNavigation('#lightbox');
+    addKeyboardNavigation('#contact_modal');
 }
 
 document.addEventListener("DOMContentLoaded", init);
@@ -85,50 +87,13 @@ document.getElementById("btnSortTitle").addEventListener("click", () => {
 ["arrowDown", "arrowUp"].forEach(id => {
     document.getElementById(id).addEventListener("click", toggleMenuFilters);
 });
-
-function addKeyboardNavigation() {
-    const focusableElements = document.querySelectorAll(".contact_button, .photographer-name, .photographer-location, .photographer-tagline, .photographer-price, .media-item");
-    let currentIndex = 0;
-
-    function focusElement(index) {
-        if (focusableElements[index]) {
-            focusableElements[index].focus();
-        }
+document.addEventListener("keydown", (e) => {
+    switch (e.key) {
+        case "Enter":
+            e.target.dispatchEvent(new CustomEvent("click", { bubbles: true }));
     }
 
-    focusableElements.forEach((item, index) => {
-        item.setAttribute("tabindex", "0");
-        item.setAttribute("role", "button");
-        item.setAttribute("aria-label", `Element ${index + 1}`);
-        item.addEventListener("click", () => {
-            currentIndex = index;
-            focusElement(currentIndex);
-        });
-    });
+})
 
-    document.addEventListener("keydown", (event) => {
-        const lightbox = document.querySelector("#lightbox");
-        switch (event.key) {
-            case "ArrowRight":
-                if (lightbox.style.display === "none") { return; }
-                currentIndex = (currentIndex + 1) % focusableElements.length;
-                focusElement(currentIndex);
-                break;
-            case "ArrowLeft":
-                currentIndex = (currentIndex - 1 + focusableElements.length) % focusableElements.length;
-                focusElement(currentIndex);
-                break;
-            
-            case "Escape":
-                closeLightbox();
-                break;
-            case "Enter":
-                if (document.activeElement.classList.contains('media-item')) {
-                    document.activeElement.click();
-                }
-                break;
-            default:
-                break;
-        }
-    });
-}
+
+

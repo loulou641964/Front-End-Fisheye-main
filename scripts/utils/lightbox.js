@@ -1,3 +1,5 @@
+import {addKeyboardNavigation} from './eventsHandling.js'
+
 let currentMediaIndex = 0; // Index du média actuellement affiché dans la lightbox
 let galleryElements = []; // Tableau contenant tous les éléments de la galerie
 
@@ -9,7 +11,9 @@ function displayLightbox(event, element) {
     modal.style.display = 'block'; // Affiche la lightbox
     modal.setAttribute('aria-hidden', 'false'); // Met à jour l'attribut aria-hidden pour l'accessibilité
     document.addEventListener('keydown', handleKeydown); // Ajoute l'écouteur pour les touches de navigation
-    modal.focus(); // Met le focus sur la lightbox pour capter les événements clavier
+    const focusableElements = modal.querySelectorAll('button');
+    focusableElements[0].focus();
+
 }
 
 // Fonction pour fermer la lightbox
@@ -18,6 +22,7 @@ function closeLightbox() {
     modal.style.display = 'none'; // Cache la lightbox
     modal.setAttribute('aria-hidden', 'true'); // Met à jour l'attribut aria-hidden pour l'accessibilité
     document.removeEventListener('keydown', handleKeydown); // Retire l'écouteur pour les touches de navigation
+
 }
 
 // Fonction pour mettre à jour le contenu de la lightbox
@@ -28,7 +33,7 @@ function updateLightbox() {
     // Vérifie si l'élément est une image
     if (element.tagName === 'IMG') {
         mediaHTML = `<img src="${element.src}" alt="${element.alt}" class="lightbox-image">`; // Crée le HTML pour l'image
-    } 
+    }
     // Vérifie si l'élément est une vidéo
     else if (element.tagName === 'VIDEO') {
         const source = element.querySelector("source");
@@ -59,6 +64,7 @@ function showNextMedia() {
 function handleKeydown(event) {
     switch (event.key) {
         case "ArrowLeft":
+            console.log('left')
             event.preventDefault();
             showPreviousMedia();
             break;
@@ -89,5 +95,29 @@ document.addEventListener("DOMContentLoaded", () => {
     document.getElementById('nextMedia').addEventListener('click', showNextMedia); // Ajoute un écouteur pour afficher le média suivant
 });
 
+
+
+function focusElement() {
+    // on recup seulement les élement qui sont focusable dans la lightbox
+    const focusableElements = document.querySelector('#contentLightbox').querySelectorAll("button");
+    console.log(focusableElements);
+    let currentIndex = 0;
+    if (focusableElements[0]) {
+        focusableElements[0].focus();
+    }
+    document.addEventListener('keydown', (e)=> {
+        if (e.key === "Tab") {
+            console.log(currentIndex)
+            currentIndex++
+            if(currentIndex > focusableElements.length - 1) {
+                currentIndex = 0;
+                focusableElements[0].focus();
+            }else{
+                focusableElements[currentIndex].focus();
+            }
+            e.preventDefault();
+        }
+    } );
+}
 // Exporte les fonctions pour les utiliser dans d'autres modules
 export { displayLightbox, closeLightbox, addListenersToGallery };
