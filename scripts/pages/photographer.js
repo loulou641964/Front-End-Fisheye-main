@@ -7,7 +7,32 @@ import { displayLightbox, addListenersToGallery, closeLightbox } from '../utils/
 const id = parseInt(new URLSearchParams(window.location.search).get('id'));
 document.querySelector(".contact_button").addEventListener("click", displayModal);
 closeLightbox();
+document.addEventListener("DOMContentLoaded", init);
+document.getElementById("btnSortLikes").addEventListener("click", () => {
+    moveToTop("btnSortLikes");
+    sortAndDisplayGallery((a, b) => b.likes - a.likes);
+});
 
+document.getElementById("btnSortDate").addEventListener("click", () => {
+    moveToTop("btnSortDate");
+    sortAndDisplayGallery((a, b) => new Date(b.date) - new Date(a.date));
+});
+
+document.getElementById("btnSortTitle").addEventListener("click", () => {
+    moveToTop("btnSortTitle");
+    sortAndDisplayGallery((a, b) => a.title.localeCompare(b.title));
+});
+
+["arrowDown", "arrowUp"].forEach(id => {
+    document.getElementById(id).addEventListener("click", toggleMenuFilters);
+});
+document.addEventListener("keydown", (e) => {
+    switch (e.key) {
+        case "Enter":
+            e.target.dispatchEvent(new CustomEvent("click", { bubbles: true }));
+    }
+
+})
 async function displayPhotographerDetails(photographer) {
     if (!photographer) {
         console.error("Photographe non trouvé");
@@ -38,7 +63,7 @@ async function init() {
     addKeyboardNavigation('#contact_modal');
 }
 
-document.addEventListener("DOMContentLoaded", init);
+
 
 function toggleMenuFilters() {
     ["arrowUp", "arrowDown", "secondSort", "thirdSort"].forEach(id => {
@@ -58,6 +83,7 @@ async function sortAndDisplayGallery(sortFunction) {
     const medias = await getMediaByPhotographer(id);
     medias.sort(sortFunction);
     displayGallery(medias);
+    
 }
 
 async function displayGallery(medias) {
@@ -67,33 +93,10 @@ async function displayGallery(medias) {
     const firstName = photographer.name.split(" ")[0];
     document.querySelector("#media-container").innerHTML = '';
     displayPhotographerMedia(id, medias, firstName);
+    addListenersToGallery();
 }
 
-document.getElementById("btnSortLikes").addEventListener("click", () => {
-    moveToTop("btnSortLikes");
-    sortAndDisplayGallery((a, b) => b.likes - a.likes);
-});
 
-document.getElementById("btnSortDate").addEventListener("click", () => {
-    moveToTop("btnSortDate");
-    sortAndDisplayGallery((a, b) => new Date(b.date) - new Date(a.date));
-});
-
-document.getElementById("btnSortTitle").addEventListener("click", () => {
-    moveToTop("btnSortTitle");
-    sortAndDisplayGallery((a, b) => a.title.localeCompare(b.title));
-});
-
-["arrowDown", "arrowUp"].forEach(id => {
-    document.getElementById(id).addEventListener("click", toggleMenuFilters);
-});
-document.addEventListener("keydown", (e) => {
-    switch (e.key) {
-        case "Enter":
-            e.target.dispatchEvent(new CustomEvent("click", { bubbles: true }));
-    }
-
-})
 
 
 
