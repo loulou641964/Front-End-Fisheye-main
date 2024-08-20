@@ -10,6 +10,7 @@ body {
     margin: auto;
 }
 
+
 #contact_modal {
     display: none;
 }
@@ -160,6 +161,16 @@ body {
 
 .photographer-details {
     position: absolute;
+    margin-left: 30px;
+    margin-top: 30px;
+}
+.photographer-name{ 
+    color: #d3573c;
+    margin-right: 35px;
+    font-size: 1.8rem;
+    font-weight: bolder;
+    margin-top: 35px;
+   
 }
 
 .photograph-header img {
@@ -169,7 +180,7 @@ body {
     object-fit: cover;
     position: absolute;
     top: 25%;
-    right: 10%;
+    right: 5%;
     cursor: pointer;
 }
 
@@ -583,21 +594,21 @@ span#arrowDown, span#arrowUp{
 
 #previousMedia {
     left: calc(47% - 320px); /* Ajustez cette valeur en fonction de la taille et des marges de votre image/vidéo */
-    font-size: 10px; /* Taille de l'icône en pixels */
+    font-size: 9px; /* Taille de l'icône en pixels */
     
 }
 
 #nextMedia {
     right: calc(47% - 320px); /* Ajustez cette valeur en fonction de la taille et des marges de votre image/vidéo */
-    font-size: 10px; /* Taille de l'icône en pixels */
+    font-size: 9px; /* Taille de l'icône en pixels */
     
 }
 
 #closeLightbox {
-    top: calc(51% - 320px); /* Ajustez cette valeur en fonction de la taille et des marges de votre image/vidéo */
+    top: calc(51.3% - 320px); /* Ajustez cette valeur en fonction de la taille et des marges de votre image/vidéo */
     right: calc(47% - 320px); /* Ajustez cette valeur en fonction de la taille et des marges de votre image/vidéo */
     transform: none;
-    font-size: 10px; /* Taille de l'icône en pixels */
+    font-size: 9px; /* Taille de l'icône en pixels */
 }
 
 .lightbox-image { 
@@ -611,10 +622,11 @@ span#arrowDown, span#arrowUp{
 
 .lightbox-paragraphe {
     position: absolute;
-    left: calc(51.5% - 320px);
+    left: calc(51.3% - 320px);
     transition: left 1s, transform 1s;
     white-space: nowrap;
     color: #d3573c;
+    margin-top: 5px;
 }
 
 
@@ -633,17 +645,6 @@ span#arrowDown, span#arrowUp{
 }
 
 
-/* Mise en page pour mobile */
-@media (max-width: 480px) {  
-    #media-container {  
-     height: 100px;
-     grid-template-columns: auto;
-    }
- }
- 
- /* Mise en page pour tablettes */
- @media (max-width: 767px) {  }
- 
- /* Mise en page pour les grands écrans */
- @media (min-width: 1200px) {  }
+
+
  

@@ -19,7 +19,8 @@ header {
 
 h1 {
     color: #d3573c;
-    margin-right: 35px;
+    position: absolute;
+    right: 7%;
     font-size: 1.8rem;
     font-weight: bolder;
     margin-top: 35px;
@@ -27,9 +28,10 @@ h1 {
 }
 .logo {
     height: 2.2rem;
-    margin-left: 35px;
     margin-top: 15px;
-    margin-left: 70px;
+    position: absolute;
+    left: 8%;
+   
     
 }
 
