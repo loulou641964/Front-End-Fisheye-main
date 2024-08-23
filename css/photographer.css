@@ -10,6 +10,16 @@ body {
     margin: auto;
 }
 
+h2.photographer-location{ 
+    color: #901C1C;
+    font-weight: lighter;
+}
+.logo-photographes {
+    height: 2.2rem;
+    margin-top: 15px;
+    margin-left: 90px;
+  }
+
 
 #contact_modal {
     display: none;
@@ -18,7 +28,6 @@ body {
 #media-container {
     display: grid;
     grid-template-columns: repeat(3, 1fr);
-    gap: 20px;
     padding: 20px;
 }
 
@@ -56,8 +65,8 @@ body {
 
 .description {
     text-align: left;
-    margin-left: 22px;
     color: #901c1c;
+    margin-left: 30px;
 }
 
 .like {
@@ -65,14 +74,15 @@ body {
     flex-direction: row-reverse;
     align-items: center;
     cursor: pointer;
-    margin-right: 24px;
-    font-size: 14px;
+    font-size: 13px;
+    margin-right: 31px;
     color: #d3573c;
 }
 
 .like-count {
     font-size: 1rem;
     margin-right: 15px;
+    color: #901c1c;
 }
 
 .heart-icon {
@@ -81,13 +91,14 @@ body {
     fill: none;
     stroke: currentColor;
     stroke-width: 2;
+    color: #901c1c;
     cursor: pointer;
 }
 
 .hearted {
     animation: heartBeat 0.3s;
     animation-iteration-count: 3;
-    fill: red;
+    fill: #901c1c;
 }
 
 @keyframes heartBeat {
@@ -103,8 +114,8 @@ body {
 }
 
 .hearted path {
-    fill: rgb(185, 73, 32);
-}
+    color: #901c1c;
+     }
 
 .heart {
     background-color: transparent;
@@ -168,7 +179,6 @@ body {
     color: #d3573c;
     margin-right: 35px;
     font-size: 1.8rem;
-    font-weight: bolder;
     margin-top: 35px;
    
 }
@@ -244,13 +254,14 @@ body {
     margin: 0;
     padding: 0;
     margin-left: 16px;
+    font-weight: lighter;
 }
 
 #contact_modal header p {
     font-size: 1.6em;
     margin: 5px;
     margin-left: 16px;
-    font-weight: bolder;
+    font-weight:lighter;
 }
 
 #contact_modal header button {
@@ -279,7 +290,6 @@ form {
 form label {
     color: #312E2E;
     font-size: 1.4em;
-    margin-bottom: -5px;
     margin-left: 15px;
 }
 
@@ -422,7 +432,7 @@ footer {
 .modal-content {
     position: relative;
     background-color: #db8876;
-    border-radius: 8px;
+    border-radius: 4px;
     max-width: 500px;
     margin: 0 auto;
     position: fixed;
@@ -521,7 +531,15 @@ span#arrowDown, span#arrowUp{
 #thirdSort, #secondSort {
     border-top: solid 1px white;
 }
+span#arrowDown, span#arrowUp{
+    color: white;
+    position: absolute;
+    top: 15px;
+    right: 20px;
+}
 /* Gestion de l'affichage des éléments (flèches et boutons) */
+
+
 .hidden{
     display: none;
 }
@@ -601,7 +619,7 @@ span#arrowDown, span#arrowUp{
 #nextMedia {
     right: calc(47% - 320px); /* Ajustez cette valeur en fonction de la taille et des marges de votre image/vidéo */
     font-size: 9px; /* Taille de l'icône en pixels */
-    
+    font-weight: lighter;
 }
 
 #closeLightbox {
@@ -642,9 +660,14 @@ span#arrowDown, span#arrowUp{
 
 .fa-4x { 
     font-weight: lighter;
+    color: #901C1C;
+}
+@media screen and (max-width: 1110px) {
+    header{
+        padding: 0 20px;
+    }
+   
 }
 
 
 
-
- 

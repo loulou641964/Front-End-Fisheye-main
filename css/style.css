@@ -1,11 +1,12 @@
 @import url("photographer.css");
 
 body {
-    width: auto;
-    font-family: "DM Sans", sans-serif;
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
     max-width: 1440px;
-    margin:  auto;
-    box-sizing: border-box;
+    margin: auto;
+    
 }
 
 header {
@@ -13,27 +14,22 @@ header {
     flex-direction: row;
     justify-content: space-between;
     align-items: center;
-    height: 90px;
+    height: 80px;
     width: 100%;
 }
 
 h1 {
-    color: #d3573c;
-    position: absolute;
-    right: 7%;
+    color:  #901C1C;
     font-size: 1.8rem;
-    font-weight: bolder;
+    font-weight:lighter;
     margin-top: 35px;
-   
+    margin-right: 87px;
 }
-.logo {
+.logo-accueil {
     height: 2.2rem;
     margin-top: 15px;
-    position: absolute;
-    left: 8%;
-   
-    
-}
+    margin-left: 88px;
+  }
 
 
 .logo:hover {
@@ -62,6 +58,7 @@ h1 {
     color: #D3573C;
     font-size: 30px;
     margin-bottom: 10px;
+    font-weight: lighter;
     
 }
 
@@ -99,4 +96,19 @@ h3 {
 .photographer_section a { 
     text-decoration: none;
     color: inherit;
+}
+/* Media queries pour les très petits écrans */
+@media screen and (max-width: 375px) {
+    .photographer_section article img {
+        height: 10rem;
+        width: 10rem;
+    }
+
+    .photographer_section article h2 {
+        font-size: 22px;
+    }
+
+    h1 {
+        font-size: 1.2rem;
+    }
 }
