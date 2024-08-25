@@ -670,6 +670,13 @@ span#arrowDown, span#arrowUp{
     gap: 20px; /* Ajout d'un espacement entre les éléments */
 }
 
+#media-container {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    padding: 20px;
+    gap: 20px; /* Ajout d'un espacement entre les éléments */
+}
+
 /* Media query pour les tablettes et gros smartphones */
 @media screen and (max-width: 1024px) and (min-width: 768px) {
     #media-container {
@@ -684,23 +691,35 @@ span#arrowDown, span#arrowUp{
     }
 
     .media-item-container {
-        margin-bottom: 20px; /* Ajoute un espacement entre les éléments en colonne */
+        margin-bottom: 20px; 
     }
 
     #media-container img, #media-container video {
-        width: 100%; /* Ajuste la largeur des médias pour qu'ils occupent toute la largeur */
-        height: auto; /* Ajuste la hauteur automatiquement */
-        max-height: 300px; /* Limite la hauteur maximale */
-        margin-top: 2rem; /* Réduit la marge supérieure */
+        width: 100%; 
+        height: auto; 
+        max-height: 300px; 
+        margin-top: 2rem; 
     }
 
     .cards-media-footer {
-        flex-direction: row; /* Assure que le titre et les likes restent sur la même ligne */
+        flex-direction: row; 
         justify-content: space-between;
-        padding: 0 10px; /* Ajoute un peu d'espace sur les côtés */
+        padding: 0 10px; 
     }
 
     .description, .like {
-        margin: 5px 0; /* Ajuste les marges */
+        margin: 5px 0; 
+    }
+    .cards-media-footer {
+        padding: 0 5px; 
+    }
+
+    .description {
+        max-width: 70%;
+    }
+
+    .like {
+        min-width: 50px; 
+        justify-content: flex-end;
     }
 }
