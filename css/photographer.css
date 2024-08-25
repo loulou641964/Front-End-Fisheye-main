@@ -722,4 +722,26 @@ span#arrowDown, span#arrowUp{
         min-width: 50px; 
         justify-content: flex-end;
     }
+    .description {
+        text-align: left;
+        color: #901c1c;
+       
+      }
+      .logo-photographes {
+        margin-left: 20px;
+        }
+}
+@media screen and (max-width: 480px) {
+    .photograph-header {
+        padding: 15px;
+    }
+
+    .photographer-name {
+        font-size: 1.8rem;
+    }
+
+    .photograph-header img {
+        width: 120px;
+        height: 120px;
+    }
 }
