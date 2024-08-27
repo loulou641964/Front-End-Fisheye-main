@@ -757,11 +757,28 @@ span#arrowDown, span#arrowUp{
     }
 
     .photographer-name {
-        font-size: 1.8rem;
+        font-size: 1rem;
     }
-
-    
+    .photographer-details {
+       margin-top: auto;
+     }
+     h2.photographer-location {
+        font-size: 1rem;
+      }
+     .photographer-tagline{
+        font-size: 0.8rem;
+     }
+     .listButton {
+       
+        height: 40px;
+        
+      }
+      button.contact_button {
+        margin-top: 120px;
+        min-width: 20px;
+        min-height: 50px;
+      }
+    }
     
        
         
-}
