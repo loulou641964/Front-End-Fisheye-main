@@ -1,138 +1,238 @@
 <!DOCTYPE html>
 <html lang="fr">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Fisheye - Photographe</title>
-    <link rel="icon" type="image/png" href="assets/favicon.png">
-    <link href="https://fonts.googleapis.com/css?family=DM+Sans&display=swap" rel="stylesheet">
-    <link href="css/style.css" rel="stylesheet" type="text/css">
-    <script src="https://kit.fontawesome.com/0b6d538c32.js" crossorigin="anonymous"></script>
-</head>
-<body>
+    <link rel="icon" type="image/png" href="assets/favicon.png" />
+    <link
+      href="https://fonts.googleapis.com/css?family=DM+Sans&display=swap"
+      rel="stylesheet"
+    />
+    <link href="css/style.css" rel="stylesheet" type="text/css" />
+    <script
+      src="https://kit.fontawesome.com/0b6d538c32.js"
+      crossorigin="anonymous"
+    ></script>
+  </head>
+  <body>
     <header id="header">
-        <a href="index.html" aria-label="Fisheye Home page">
-            <img src="assets\images\logo.png" alt="Logo Photographes" class="logo-photographes">
-            
-        </a>
+      <a href="index.html" aria-label="Fisheye Home page">
+        <img
+          src="assets\images\logo.png"
+          alt="Logo Photographes"
+          class="logo-photographes"
+        />
+      </a>
     </header>
     <main id="main">
-        <div class="photographer-header">
-            <div class="photograph-header">
-                <div class="photographer-details">
-                    <h3 class="photographer-name"></h3>
-                    <h2 class="photographer-location"></h2>
-                    <p class="photographer-tagline"></p>
-                    <p class="photographer-price"></p>
-                </div>
-                <div>
-                    <img class="photographer-img" src="images/photographer.jpg" alt="Portrait du photographe">
-                    <button class="contact_button" aria-haspopup="dialog" aria-controls="contact_modal" >Contactez-moi</button>
-                </div>
-                <section class="photograph-media">
-                    <div class="menuFilter">
-                        <label id="labelTri" for="sortOptions">Trier par</label>
-                        <ul id="listFilters" role="listbox" aria-label="Menu de tri">
-                            <!-- Première option de tri -->
-                            <li id="firstSort" role="option">
-                                <button class="listButton" id="btnSortLikes" aria-labelledby="labelTri btnSortLikes">Popularité</button>          
-                            </li>
-                            <li role="option">
-                                <!-- Flèche bas pour développer les options -->
-                                <span id="arrowDown" class="visible" aria-label="Flèche bas pour dérouler menu" tabindex="0" role="button" aria-haspopup="listbox" aria-expanded="false">
-                                    <!-- Icône FontAwesome flèche bas -->
-                                    <i class="fa-solid fa-angle-down fa-lg"></i> 
-                                </span>
-                                <!-- Flèche haut pour réduire les options -->
-                                <span id="arrowUp" class="hidden" tabindex="0" role="button" aria-haspopup="listbox" aria-expanded="true">
-                                    <!-- Icône FontAwesome flèche haut -->
-                                    <i class="fa-solid fa-angle-up fa-lg"></i>
-                                </span>
-                            </li>   
-                            <!-- Deuxième option de tri -->         
-                            <li role="option" class="hidden" id="secondSort">
-                                <button class="listButton" id="btnSortDate" aria-labelledby="labelTri btnSortDate">Date</button>
-                            </li>
-                            <!-- Troisième option de tri -->
-                            <li role="option" class="hidden" id="thirdSort">
-                                <button class="listButton" id="btnSortTitle" aria-labelledby="labelTri btnSortTitle">Titre</button>
-                            </li>
-                        </ul>
-                    </div>
-                    <div class="media-grid" id="mediaGrid">
-                        <!-- Contenu multimédia ici -->
-                    </div>
-                </section>
+      <div class="photographer-header">
+        <div class="photograph-header">
+          <div class="photographer-details">
+            <h3 class="photographer-name"></h3>
+            <h2 class="photographer-location"></h2>
+            <p class="photographer-tagline"></p>
+            <p class="photographer-price"></p>
+          </div>
+          <div>
+            <img
+              class="photographer-img"
+              src="images/photographer.jpg"
+              alt="Portrait du photographe"
+            />
+            <button
+              class="contact_button"
+              aria-haspopup="dialog"
+              aria-controls="contact_modal"
+            >
+              Contactez-moi
+            </button>
+          </div>
+          <section class="photograph-media">
+            <div class="menuFilter">
+              <label id="labelTri" for="sortOptions">Trier par</label>
+              <ul id="listFilters" role="listbox" aria-label="Menu de tri">
+                <!-- Première option de tri -->
+                <li id="firstSort" role="option">
+                  <button
+                    class="listButton"
+                    id="btnSortLikes"
+                    aria-labelledby="labelTri btnSortLikes"
+                  >
+                    Popularité
+                  </button>
+                </li>
+
+                <!-- Deuxième option de tri -->
+                <li role="option" class="hidden" id="secondSort">
+                  <button
+                    class="listButton"
+                    id="btnSortDate"
+                    aria-labelledby="labelTri btnSortDate"
+                  >
+                    Date
+                  </button>
+                </li>
+                <!-- Troisième option de tri -->
+                <li role="option" class="hidden" id="thirdSort">
+                  <button
+                    class="listButton"
+                    id="btnSortTitle"
+                    aria-labelledby="labelTri btnSortTitle"
+                  >
+                    Titre
+                  </button>
+                </li>
+              </ul>
+              <div class="arrows">
+                <span
+                  id="arrowDown"
+                  class="visible"
+                  aria-label="Flèche bas pour dérouler menu"
+                  tabindex="0"
+                  role="button"
+                  aria-haspopup="listbox"
+                  aria-expanded="false"
+                >
+                  <!-- Icône FontAwesome flèche bas -->
+                  <i class="fa-solid fa-angle-down fa-lg"></i>
+                </span>
+                <!-- Flèche haut pour réduire les options -->
+                <span
+                  id="arrowUp"
+                  class="hidden"
+                  tabindex="0"
+                  role="button"
+                  aria-haspopup="listbox"
+                  aria-expanded="true"
+                >
+                  <!-- Icône FontAwesome flèche haut -->
+                  <i class="fa-solid fa-angle-up fa-lg"></i>
+                </span>
+              </div>
             </div>
+            <div class="media-grid" id="mediaGrid">
+              <!-- Contenu multimédia ici -->
+            </div>
+          </section>
         </div>
-        <div id="media-container"></div>
-        <div class="cards-media-footer"></div>
+      </div>
+      <div id="media-container"></div>
+      <div class="cards-media-footer"></div>
     </main>
     <footer>
-        <div id="priceLikes"></div>
+      <div id="priceLikes"></div>
     </footer>
 
-    <div id="contact_modal" class="modal" aria-hidden="true" aria-labelledby="contact_modal_title">
-        <div class="modal-content">
-            <header>
-                <div class="modal-header-content">
-                    <h2 id="contact_modal_title">Contactez-moi</h2>
-                    <p id="photographer-name-contact">Nom du photographe</p>
-                </div>
-                <button aria-label="Fermer le formulaire de contact" >
-                    <img src="assets/icons/close.svg" alt="Fermer">
-                </button>
-            </header>
-            <div id="contact-form">
-                <form id="contactForm">
-                    <div>
-                        <label for="prenom">Prénom</label>
-                        <input class="text-control" type="text" id="prenom" name="prenom" minlength="2" required><br>
-                    </div>
-                    <p class="errorField" id="error-prenom"></p>
-                    <div>
-                        <label for="nom">Nom</label>
-                        <input class="text-control" type="text" id="nom" name="nom" minlength="2" required><br>
-                    </div>
-                    <p class="errorField" id="error-nom"></p>
-                    <div>
-                        <label for="email">Email</label>
-                        <input class="text-control" type="email" id="email" name="email" required><br>
-                    </div>
-                    <p class="errorField" id="error-email"></p>
-                    <div>
-                        <label for="message">Votre message</label>
-                        <textarea class="text-control inputMessage" id="message" name="message" required></textarea><br>
-                    </div>
-                    <p class="errorField" id="error-message"></p>
-                    <div class="form-actions">
-                        <button class="send_button" type="submit">Envoyer</button>
-                    </div>
-                </form>
+    <div
+      id="contact_modal"
+      class="modal"
+      aria-hidden="true"
+      aria-labelledby="contact_modal_title"
+    >
+      <div class="modal-content">
+        <header>
+          <div class="modal-header-content">
+            <h2 id="contact_modal_title">Contactez-moi</h2>
+            <p id="photographer-name-contact">Nom du photographe</p>
+          </div>
+          <button aria-label="Fermer le formulaire de contact">
+            <img src="assets/icons/close.svg" alt="Fermer" />
+          </button>
+        </header>
+        <div id="contact-form">
+          <form id="contactForm">
+            <div>
+              <label for="prenom">Prénom</label>
+              <input
+                class="text-control"
+                type="text"
+                id="prenom"
+                name="prenom"
+                minlength="2"
+                required
+              /><br />
             </div>
+            <p class="errorField" id="error-prenom"></p>
+            <div>
+              <label for="nom">Nom</label>
+              <input
+                class="text-control"
+                type="text"
+                id="nom"
+                name="nom"
+                minlength="2"
+                required
+              /><br />
+            </div>
+            <p class="errorField" id="error-nom"></p>
+            <div>
+              <label for="email">Email</label>
+              <input
+                class="text-control"
+                type="email"
+                id="email"
+                name="email"
+                required
+              /><br />
+            </div>
+            <p class="errorField" id="error-email"></p>
+            <div>
+              <label for="message">Votre message</label>
+              <textarea
+                class="text-control inputMessage"
+                id="message"
+                name="message"
+                required
+              ></textarea
+              ><br />
+            </div>
+            <p class="errorField" id="error-message"></p>
+            <div class="form-actions">
+              <button class="send_button" type="submit">Envoyer</button>
+            </div>
+          </form>
         </div>
+      </div>
     </div>
-     <!-- Lightbox -->
-<div id="lightbox" tabindex="-1" role="dialog" aria-hidden="true" aria-modal="true" aria-label="image closeup view">
-    <div id="contentLightbox">
-        <button class="previousMedia lightboxIcon" id="previousMedia" aria-label="previous image">
-            <i class="fa-solid fa-angle-left fa-4x"></i>
+    <!-- Lightbox -->
+    <div
+      id="lightbox"
+      tabindex="-1"
+      role="dialog"
+      aria-hidden="true"
+      aria-modal="true"
+      aria-label="image closeup view"
+    >
+      <div id="contentLightbox">
+        <button
+          class="previousMedia lightboxIcon"
+          id="previousMedia"
+          aria-label="previous image"
+        >
+          <i class="fa-solid fa-angle-left fa-4x"></i>
         </button>
-        
+
         <div id="divMediaLightbox"></div>
-        <button class="nextMedia lightboxIcon" id="nextMedia" aria-label="next image">
-            <i class="fa-solid fa-angle-right fa-4x"></i>
+        <button
+          class="nextMedia lightboxIcon"
+          id="nextMedia"
+          aria-label="next image"
+        >
+          <i class="fa-solid fa-angle-right fa-4x"></i>
         </button>
-        <button class="closeLightbox lightboxIcon" id="closeLightbox" aria-label="close dialog">
-            <i class="fa-solid fa-xmark fa-4x"></i>
+        <button
+          class="closeLightbox lightboxIcon"
+          id="closeLightbox"
+          aria-label="close dialog"
+        >
+          <i class="fa-solid fa-xmark fa-4x"></i>
         </button>
+      </div>
     </div>
-</div>
     <div id="modal-background" class="modal-background"></div>
 
-    
     <script type="module" src="scripts/pages/photographer.js"></script>
     <script type="module" src="scripts/utils/contactForm.js"></script>
-    
-</body>
+  </body>
 </html>

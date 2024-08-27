@@ -476,6 +476,7 @@ footer {
 
 /*  menu tri */
 .menuFilter{
+    position:relative;
     display: flex;
     flex-direction: row;
     column-gap: 20px;
@@ -516,6 +517,12 @@ li{
     cursor: pointer;
     text-align: left;
     width: 100%;
+}
+.arrows{ 
+    position: absolute;
+    right: -5px;
+    z-index: 100;
+    top: 18px;
 }
 span#arrowDown, span#arrowUp{
     color: white;
@@ -671,8 +678,15 @@ span#arrowDown, span#arrowUp{
 
   }
 
+
+
+    
+    
+       
+        
+
 /* Media query pour les tablettes et gros smartphones */
-@media screen and (max-width: 1024px) and (min-width: 768px) {
+@media screen and (max-width: 1024px)  {
     #media-container {
         grid-template-columns: repeat(2, 1fr);
     }
