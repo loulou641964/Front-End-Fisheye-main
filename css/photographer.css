@@ -499,7 +499,7 @@ ul{
     height: fit-content; 
     user-select: none;
     position: relative;
-    z-index: 10; /* Assurez-vous que le menu a un z-index supérieur */
+    z-index: 10;
 }
 li{
     display: block;
@@ -611,22 +611,22 @@ span#arrowDown, span#arrowUp{
 }
 
 #previousMedia {
-    left: calc(47% - 320px); /* Ajustez cette valeur en fonction de la taille et des marges de votre image/vidéo */
-    font-size: 9px; /* Taille de l'icône en pixels */
+    left: calc(47% - 320px); 
+    font-size: 9px; 
     
 }
 
 #nextMedia {
-    right: calc(47% - 320px); /* Ajustez cette valeur en fonction de la taille et des marges de votre image/vidéo */
-    font-size: 9px; /* Taille de l'icône en pixels */
+    right: calc(47% - 320px); 
+    font-size: 9px; 
     font-weight: lighter;
 }
 
 #closeLightbox {
-    top: calc(51.3% - 320px); /* Ajustez cette valeur en fonction de la taille et des marges de votre image/vidéo */
+    top: calc(51.3% - 320px); 
     right: calc(47% - 320px); /* Ajustez cette valeur en fonction de la taille et des marges de votre image/vidéo */
     transform: none;
-    font-size: 9px; /* Taille de l'icône en pixels */
+    font-size: 9px; 
 }
 
 .lightbox-image { 
@@ -667,15 +667,9 @@ span#arrowDown, span#arrowUp{
     display: grid;
     grid-template-columns: repeat(3, 1fr);
     padding: 20px;
-    gap: 20px; /* Ajout d'un espacement entre les éléments */
-}
+    gap: 20px; 
 
-#media-container {
-    display: grid;
-    grid-template-columns: repeat(3, 1fr);
-    padding: 20px;
-    gap: 20px; /* Ajout d'un espacement entre les éléments */
-}
+  }
 
 /* Media query pour les tablettes et gros smartphones */
 @media screen and (max-width: 1024px) and (min-width: 768px) {
@@ -730,7 +724,19 @@ span#arrowDown, span#arrowUp{
       .logo-photographes {
         margin-left: 20px;
         }
+        button.contact_button {
+        
+            margin-top: 120px;
+          }
+          .photograph-header img {
+            width: 100px;
+            height: 100px;
+        }
+        .listButton {
+            
+            width: 100%;
 }
+  }
 @media screen and (max-width: 480px) {
     .photograph-header {
         padding: 15px;
@@ -740,8 +746,8 @@ span#arrowDown, span#arrowUp{
         font-size: 1.8rem;
     }
 
-    .photograph-header img {
-        width: 120px;
-        height: 120px;
-    }
+    
+    
+       
+        
 }
