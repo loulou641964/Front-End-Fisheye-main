@@ -22,7 +22,6 @@ document.getElementById("btnSortTitle").addEventListener("click", () => {
     moveToTop("btnSortTitle");
     sortAndDisplayGallery((a, b) => a.title.localeCompare(b.title));
 });
-
 ["arrowDown", "arrowUp"].forEach(id => {
     document.getElementById(id).addEventListener("click", toggleMenuFilters);
 });
@@ -31,8 +30,9 @@ document.addEventListener("keydown", (e) => {
         case "Enter":
             e.target.dispatchEvent(new CustomEvent("click", { bubbles: true }));
     }
-
 })
+
+
 async function displayPhotographerDetails(photographer) {
     if (!photographer) {
         console.error("Photographe non trouvé");
@@ -62,16 +62,35 @@ async function init() {
     addKeyboardNavigation('#lightbox');
     addKeyboardNavigation('#contact_modal');
 }
-
-
-
 function toggleMenuFilters() {
-    ["arrowUp", "arrowDown", "secondSort", "thirdSort"].forEach(id => {
-        const element = document.getElementById(id);
-        element.classList.toggle('hidden');
-        element.classList.toggle('visible');
+    const list = document.getElementById("listFilters");
+    const arrowDown = document.getElementById("arrowDown");
+    const arrowUp = document.getElementById("arrowUp");
+    const elements = Array.from(list.getElementsByTagName("li"));
+
+    list.classList.toggle("open");
+
+    if (arrowDown && arrowUp) {
+        arrowDown.classList.toggle("hidden");
+        arrowDown.classList.toggle("visible");
+        arrowUp.classList.toggle("visible");
+        arrowUp.classList.toggle("hidden");
+    }
+
+    const isOpen = list.classList.contains("open");
+
+    elements.forEach((elt, index) => {
+        if (index === 0) return; // Skip the first element
+        elt.classList.toggle("visible", isOpen);
+        elt.classList.toggle("hidden", !isOpen);
     });
 }
+
+
+
+
+
+
 
 function moveToTop(buttonId) {
     const button = document.getElementById(buttonId).parentElement;
@@ -95,6 +114,7 @@ async function displayGallery(medias) {
     displayPhotographerMedia(id, medias, firstName);
     addListenersToGallery();
 }
+
 
 
 
