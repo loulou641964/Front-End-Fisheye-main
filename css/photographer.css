@@ -678,24 +678,22 @@ span#arrowDown, span#arrowUp{
 
   }
 
-
-
-    
-    
-       
-        
-
 /* Media query pour les tablettes et gros smartphones */
 @media screen and (max-width: 1024px)  {
     #media-container {
         grid-template-columns: repeat(2, 1fr);
         
     }
+    .description {
+        text-align: left;
+        color: #901c1c;
+        
+      }
 
 }
 
 /* Media query pour les smartphones */
-@media screen and (max-width: 767px) {
+@media screen and (max-width: 768px) {
     #media-container {
         grid-template-columns: 1fr;
     }
@@ -725,18 +723,18 @@ span#arrowDown, span#arrowUp{
     }
 
     .description {
-        max-width: 70%;
-    }
+        text-align: left;
+        color: #901c1c;
+        margin-left: -6px;
+       
+      }
 
     .like {
         min-width: 50px; 
         justify-content: flex-end;
+        margin-right: 0;
     }
-    .description {
-        text-align: left;
-        color: #901c1c;
-       
-      }
+    
       .logo-photographes {
         margin-left: 20px;
         }
@@ -752,27 +750,27 @@ span#arrowDown, span#arrowUp{
             
             width: 100%;
         }
+        #contact_modal header h2 {
+            font-size: 1.5em;
+        }
+        
+        form label {
+            font-size: 1.2em;
+        }
+        
+        form input, form textarea {
+            font-size: 0.9em;
+        }
+        #contact_modal header button img {
+            position: absolute;
+            right: 20px;
+            top: 10px;
+      }
   }
 
 
-@media screen and (max-width: 768px) {
-    .modal-content {
-        width: 95%;
-        padding: 15px;
-    }
 
-    .modal-content header h2 {
-        font-size: 1.5em;
-    }
-
-    .modal-content form label {
-        font-size: 1.2em;
-    }
-
-    .contact_button {
-        font-size: 0.9em;
-    }
-  }
+  
 @media screen and (max-width: 480px) {
     .photograph-header {
         padding: 15px;
@@ -783,6 +781,7 @@ span#arrowDown, span#arrowUp{
     }
     .photographer-details {
        margin-top: auto;
+       margin-left: 0;
      }
      h2.photographer-location {
         font-size: 1rem;
@@ -790,21 +789,47 @@ span#arrowDown, span#arrowUp{
      .photographer-tagline{
         font-size: 0.8rem;
      }
-     .listButton {
-       
-        height: 40px;
-        
-      }
+    
       button.contact_button {
         margin-top: 120px;
         min-width: 20px;
         min-height: 50px;
       }
+      #contact_modal {
+        width: 95%;
+        padding: 15px;
+    }
+    
+    #contact_modal header {
+        padding: 10px; 
+    }
+
+    #contact_modal header h2 {
+        font-size: 1.3em; 
+    }
+    #contact_modal header button img {
+        position: absolute;
+        right: 20px;
+        top: 10px;
+  }
+
+
+    
+    form label {
+        font-size: 1em;
+    }
+    
+    .send_button {
+        font-size: 0.9em;
+    }
+}
      
         
 
-  }
+  
+
     
     
        
         
+
