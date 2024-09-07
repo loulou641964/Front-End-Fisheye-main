@@ -89,8 +89,7 @@ function updateTotalLikesAndPrice() {
 
 // Gestionnaire d'événements de clic sur le cœur
 document.addEventListener('click', (event) => {
-    console.log(event);
-    const heartIcon = event.target.classList.contains('heart-icon') ? event.target : event.target.closest('.heart-icon');
+   const heartIcon = event.target.classList.contains('heart-icon') ? event.target : event.target.closest('.heart-icon');
     if (heartIcon) {
         const likeContainer = heartIcon.closest('.like');
         const likeCount = likeContainer.querySelector('.like-count');
