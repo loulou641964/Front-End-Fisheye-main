@@ -1,853 +1,826 @@
-/* Définition générale */
-* {  
-    box-sizing: border-box;
+* {
+  box-sizing: border-box;
 }
 
 body {
-    font-family: Arial, sans-serif;
-    margin: 0;
-    padding: 0;
-    max-width: 1440px;
-    margin: auto;
+  font-family: Arial, sans-serif;
+  margin: 0;
+  padding: 0;
+  max-width: 1440px;
+  margin: auto;
 }
 
-h2.photographer-location{ 
-    color: #901C1C;
-    font-weight: lighter;
+h2.photographer-location {
+  color: #901c1c;
+  font-weight: lighter;
 }
 .logo-photographes {
-    height: 2.2rem;
-    margin-top: 15px;
-    margin-left: 90px;
-  }
-
+  height: 2.2rem;
+  margin-top: 15px;
+  margin-left: 90px;
+}
 
 #contact_modal {
-    display: none;
+  display: none;
 }
 
 #media-container {
-    display: grid;
-    grid-template-columns: repeat(3, 1fr);
-    padding: 20px;
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  padding: 20px;
 }
 
 .media-item-container {
-    text-align: center;
-    position: relative;
+  text-align: center;
+  position: relative;
 }
 
 #media-container img,
 #media-container video {
-    width: 300px;
-    height: 250px;
-    object-fit: cover;
-    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
-    transition: transform 0.3s ease;
-    margin-top: 4rem;
-    cursor: pointer;
+  width: 300px;
+  height: 250px;
+  object-fit: cover;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  transition: transform 0.3s ease;
+  margin-top: 4rem;
+  cursor: pointer;
 }
 
 #media-container img:hover,
 #media-container video:hover,
 #media-container img:focus,
 #media-container video:focus {
-    transform: scale(1.3);
+  transform: scale(1.3);
 }
 
 .cards-media-footer {
-    margin-top: 10px;
-    font-size: 1rem;
-    color: #555;
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
+  margin-top: 10px;
+  font-size: 1rem;
+  color: #555;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
 }
 
 .description {
-    text-align: left;
-    color: #901c1c;
-    margin-left: 25px;
+  text-align: left;
+  color: #901c1c;
+  margin-left: 25px;
 }
 
 .like {
-    display: flex;
-    flex-direction: row-reverse;
-    align-items: center;
-    cursor: pointer;
-    font-size: 13px;
-    margin-right: 31px;
-    color: #d3573c;
+  display: flex;
+  flex-direction: row-reverse;
+  align-items: center;
+  cursor: pointer;
+  font-size: 13px;
+  margin-right: 31px;
+  color: #d3573c;
 }
 
 .like-count {
-    font-size: 1rem;
-    margin-right: 15px;
-    color: #901c1c;
+  font-size: 1rem;
+  margin-right: 15px;
+  color: #901c1c;
 }
 
 .heart-icon {
-    width: 20px;
-    height: 20px;
-    fill: none;
-    stroke: currentColor;
-    stroke-width: 2;
-    color: #901c1c;
-    cursor: pointer;
+  width: 20px;
+  height: 20px;
+  fill: none;
+  stroke: currentColor;
+  stroke-width: 2;
+  color: #901c1c;
+  cursor: pointer;
 }
 
 .hearted {
-    animation: heartBeat 0.3s;
-    animation-iteration-count: 3;
-    fill: #901c1c;
+  animation: heartBeat 0.3s;
+  animation-iteration-count: 3;
+  fill: #901c1c;
 }
 
 @keyframes heartBeat {
-    0% {
-        transform: scale(1);
-    }
-    50% {
-        transform: scale(1.5);
-    }
-    100% {
-        transform: scale(1);
-    }
+  0% {
+    transform: scale(1);
+  }
+  50% {
+    transform: scale(1.5);
+  }
+  100% {
+    transform: scale(1);
+  }
 }
 
 .hearted path {
-    color: #901c1c;
-     }
+  color: #901c1c;
+}
 
 .heart {
-    background-color: transparent;
-    border: none;
-    cursor: pointer;
-    outline: none;
-    font-size: 2rem;
-    color: gray;
+  background-color: transparent;
+  border: none;
+  cursor: pointer;
+  outline: none;
+  font-size: 2rem;
+  color: gray;
 }
 
 .heart::before {
-    content: "♥";
+  content: "♥";
 }
 
 .photograph-media {
-    top: 300px;
-    position: absolute;
+  top: 300px;
+  position: absolute;
 }
 
 .media-grid {
-    display: grid;
-    grid-template-columns: 1fr 1fr 1fr;
-    column-gap: 90px;
-    row-gap: 15px;
-    margin-top: 50px;
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr;
+  column-gap: 90px;
+  row-gap: 15px;
+  margin-top: 50px;
 }
 
 .media-grid article .thumbnail-container {
-    cursor: pointer;
-    transition: transform 300ms;
+  cursor: pointer;
+  transition: transform 300ms;
 }
 
 .media-grid article .thumbnail-container:hover,
 .media-grid article .thumbnail-container:focus {
-    transform: scale(1.05);
+  transform: scale(1.05);
 }
 
 #media-container img:last-child,
 #media-container video:last-child {
-    grid-column: span 3;
-    justify-self: center;
-    margin-bottom: 50px;
-    margin-top: 0;
+  grid-column: span 3;
+  justify-self: center;
+  margin-bottom: 50px;
+  margin-top: 0;
 }
 
 .photograph-header {
-    width: 88%;
-    max-width: 1440px;
-    background-color: #fafafa;
-    height: 300px;
-    margin: 0 auto;
-    position: relative;
+  width: 88%;
+  max-width: 1440px;
+  background-color: #fafafa;
+  height: 300px;
+  margin: 0 auto;
+  position: relative;
 }
 
 .photographer-details {
-    position: absolute;
-    margin-left: 30px;
-    margin-top: 30px;
+  position: absolute;
+  margin-left: 30px;
+  margin-top: 30px;
 }
-.photographer-name{ 
-    color: #d3573c;
-    margin-right: 35px;
-    font-size: 1.8rem;
-    margin-top: 35px;
-   
+.photographer-name {
+  color: #d3573c;
+  margin-right: 35px;
+  font-size: 1.8rem;
+  margin-top: 35px;
 }
 
 .photograph-header img {
-    width: 150px;
-    height: 150px;
-    border-radius: 50%;
-    object-fit: cover;
-    position: absolute;
-    top: 25%;
-    right: 5%;
-    cursor: pointer;
+  width: 150px;
+  height: 150px;
+  border-radius: 50%;
+  object-fit: cover;
+  position: absolute;
+  top: 25%;
+  right: 5%;
+  cursor: pointer;
 }
 
 .contact_button {
-    font-size: 1em;
-    font-weight: bold;
-    color: white;
-    padding: 11px;
-    min-width: 170px;
-    min-height: 50px;
-    border: none;
-    background-color: #901c1c;
-    border-radius: 5px;
-    position: absolute;
-    top: 100px;
-    left: 50%;
-    transform: translateX(-50%);
-    cursor: pointer;
+  font-size: 1em;
+  font-weight: bold;
+  color: white;
+  padding: 11px;
+  min-width: 170px;
+  min-height: 50px;
+  border: none;
+  background-color: #901c1c;
+  border-radius: 5px;
+  position: absolute;
+  top: 100px;
+  left: 50%;
+  transform: translateX(-50%);
+  cursor: pointer;
 }
 
 .contact_button:hover,
 .contact_button:focus-visible {
-    background-color: #d3573c;
+  background-color: #d3573c;
 }
 
 /* Arrière-plan grisé */
 .modalBground_layout {
-    position: fixed;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    background-color: rgba(0, 0, 0, 0.5);
-    z-index: 1000;
-    display: none; 
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.5);
+  z-index: 1000;
+  display: none;
 }
 
 #contact_modal {
-    display: none;
-    position: fixed;
-    top: 50%;
-    left: 50%;
-    transform: translate(-50%, -50%);
-    z-index: 1001;
-    border-radius: 5px;
-    width: 50%;
-    padding: 35px;
-    height: auto;
-    max-width: 380px;
+  display: none;
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  z-index: 1001;
+  border-radius: 5px;
+  width: 50%;
+  padding: 35px;
+  height: auto;
+  max-width: 380px;
 }
 
 #contact_modal header {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    width: 100%;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  width: 100%;
 }
 
 #contact_modal header h2 {
-    font-size: 2em;
-    margin: 0;
-    padding: 0;
-    margin-left: 16px;
-    font-weight: lighter;
+  font-size: 2em;
+  margin: 0;
+  padding: 0;
+  margin-left: 16px;
+  font-weight: lighter;
 }
 
 #contact_modal header p {
-    font-size: 1.6em;
-    margin: 5px;
-    margin-left: 16px;
-    font-weight:lighter;
+  font-size: 1.6em;
+  margin: 5px;
+  margin-left: 16px;
+  font-weight: lighter;
 }
 
 #contact_modal header button {
-    cursor: pointer;
-    background: none;
-    border: none;
+  cursor: pointer;
+  background: none;
+  border: none;
 }
 
 .modal-header-content {
-    width: 100%; 
+  width: 100%;
 }
 
 #contact_modal header button img {
-    width: 24px;
-    height: 24px;
-    margin-bottom: 40px;
-    margin-right: 20px;
+  width: 24px;
+  height: 24px;
+  margin-bottom: 40px;
+  margin-right: 20px;
 }
 
 form {
-    display: flex;
-    flex-direction: column;
-    width: 100%;
+  display: flex;
+  flex-direction: column;
+  width: 100%;
 }
 
 form label {
-    color: #312E2E;
-    font-size: 1.4em;
-    margin-left: 15px;
+  color: #312e2e;
+  font-size: 1.4em;
+  margin-left: 15px;
 }
 
 form div {
-    display: flex;
-    flex-direction: column;
-    width: 100%;
-    align-items: flex-start;
-    margin-bottom: 26px;
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+  align-items: flex-start;
+  margin-bottom: 26px;
 }
 
 form input,
 form textarea {
-    width: 90%;
-    min-height: 30px;
-    border: none;
-    border-radius: 5px;
-    font-size: 1em;
-    padding: 10px;
-    margin-top: 5px;
-    margin-bottom: -20px;
-    margin-left: 16px;
+  width: 90%;
+  min-height: 30px;
+  border: none;
+  border-radius: 5px;
+  font-size: 1em;
+  padding: 10px;
+  margin-top: 5px;
+  margin-bottom: -20px;
+  margin-left: 16px;
 }
 
 form textarea {
-    height: 120px;
-    padding-top: 10px;
-    font-size: 1em;
+  height: 120px;
+  padding-top: 10px;
+  font-size: 1em;
 }
 
 button.contact_button {
-    font-size: 1em;
-    font-weight: bold;
-    color: white;
-    padding: 11px;
-    min-width: 170px;
-    min-height: 50px;
-    border: none;
-    background-color: #901c1c;
-    border-radius: 5px;
-    cursor: pointer;
-    align-self: center;
-    margin-top: 20px;
+  font-size: 1em;
+  font-weight: bold;
+  color: white;
+  padding: 11px;
+  min-width: 170px;
+  min-height: 50px;
+  border: none;
+  background-color: #901c1c;
+  border-radius: 5px;
+  cursor: pointer;
+  align-self: center;
+  margin-top: 20px;
 }
 
 button.contact_button:hover,
 button.contact_button:focus-visible {
-    background-color: #d3573c;
+  background-color: #d3573c;
 }
 
 .errorField {
-    font-size: 1em;
-    color: black;
-    display: block;
-    margin-bottom: -15px;
-    text-align: left;
-    transition: 0.2s;
+  font-size: 1em;
+  color: black;
+  display: block;
+  margin-bottom: -15px;
+  text-align: left;
+  transition: 0.2s;
 }
 
 footer {
-    background-color: transparent; 
-    color: #fff; 
-    box-sizing: border-box; 
-    display: flex;
-    justify-content: flex-end;
-    align-items: center;
-    position: fixed; 
-    bottom: 0; 
-    left: 0; 
-    width: 100%; 
-    z-index: 1000; 
+  background-color: transparent;
+  color: #fff;
+  box-sizing: border-box;
+  display: flex;
+  justify-content: flex-end;
+  align-items: center;
+  position: fixed;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  z-index: 1000;
 }
 
 #priceLikes {
-    display: flex;
-    gap: 10px;
-    align-items: center;
+  display: flex;
+  gap: 10px;
+  align-items: center;
 }
 
 #priceLikes .combined-info {
-    display: flex;
-    align-items: center;
-    flex-direction: row-reverse;
-    gap: 10px;
-    background-color: #db8876;
-    padding: 5px 10px;
-    color: #030000;
-    font-size: 1.2rem;
-    margin-right: 20px;
+  display: flex;
+  align-items: center;
+  flex-direction: row-reverse;
+  gap: 10px;
+  background-color: #db8876;
+  padding: 5px 10px;
+  color: #030000;
+  font-size: 1.2rem;
+  margin-right: 20px;
 }
 
 #priceLikes .heart-icon {
-    width: 14px;
-    height: 14px;
-    fill: #312e2e;
-    stroke: #000;
-    stroke-width: 1;
-    margin-left: 5px;
+  width: 14px;
+  height: 14px;
+  fill: #312e2e;
+  stroke: #000;
+  stroke-width: 1;
+  margin-left: 5px;
 }
 
 .daily-price {
-    font-size: 14px;
-    margin-right: 5px;
+  font-size: 14px;
+  margin-right: 5px;
 }
 
 .total-likes {
-    color: #000;
+  color: #000;
 }
 
 /* Styles pour la section photograph-media */
 .photograph-media {
-    border-radius: 8px;
+  border-radius: 8px;
 }
 
 /* Styles pour la grille de médias */
 .media-grid {
-    display: grid;
-    grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
-    gap: 20px;
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+  gap: 20px;
 }
 
 .media-grid div {
-    border-bottom: 2px solid #fff;
-    padding: 10px;
-    color: #ffffff; /* La couleur du texte des éléments de la grille est blanche */
+  border-bottom: 2px solid #fff;
+  padding: 10px;
+  color: #ffffff; /* La couleur du texte des éléments de la grille est blanche */
 }
 
 /* Arrière-plan grisé */
 .modal-background {
-    display: none;
-    position: fixed;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    background-color: rgba(0, 0, 0, 0.5);
-    z-index: 1000;
+  display: none;
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.5);
+  z-index: 1000;
 }
 
 .modal-content {
-    position: relative;
-    background-color: #db8876;
-    border-radius: 4px;
-    max-width: 500px;
-    margin: 0 auto;
-    position: fixed;
-    left: 50%;
-    top: 55%;
-    transform: translate(-50%, -50%);
-    z-index: 150;
-    width: 100%;
+  position: relative;
+  background-color: #db8876;
+  border-radius: 4px;
+  max-width: 500px;
+  margin: 0 auto;
+  position: fixed;
+  left: 50%;
+  top: 55%;
+  transform: translate(-50%, -50%);
+  z-index: 150;
+  width: 100%;
 }
 
 .modal-content header {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    margin-bottom: 20px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 20px;
 }
 
 .modal-content form {
-    display: flex;
-    flex-direction: column;
+  display: flex;
+  flex-direction: column;
 }
 
 .modal-content .form-actions {
-    display: flex;
-    justify-content: flex-end;
-    margin-top: 20px;
+  display: flex;
+  justify-content: flex-end;
+  margin-top: 20px;
 }
 
 .contact_button {
-    padding: 10px 20px;
-    background-color: #0055ff;
-    color: white;
-    border: none;
-    border-radius: 4px;
-    cursor: pointer;
+  padding: 10px 20px;
+  background-color: #0055ff;
+  color: white;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
 }
 
 .contact_button:hover {
-    background-color: #003bb5;
+  background-color: #003bb5;
 }
 
 /*  menu tri */
-.menuFilter{
-    position:relative;
-    display: flex;
-    flex-direction: row;
-    column-gap: 20px;
-    height: fit-content;
+.menuFilter {
+  position: relative;
+  display: flex;
+  flex-direction: row;
+  column-gap: 20px;
+  height: fit-content;
 }
-.menuFilter label{
-    font-weight: 700;
-    font-size: 1.1em;
-    padding-top: 30px;
+.menuFilter label {
+  font-weight: 700;
+  font-size: 1.1em;
+  padding-top: 30px;
 }
 /* Éléments de la liste de tri */
-ul{
-    list-style-type: none;
-    width: fit-content;
-    margin: 0;
-    background-color: #901C1C;
-    border-radius: 5px;
-    min-width: 150px;
-    padding: 0px 10px;
-    margin-top: 16px;   
-    height: fit-content; 
-    user-select: none;
-    position: relative;
-    z-index: 10;
+ul {
+  list-style-type: none;
+  width: fit-content;
+  margin: 0;
+  background-color: #901c1c;
+  border-radius: 5px;
+  min-width: 150px;
+  padding: 0px 10px;
+  margin-top: 16px;
+  height: fit-content;
+  user-select: none;
+  position: relative;
+  z-index: 10;
 }
-li{
-    display: block;
+li {
+  display: block;
 }
-.listButton{
-    border-radius: 5px;
-    overflow: hidden;
-    font-size: 1.1em;
-    color: white;
-    padding: 10px;
-    height: 50px;
-    border: none;
-    background-color: #901C1C;
-    cursor: pointer;
-    text-align: left;
-    width: 100%;
+.listButton {
+  border-radius: 5px;
+  overflow: hidden;
+  font-size: 1.1em;
+  color: white;
+  padding: 10px;
+  height: 50px;
+  border: none;
+  background-color: #901c1c;
+  cursor: pointer;
+  text-align: left;
+  width: 100%;
 }
-.arrows{ 
-    position: absolute;
-    right: -5px;
-    z-index: 100;
-    top: 18px;
+.arrows {
+  position: absolute;
+  right: -5px;
+  z-index: 100;
+  top: 18px;
 }
-span#arrowDown, span#arrowUp{
-    color: white;
-    position: absolute;
-    top: 15px;
-    right: 20px;
+span#arrowDown,
+span#arrowUp {
+  color: white;
+  position: absolute;
+  top: 15px;
+  right: 20px;
 }
 
-#arrowDown i, #arrowUp i{
-    cursor: pointer;
+#arrowDown i,
+#arrowUp i {
+  cursor: pointer;
 }
 /* pour afficher les 2 lignes blanches du menu */
-#listFilters li:nth-child(2),#listFilters li:nth-child(3) {
-    border-top: solid 1px white;
+#listFilters li:nth-child(2),
+#listFilters li:nth-child(3) {
+  border-top: solid 1px white;
 }
-span#arrowDown, span#arrowUp{
-    color: white;
-    position: absolute;
-    top: 15px;
-    right: 20px;
+span#arrowDown,
+span#arrowUp {
+  color: white;
+  position: absolute;
+  top: 15px;
+  right: 20px;
 }
 /* Gestion de l'affichage des éléments (flèches et boutons) */
 
-
-.hidden{
-    display: none;
+.hidden {
+  display: none;
 }
 
-
 .visible {
-    display: block;
+  display: block;
 }
 
 .photographer-img {
-    position: relative;
-    z-index: 1; /* Plus bas que le menu déroulant */
+  position: relative;
+  z-index: 1; /* Plus bas que le menu déroulant */
 }
 .send_button {
-    background-color: #901c1c;
-    color: white;
-    padding: 1rem;
-    border: none;
-    border-radius: 0.3rem;
-    margin-top: -15px;
-    width: 30%;
-    align-self: flex-start;
-    cursor: pointer;
-    transition: all 0.3s ease-in-out;
-    margin-left: 15px;
+  background-color: #901c1c;
+  color: white;
+  padding: 1rem;
+  border: none;
+  border-radius: 0.3rem;
+  margin-top: -15px;
+  width: 30%;
+  align-self: flex-start;
+  cursor: pointer;
+  transition: all 0.3s ease-in-out;
+  margin-left: 15px;
 }
 
 .send_button:hover,
 .send_button:focus-visible {
-    background-color: #d3573c; /* Couleur de fond commune au survol */
+  background-color: #d3573c; /* Couleur de fond commune au survol */
 }
 
- 
 /* Styles pour le lightbox */
 #lightbox {
-    display: none;
-    position: fixed;
-    z-index: 9999;
-    width: 100%;
-    height: 100%;
-    top: 0;
-    left: 0;
-    background-color: #fffffb;
+  display: none;
+  position: fixed;
+  z-index: 9999;
+  width: 100%;
+  height: 100%;
+  top: 0;
+  left: 0;
+  background-color: #fffffb;
 }
 
 #contentLightbox {
-    position: relative;
-    width: 100%;
-    height: 100%;
-    margin: auto;
-    top: 50%;
-    transform: translateY(-50%);
-    background-color: white;
-    padding: 20px;
-    overflow: hidden;
+  position: relative;
+  width: 100%;
+  height: 100%;
+  margin: auto;
+  top: 50%;
+  transform: translateY(-50%);
+  background-color: white;
+  padding: 20px;
+  overflow: hidden;
 }
 
 .lightboxIcon {
-    position: absolute;
-    top: 50%;
-    transform: translateY(-50%);
-    background-color: transparent;
-    border: none;
-    color: #d3573c;
-    cursor: pointer;
-    padding: 10px;
-    border-radius: 50%;
-    font-weight: bolder;
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  background-color: transparent;
+  border: none;
+  color: #d3573c;
+  cursor: pointer;
+  padding: 10px;
+  border-radius: 50%;
+  font-weight: bolder;
 }
 
 #previousMedia {
-    left: calc(47% - 320px); 
-    font-size: 9px; 
-    
+  left: calc(47% - 320px);
+  font-size: 9px;
 }
 
 #nextMedia {
-    right: calc(47% - 320px); 
-    font-size: 9px; 
-    font-weight: lighter;
+  right: calc(47% - 320px);
+  font-size: 9px;
+  font-weight: lighter;
 }
 
 #closeLightbox {
-    top: calc(57.3% - 320px); 
-    right: calc(47% - 320px); /* Ajustez cette valeur en fonction de la taille et des marges de votre image/vidéo */
-    transform: none;
-    font-size: 9px; 
+  top: calc(57.3% - 320px);
+  right: calc(
+    47% - 320px
+  ); /* Ajustez cette valeur en fonction de la taille et des marges de votre image/vidéo */
+  transform: none;
+  font-size: 9px;
 }
 
-.lightbox-image { 
-    display: block;
-    width: 100%;
-    height: 565px;
-    object-fit: cover;
-    margin-left: auto;
-    margin-right: auto;
-    max-width: 600px;
-    position: relative;
-} 
+.lightbox-image {
+  display: block;
+  width: 100%;
+  height: 565px;
+  object-fit: cover;
+  margin-left: auto;
+  margin-right: auto;
+  max-width: 600px;
+  position: relative;
+}
 
 .lightbox-paragraphe {
-    position: absolute;
-    left: calc(51.3% - 320px);
-    transition: left 1s, transform 1s;
-    white-space: nowrap;
-    color: #d3573c;
-    margin-top: 5px;
+  position: absolute;
+  left: calc(51.3% - 320px);
+  transition: left 1s, transform 1s;
+  white-space: nowrap;
+  color: #d3573c;
+  margin-top: 5px;
 }
 #contentLightbox {
-    overflow-y: auto;
-    max-height: 90vh; /* Limite la hauteur de l'écran à 90% pour éviter que la lightbox dépasse */
+  overflow-y: auto;
+  max-height: 90vh; /* Limite la hauteur de l'écran à 90% pour éviter que la lightbox dépasse */
 }
-
-
 
 .lightbox-video {
-    display: block;
-    width: 600px;
-    height: 565px;
-    object-fit: cover;
-    margin-left: auto;
-    margin-right: auto;
+  display: block;
+  width: 600px;
+  height: 565px;
+  object-fit: cover;
+  margin-left: auto;
+  margin-right: auto;
 }
 
-.fa-4x { 
-    font-weight: lighter;
-    color: #901C1C;
+.fa-4x {
+  font-weight: lighter;
+  color: #901c1c;
 }
 /* Styles existants pour le conteneur des médias */
 #media-container {
-    display: grid;
-    grid-template-columns: repeat(3, 1fr);
-    padding: 20px;
-    gap: 20px; 
-
-  }
-
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  padding: 20px;
+  gap: 20px;
+}
 /* Media query pour les tablettes et gros smartphones */
-@media screen and (max-width: 1024px)  {
-    #media-container {
-        grid-template-columns: repeat(2, 1fr);
-        
-    }
-    .description {
-        text-align: left;
-        color: #901c1c;
-        
-      }
-
+@media screen and (max-width: 1024px) {
+  #media-container {
+    grid-template-columns: repeat(2, 1fr);
+  }
+  .description {
+    text-align: left;
+    color: #901c1c;
+  }
 }
 
 /* Media query pour les smartphones */
 @media screen and (max-width: 768px) {
-    #media-container {
-        grid-template-columns: 1fr;
-    }
-
-    .media-item-container {
-        margin-bottom: 20px; 
-    }
-
-    #media-container img, #media-container video {
-        width: 100%; 
-        height: auto; 
-        max-height: 300px; 
-        margin-top: 2rem; 
-    }
-
-    .cards-media-footer {
-        flex-direction: row; 
-        justify-content: space-between;
-        padding: 0 10px; 
-    }
-
-    .description, .like {
-        margin: 5px 0; 
-    }
-    .cards-media-footer {
-        padding: 0 5px; 
-    }
-
-    .description {
-        text-align: left;
-        color: #901c1c;
-        margin-left: -6px;
-       
-      }
-
-    .like {
-        min-width: 50px; 
-        justify-content: flex-end;
-        margin-right: 0;
-    }
-    
-      .logo-photographes {
-        margin-left: 20px;
-        }
-        button.contact_button {
-        
-            margin-top: 120px;
-          }
-          .photograph-header img {
-            width: 100px;
-            height: 100px;
-        }
-        .listButton {
-            
-            width: 100%;
-        }
-        #contact_modal header h2 {
-            font-size: 1.5em;
-        }
-        
-        form label {
-            font-size: 1.2em;
-        }
-        
-        form input, form textarea {
-            font-size: 0.9em;
-        }
-        #contact_modal header button img {
-            position: absolute;
-            right: 20px;
-            top: 10px;
-      }
-      
-
+  #media-container {
+    grid-template-columns: 1fr;
   }
 
+  .media-item-container {
+    margin-bottom: 20px;
+  }
 
+  #media-container img,
+  #media-container video {
+    width: 100%;
+    height: auto;
+    max-height: 300px;
+    margin-top: 2rem;
+  }
 
-  
+  .cards-media-footer {
+    flex-direction: row;
+    justify-content: space-between;
+    padding: 0 10px;
+  }
+
+  .description,
+  .like {
+    margin: 5px 0;
+  }
+  .cards-media-footer {
+    padding: 0 5px;
+  }
+
+  .description {
+    text-align: left;
+    color: #901c1c;
+    margin-left: -6px;
+  }
+
+  .like {
+    min-width: 50px;
+    justify-content: flex-end;
+    margin-right: 0;
+  }
+
+  .logo-photographes {
+    margin-left: 20px;
+  }
+  button.contact_button {
+    margin-top: 120px;
+  }
+  .photograph-header img {
+    width: 100px;
+    height: 100px;
+  }
+  .listButton {
+    width: 100%;
+  }
+  #contact_modal header h2 {
+    font-size: 1.5em;
+  }
+
+  form label {
+    font-size: 1.2em;
+  }
+
+  form input,
+  form textarea {
+    font-size: 0.9em;
+  }
+  #contact_modal header button img {
+    position: absolute;
+    right: 20px;
+    top: 10px;
+  }
+}
+
 @media screen and (max-width: 480px) {
-    .photograph-header {
-        padding: 15px;
-    }
-
-    .photographer-name {
-        font-size: 1rem;
-    }
-    .photographer-details {
-       margin-top: auto;
-       margin-left: 0;
-     }
-     h2.photographer-location {
-        font-size: 1rem;
-      }
-     .photographer-tagline{
-        font-size: 0.8rem;
-     }
-    
-      button.contact_button {
-        margin-top: 120px;
-        min-width: 20px;
-        min-height: 50px;
-      }
-      #contact_modal {
-        width: 95%;
-        padding: 15px;
-    }
-    
-    #contact_modal header {
-        padding: 10px; 
-    }
-
-    #contact_modal header h2 {
-        font-size: 1.3em; 
-    }
-    #contact_modal header button img {
-        position: absolute;
-        right: 20px;
-        top: 10px;
+  .photograph-header {
+    padding: 15px;
   }
 
+  .photographer-name {
+    font-size: 1rem;
+  }
+  .photographer-details {
+    margin-top: auto;
+    margin-left: 0;
+  }
+  h2.photographer-location {
+    font-size: 1rem;
+  }
+  .photographer-tagline {
+    font-size: 0.8rem;
+  }
 
-    
-    form label {
-        font-size: 1em;
-    }
-    
-    .send_button {
-        font-size: 0.9em;
-    }
-    .lightbox-image {
-       
-        width: 100%;
-        height:100vh;
-        
-        max-width: 380px;
-        position: relative;
-    
-     }
-      }
-      
-     
-        
+  button.contact_button {
+    margin-top: 120px;
+    min-width: 20px;
+    min-height: 50px;
+  }
+  #contact_modal {
+    width: 95%;
+    padding: 15px;
+  }
 
-  
+  #contact_modal header {
+    padding: 10px;
+  }
 
-    
-    
-       
-        
+  #contact_modal header h2 {
+    font-size: 1.3em;
+  }
+  #contact_modal header button img {
+    position: absolute;
+    right: 20px;
+    top: 10px;
+  }
+
+  form label {
+    font-size: 1em;
+  }
+
+  .send_button {
+    font-size: 0.9em;
+  }
+  .lightbox-image {
+    width: 100%;
+    height: 100vh;
+
+    max-width: 380px;
+    position: relative;
+  }
+}
