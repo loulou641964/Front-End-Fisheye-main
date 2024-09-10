@@ -298,6 +298,12 @@ form div {
   align-items: flex-start;
   margin-bottom: 26px;
 }
+#labelTri  { 
+   
+    font-size: large;
+    font-weight: bold;
+    margin-top: 30px;
+}
 
 form input,
 form textarea {
@@ -684,17 +690,21 @@ span#arrowUp {
 @media screen and (max-width: 1024px) {
   #media-container {
     grid-template-columns: repeat(2, 1fr);
+    float: none; 
+        width: 100%; 
   }
   .description {
     text-align: left;
     color: #901c1c;
   }
-}
+
+} 
 
 /* Media query pour les smartphones */
 @media screen and (max-width: 768px) {
   #media-container {
     grid-template-columns: 1fr;
+    
   }
 
   .media-item-container {
@@ -767,17 +777,16 @@ span#arrowUp {
     top: 10px;
   }
   .lightbox-image {
-    display: block;
     width: 100%;
-    height: 565px;
-    object-fit: cover;
-    margin-left: auto;
-    margin-right: auto;
+    height: 100vh;
     max-width: 500px;
-    position: relative;
+    
+}
+.lightbox-paragraphe {
+  
+  left: calc(59.3% - 320px);
 }
 }
-
 @media screen and (max-width: 480px) {
   .photograph-header {
     padding: 15px;
@@ -830,8 +839,13 @@ span#arrowUp {
   .lightbox-image {
     width: 100%;
     height: 100vh;
-
-    max-width: 380px;
+    
+    max-width: 250px;
     position: relative;
   }
+  .lightbox-paragraphe {
+    
+    left: calc(92.3% - 320px);
+}
+
 }
