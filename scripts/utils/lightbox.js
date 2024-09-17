@@ -1,4 +1,4 @@
-import { addKeyboardNavigation } from './eventsHandling.js';
+
 
 let currentMediaIndex = 0;
 let galleryElements = [];
@@ -38,8 +38,10 @@ function updateLightbox() {
             </video>`;
     }
 
-    document.querySelector("#divMediaLightbox").innerHTML = mediaHTML + `<p class="lightbox-paragraphe">${element.alt}</p>`;
+    document.querySelector("#divMediaLightbox").innerHTML = 
+        `<div class="lightbox">${mediaHTML}<p class="lightbox-paragraphe">${element.alt}</p></div>`;
 }
+
 
 // Fonction pour afficher le média précédent
 function showPreviousMedia() {

@@ -4,10 +4,9 @@
 
 body {
   font-family: Arial, sans-serif;
-  margin: 0;
-  padding: 0;
-  max-width: 1440px;
-  margin: auto;
+        margin: 0;
+        padding: 0;
+        width: 100%;
 }
 
 h2.photographer-location {
@@ -579,12 +578,6 @@ span#arrowUp {
   transition: all 0.3s ease-in-out;
   margin-left: 15px;
 }
-
-.send_button:hover,
-.send_button:focus-visible {
-  background-color: #d3573c; /* Couleur de fond commune au survol */
-}
-
 /* Styles pour le lightbox */
 #lightbox {
   display: none;
@@ -596,6 +589,8 @@ span#arrowUp {
   left: 0;
   background-color: #fffffb;
 }
+
+    
 
 #contentLightbox {
   position: relative;
@@ -679,6 +674,8 @@ span#arrowUp {
   font-weight: lighter;
   color: #901c1c;
 }
+
+
 /* Styles existants pour le conteneur des médias */
 #media-container {
   display: grid;
@@ -686,25 +683,30 @@ span#arrowUp {
   padding: 20px;
   gap: 20px;
 }
-/* Media query pour les tablettes et gros smartphones */
+
+/* Media queries pour les tablettes */
 @media screen and (max-width: 1024px) {
   #media-container {
     grid-template-columns: repeat(2, 1fr);
-    float: none; 
-        width: 100%; 
-  }
-  .description {
-    text-align: left;
-    color: #901c1c;
+    width: 100%;
   }
 
-} 
+  .photographer-details {
+    margin: 10px;
+  }
 
-/* Media query pour les smartphones */
+  .photograph-header img {
+    width: 100px;
+    height: 100px;
+  }
+
+  
+}
+
+/* Media queries pour les petits écrans */
 @media screen and (max-width: 768px) {
   #media-container {
     grid-template-columns: 1fr;
-    
   }
 
   .media-item-container {
@@ -717,7 +719,6 @@ span#arrowUp {
     height: auto;
     max-height: 300px;
     margin-top: 2rem;
-    max-width: 500px;
   }
 
   .cards-media-footer {
@@ -726,67 +727,34 @@ span#arrowUp {
     padding: 0 10px;
   }
 
-  .description,
-  .like {
-    margin: 5px 0;
-  }
-  .cards-media-footer {
-    padding: 0 5px;
+  .photograph-header {
+    padding: 15px;
   }
 
-  .description {
-    text-align: left;
-    color: #901c1c;
-    margin-left: -6px;
+  .photographer-name {
+    font-size: 1.5rem;
   }
 
-  .like {
-    min-width: 50px;
-    justify-content: flex-end;
-    margin-right: 0;
-  }
-
-  .logo-photographes {
-    margin-left: 20px;
-  }
   button.contact_button {
     margin-top: 120px;
   }
-  .photograph-header img {
-    width: 100px;
-    height: 100px;
-  }
-  .listButton {
-    width: 100%;
-  }
-  #contact_modal header h2 {
-    font-size: 1.5em;
-  }
 
-  form label {
-    font-size: 1.2em;
+  /* Redondance enlevée et alignement à gauche maintenu */
+  .description {
+    margin-left: -15px;
   }
+  .like {
+  margin-right: -12px;
+ }
+ .modal-content {
+  max-width: 500px; /* Revenir à la largeur max de 500px pour les écrans plus larges */
+}
 
-  form input,
-  form textarea {
-    font-size: 0.9em;
-  }
-  #contact_modal header button img {
-    position: absolute;
-    right: 20px;
-    top: 10px;
-  }
-  .lightbox-image {
-    width: 100%;
-    height: 100vh;
-    max-width: 500px;
-    
+
 }
-.lightbox-paragraphe {
-  
-  left: calc(59.3% - 320px);
-}
-}
+
+
+/* Media queries pour les très petits écrans */
 @media screen and (max-width: 480px) {
   .photograph-header {
     padding: 15px;
@@ -794,14 +762,18 @@ span#arrowUp {
 
   .photographer-name {
     font-size: 1rem;
+    margin-left: -60px;
   }
+
   .photographer-details {
     margin-top: auto;
     margin-left: 0;
   }
+
   h2.photographer-location {
     font-size: 1rem;
   }
+
   .photographer-tagline {
     font-size: 0.8rem;
   }
@@ -811,41 +783,39 @@ span#arrowUp {
     min-width: 20px;
     min-height: 50px;
   }
+
   #contact_modal {
     width: 95%;
     padding: 15px;
   }
 
-  #contact_modal header {
-    padding: 10px;
+  /* Alignement et couleur pour description maintenus */
+  .description {
+    margin-left: -15px;
   }
-
-  #contact_modal header h2 {
-    font-size: 1.3em;
-  }
-  #contact_modal header button img {
-    position: absolute;
-    right: 20px;
-    top: 10px;
-  }
-
-  form label {
-    font-size: 1em;
-  }
-
-  .send_button {
-    font-size: 0.9em;
-  }
-  .lightbox-image {
-    width: 100%;
-    height: 100vh;
+  .like {
+    margin-right: -12px;
     
-    max-width: 250px;
-    position: relative;
   }
-  .lightbox-paragraphe {
+  #closeLightbox{ 
+    font-size: 5px;
+  position: absolute;
+  top: 0;
+  left: 90%;
+  width: 3rem;
+  height: 3rem;
+  border: none;
+  background-color: transparent;
+  cursor: pointer;
+  }
+  .logo-photographes {
+    height: 2.2rem;
+    margin-top: 15px;
     
-    left: calc(92.3% - 320px);
-}
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+  
 
 }
