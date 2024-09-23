@@ -4,10 +4,14 @@
 
 body {
   font-family: Arial, sans-serif;
-        margin: 0;
-        padding: 0;
-        width: 100%;
+  margin: 0;
+  padding: 0;
+  width: 100%;
+  max-width: 1440px;
+  margin-left: auto;
+  margin-right: auto;
 }
+
 
 h2.photographer-location {
   color: #901c1c;
@@ -674,8 +678,6 @@ span#arrowUp {
   font-weight: lighter;
   color: #901c1c;
 }
-
-
 /* Styles existants pour le conteneur des médias */
 #media-container {
   display: grid;
@@ -683,25 +685,25 @@ span#arrowUp {
   padding: 20px;
   gap: 20px;
 }
-
-/* Media queries pour les tablettes */
-@media screen and (max-width: 1024px) {
+@media (max-width: 1024px) {
   #media-container {
-    grid-template-columns: repeat(2, 1fr);
-    width: 100%;
+    grid-template-columns: 1fr; /* 1 colonne pour les tablettes */
   }
 
-  .photographer-details {
-    margin: 10px;
+  .media-item-container img, .media-item-container video {
+    width: 100%; /* Adapter la taille des médias */
+    height: auto; 
   }
 
-  .photograph-header img {
-    width: 100px;
-    height: 100px;
+  .cards-media-footer {
+    font-size: 0.9rem; /* Réduire la taille de la police pour mieux tenir sur les petits écrans */
   }
-
-  
 }
+
+
+
+
+
 
 /* Media queries pour les petits écrans */
 @media screen and (max-width: 768px) {

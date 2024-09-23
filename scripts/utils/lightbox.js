@@ -1,5 +1,3 @@
-
-
 let currentMediaIndex = 0;
 let galleryElements = [];
 
@@ -38,10 +36,8 @@ function updateLightbox() {
             </video>`;
     }
 
-    document.querySelector("#divMediaLightbox").innerHTML = 
-        `<div class="lightbox">${mediaHTML}<p class="lightbox-paragraphe">${element.alt}</p></div>`;
+    document.querySelector("#divMediaLightbox").innerHTML = mediaHTML + `<p class="lightbox-paragraphe">${element.alt}</p>`;
 }
-
 
 // Fonction pour afficher le média précédent
 function showPreviousMedia() {
@@ -105,4 +101,7 @@ document.addEventListener("DOMContentLoaded", () => {
     document.getElementById('nextMedia').addEventListener('click', showNextMedia);
 });
 
+// Exporte les fonctions pour les utiliser dans d'autres modules
 export { displayLightbox, closeLightbox, addListenersToGallery };
+
+
