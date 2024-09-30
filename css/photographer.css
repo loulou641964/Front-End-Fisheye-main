@@ -48,6 +48,7 @@ h2.photographer-location {
   transition: transform 0.3s ease;
   margin-top: 4rem;
   cursor: pointer;
+  border-radius: 5px;
 }
 
 #media-container img:hover,
@@ -64,6 +65,8 @@ h2.photographer-location {
   display: flex;
   justify-content: space-between;
   align-items: center;
+  margin: 0;
+  padding: 0;
 }
 
 .description {
@@ -711,6 +714,7 @@ span#arrowUp {
     font-size: 0.9rem;
     /* Réduire la taille de la police pour mieux tenir sur les petits écrans */
   }
+  
 }
 
 
@@ -722,10 +726,16 @@ span#arrowUp {
 @media screen and (max-width: 768px) {
   #media-container {
     grid-template-columns: 1fr ;
+    margin-top: 35px;
   }
 
   .media-item-container {
     margin-bottom: 20px;
+  }
+  #media-container img,
+  #media-container video {
+    width: 100%; /* L'image occupe 100% de la largeur de son conteneur */
+    margin-top: 2rem; /* Encore moins d'espace au-dessus sur les petits écrans */
   }
 
 
@@ -808,4 +818,10 @@ span#arrowUp {
     height: 80px;
     top: 10%
   }
+ 
+    #media-container img,
+    #media-container video {
+      width: 100%; /* Toujours à 100% mais pour très petits écrans (smartphones) */
+      margin-top: 1rem; /* Réduction encore plus grande de l'espace */
+    }
 }
