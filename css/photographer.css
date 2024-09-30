@@ -641,7 +641,7 @@ span#arrowUp {
 .lightbox-image {
   display: block;
   width: 100%;
-  height: 90vh;
+  max-height: 90vh;
   object-fit: cover;
   margin-left: auto;
   margin-right: auto;
@@ -665,7 +665,9 @@ span#arrowUp {
 }
 
 #closeLightbox {
-
+  position: absolute;
+  top: 0;
+  right: 0;
   transform: none;
   font-size: 9px;
 }
@@ -673,7 +675,7 @@ span#arrowUp {
 .lightbox-video {
   display: block;
   width: 100%;
-  height: 90vh;
+  max-height: 90vh;
   object-fit: cover;
   margin-left: auto;
   margin-right: auto;

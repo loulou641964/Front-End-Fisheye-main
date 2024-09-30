@@ -8,6 +8,7 @@ function mediaFactory(media, firstName) {
         mediaElement.tabIndex = 0;
     } else if (media.video) {
         mediaElement = document.createElement('video');
+        mediaElement.title = media.title
         mediaElement.controls = true;
         const sourceElement = document.createElement('source');
         sourceElement.src = './assets/images/' + firstName + "/" + media.video;

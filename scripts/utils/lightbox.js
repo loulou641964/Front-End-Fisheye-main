@@ -36,7 +36,7 @@ function updateLightbox() {
             </video>`;
     }
 
-    document.querySelector("#divMediaLightbox").innerHTML = mediaHTML + `<p class="lightbox-paragraphe">${element.alt}</p>`;
+    document.querySelector("#divMediaLightbox").innerHTML = mediaHTML + `<p class="lightbox-paragraphe">${element.alt ?? element.title}</p>`;
 }
 
 // Fonction pour afficher le média précédent
