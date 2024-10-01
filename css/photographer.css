@@ -705,11 +705,11 @@ span#arrowUp {
     /* Réduire la taille de la police pour mieux tenir sur les petits écrans */
   }
   .description {
-    margin-left: -15px;
+    margin-left: -5px;
   }
 
   .like {
-    margin-right: -12px;
+    margin-right: -5px;
   }
   .daily-price {
     margin-left: 10px;
