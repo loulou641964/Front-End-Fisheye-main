@@ -65,8 +65,7 @@ h2.photographer-location {
   display: flex;
   justify-content: space-between;
   align-items: center;
-  margin: 0;
-  padding: 0;
+  
 }
 
 .description {
@@ -397,8 +396,7 @@ footer {
 }
 
 #priceLikes .heart-icon {
-  width: 14px;
-  height: 14px;
+  
   fill: #312e2e;
   stroke: #000;
   stroke-width: 1;
@@ -412,6 +410,7 @@ footer {
 
 .total-likes {
   color: #000;
+  
 }
 
 /* Styles pour la section photograph-media */
@@ -714,6 +713,17 @@ span#arrowUp {
     font-size: 0.9rem;
     /* Réduire la taille de la police pour mieux tenir sur les petits écrans */
   }
+  .description {
+    margin-left: -15px;
+  }
+
+  .like {
+    margin-right: -12px;
+
+  }
+  .daily-price {
+    margin-left: 10px;
+  }
   
 }
 
@@ -757,6 +767,17 @@ span#arrowUp {
   button.contact_button {
     margin-top: 120px;
   }
+  .description {
+    margin-left: -15px;
+  }
+
+  .like {
+    margin-right: -12px;
+
+  }
+  .daily-price {
+    margin-left: 10px;
+  }
 
 
 
@@ -799,9 +820,7 @@ span#arrowUp {
   }
 
   /* Alignement et couleur pour description maintenus */
-  .description {
-    margin-left: -15px;
-  }
+  
 
   .like {
     margin-right: -12px;
@@ -823,5 +842,16 @@ span#arrowUp {
     #media-container video {
       width: 100%; /* Toujours à 100% mais pour très petits écrans (smartphones) */
       margin-top: 1rem; /* Réduction encore plus grande de l'espace */
+    }
+    .description {
+      margin-left: -15px;
+    }
+  
+    .like {
+      margin-right: -12px;
+  
+    }
+    .daily-price {
+      margin-left: 10px;
     }
 }
