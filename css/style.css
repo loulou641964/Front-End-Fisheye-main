@@ -1,147 +1,137 @@
 @import url("photographer.css");
 
 body {
-    body {
-        font-family: Arial, sans-serif;
-        margin: 0;
-        padding: 0;
-        width: 100%;
-        max-width: 1440px;
-        margin-left: auto;
-        margin-right: auto;
-        box-sizing: border-box;
-      }
-      
-        
-      
-    
+  body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+    width: 100%;
+    max-width: 1440px;
+    margin-left: auto;
+    margin-right: auto;
+    box-sizing: border-box;
+  }
 }
 
 header {
-    display: flex;
-    flex-direction: row;
-    justify-content: space-between;
-    align-items: center;
-    height: 80px;
-    width: 100%;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+  height: 80px;
+  width: 100%;
 }
 
 h1 {
-    color:  #901C1C;
-    font-size: 1.8rem;
-    font-weight:lighter;
-    margin-top: 35px;
-    margin-right: 87px;
+  color: #901c1c;
+  font-size: 1.8rem;
+  font-weight: lighter;
+  margin-top: 35px;
+  margin-right: 87px;
 }
 .logo-accueil {
-    height: 2.2rem;
-    margin-top: 15px;
-    margin-left: 88px;
-  }
-
-
-.logo:hover {
-    transform: scale(1.08);
+  height: 2.2rem;
+  margin-top: 15px;
+  margin-left: 88px;
 }
 
-
+.logo:hover {
+  transform: scale(1.08);
+}
 
 .photographer_section {
-    display: grid;
-    grid-template-columns: 1fr 1fr 1fr;
-    gap: 70px;
-    margin-top: 100px;
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr;
+  gap: 70px;
+  margin-top: 100px;
 }
 
 .photographer_section article {
-    justify-self: center;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    flex-direction: column;
-   
+  justify-self: center;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
 }
 
 .photographer_section article h2 {
-    color: #D3573C;
-    font-size: 30px;
-    margin-bottom: 10px;
-    font-weight: lighter;
-    
+  color: #d3573c;
+  font-size: 30px;
+  margin-bottom: 10px;
+  font-weight: lighter;
 }
 
 .photographer_section article img {
-    height: 14rem;
-    width: 14rem;
-    border-radius: 8rem;
-    overflow: hidden; 
-    margin: auto;
-    object-fit: cover; /* Le contenu remplacé est dimensionné pour maintenir son ratio d'affichage */
-    box-shadow: 0 4px 12px rgb(170, 168, 168);
+  height: 14rem;
+  width: 14rem;
+  border-radius: 8rem;
+  overflow: hidden;
+  margin: auto;
+  object-fit: cover; /* Le contenu remplacé est dimensionné pour maintenir son ratio d'affichage */
+  box-shadow: 0 4px 12px rgb(170, 168, 168);
 }
 .photographer_section article img:hover {
-    transform: scale(1.08)
+  transform: scale(1.08);
 }
 
-h3 { 
-    color: #901C1C;
-    font-size: 1rem;
-    font-weight:lighter;
-    margin-top: 1px;
- }
- p.pricing{ 
-    color: #757575;
-    margin-top: -12px;
-    font-size: 0.7rem;
-    font-weight: lighter;
-    
- }
- p.tagline{ 
-    margin-top: -15px;
-    font-weight:500;
-    
+h3 {
+  color: #901c1c;
+  font-size: 1rem;
+  font-weight: lighter;
+  margin-top: 1px;
 }
-.photographer_section a { 
-    text-decoration: none;
-    color: inherit;
+p.pricing {
+  color: #757575;
+  margin-top: -12px;
+  font-size: 0.7rem;
+  font-weight: lighter;
+}
+p.tagline {
+  margin-top: -15px;
+  font-weight: 500;
+}
+.photographer_section a {
+  text-decoration: none;
+  color: inherit;
 }
 @media screen and (max-width: 767px) {
-    header {
-        flex-direction: column;
-        height: auto;
-        padding: 20px;
-    }
+  header {
+    flex-direction: column;
+    height: auto;
+    padding: 20px;
+  }
 
-    h1 {
-        font-size: 1.8rem;
-        margin: 20px 0;
-        text-align: center;
-    }
+  h1 {
+    font-size: 1.8rem;
+    margin: 20px 0;
+    text-align: center;
+  }
 
-    .logo-accueil {
-        margin: 0;
-    }
+  .logo-accueil {
+    margin: 0;
+  }
 
-    .photographer_section {
-        grid-template-columns: 1fr;
-        gap: 40px;
-        margin-top: 50px;
-    }
+  .photographer_section {
+    grid-template-columns: 1fr;
+    gap: 40px;
+    margin-top: 50px;
+  }
 
-    .photographer_section article img {
-        height: 13rem;
-        width: 13rem;
-    }
+  .photographer_section article img {
+    height: 13rem;
+    width: 13rem;
+  }
 
-    .photographer_section article h2 {
-        font-size: 24px;
-    }
+  .photographer_section article h2 {
+    font-size: 24px;
+  }
 
-    h3 {
-        font-size: 0.9rem;
-    }
+  h3 {
+    font-size: 0.9rem;
+  }
 
-    p.pricing, p.tagline {
-        font-size: 0.8rem;
-    }
+  p.pricing,
+  p.tagline {
+    font-size: 0.8rem;
+  }
 }

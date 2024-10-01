@@ -12,7 +12,6 @@ body {
   margin-right: auto;
 }
 
-
 h2.photographer-location {
   color: #901c1c;
   font-weight: lighter;
@@ -65,7 +64,6 @@ h2.photographer-location {
   display: flex;
   justify-content: space-between;
   align-items: center;
-  
 }
 
 .description {
@@ -309,7 +307,6 @@ form div {
 }
 
 #labelTri {
-
   font-size: large;
   font-weight: bold;
   margin-top: 30px;
@@ -396,7 +393,6 @@ footer {
 }
 
 #priceLikes .heart-icon {
-  
   fill: #312e2e;
   stroke: #000;
   stroke-width: 1;
@@ -410,7 +406,6 @@ footer {
 
 .total-likes {
   color: #000;
-  
 }
 
 /* Styles pour la section photograph-media */
@@ -614,9 +609,6 @@ span#arrowUp {
   background-color: #fffffb;
 }
 
-
-
-
 #contentLightbox {
   position: relative;
   top: 0;
@@ -630,7 +622,7 @@ span#arrowUp {
 }
 
 .lightboxIcon {
-  color: #901C1C;
+  color: #901c1c;
   background-color: transparent;
   border: none;
   cursor: pointer;
@@ -638,7 +630,6 @@ span#arrowUp {
   width: 35px;
   padding: 0;
 }
-
 
 .lightbox-image {
   display: block;
@@ -661,7 +652,6 @@ span#arrowUp {
 }
 
 #nextMedia {
-
   font-size: 9px;
   font-weight: lighter;
 }
@@ -694,20 +684,21 @@ span#arrowUp {
   display: grid;
   grid-template-columns: repeat(3, 1fr);
   padding: 20px;
-  gap: 20px;
+ 
 }
 
 @media (max-width: 1024px) {
   #media-container {
-    grid-template-columns: 1fr 2fr;
+    grid-template-columns: 1fr ;
     /* 1 colonne pour les tablettes */
   }
-
-  .media-item-container img, .media-item-container video {
-    width: 100%;
-    /* Adapter la taille des médias */
-    height: auto;
+  #media-container img,
+  #media-container video {
+    width: 100%; /* L'image occupe 100% de la largeur de son conteneur */
+    margin-top: 2rem; /* Encore moins d'espace au-dessus sur les petits écrans */
   }
+
+  
 
   .cards-media-footer {
     font-size: 0.9rem;
@@ -719,23 +710,16 @@ span#arrowUp {
 
   .like {
     margin-right: -12px;
-
   }
   .daily-price {
     margin-left: 10px;
   }
-  
 }
-
-
-
-
-
 
 /* Media queries pour les petits écrans */
 @media screen and (max-width: 768px) {
   #media-container {
-    grid-template-columns: 1fr ;
+    grid-template-columns: 1fr;
     margin-top: 35px;
   }
 
@@ -747,8 +731,10 @@ span#arrowUp {
     width: 100%; /* L'image occupe 100% de la largeur de son conteneur */
     margin-top: 2rem; /* Encore moins d'espace au-dessus sur les petits écrans */
   }
-
-
+  .photographer-name {
+    margin-right: 99px;
+    font-size: 1.5rem;
+  }
 
   .cards-media-footer {
     flex-direction: row;
@@ -759,30 +745,25 @@ span#arrowUp {
   .photograph-header {
     padding: 15px;
   }
-
-  .photographer-name {
-    font-size: 1.5rem;
+  .photograph-header img {
+    width: 120px;
+    height: 120px;
+    top: 10%;
   }
-
-  button.contact_button {
-    margin-top: 120px;
-  }
-  .description {
-    margin-left: -15px;
-  }
-
-  .like {
-    margin-right: -12px;
-
-  }
-  .daily-price {
-    margin-left: 10px;
-  }
-
-
-
 }
 
+button.contact_button {
+  margin-top: 120px;
+}
+
+.daily-price {
+  margin-left: 10px;
+}
+#contact_modal header button img {
+  position: absolute;
+  right: 20px;
+  top: 20px;
+}
 
 /* Media queries pour les très petits écrans */
 @media screen and (max-width: 480px) {
@@ -792,7 +773,6 @@ span#arrowUp {
 
   .photographer-name {
     font-size: 1rem;
-    margin-left: -60px;
   }
 
   .photographer-details {
@@ -820,11 +800,9 @@ span#arrowUp {
   }
 
   /* Alignement et couleur pour description maintenus */
-  
 
   .like {
     margin-right: -12px;
-
   }
 
   .logo-photographes {
@@ -833,25 +811,29 @@ span#arrowUp {
   }
 
   .photograph-header img {
-    width: 80px;
-    height: 80px;
-    top: 10%
+    width: 90px;
+    height: 90px;
+    top: 10%;
   }
- 
-    #media-container img,
-    #media-container video {
-      width: 100%; /* Toujours à 100% mais pour très petits écrans (smartphones) */
-      margin-top: 1rem; /* Réduction encore plus grande de l'espace */
-    }
-    .description {
-      margin-left: -15px;
-    }
-  
-    .like {
-      margin-right: -12px;
-  
-    }
-    .daily-price {
-      margin-left: 10px;
-    }
+
+  #media-container img,
+  #media-container video {
+    width: 100%; /* Toujours à 100% mais pour très petits écrans (smartphones) */
+    margin-top: 1rem; /* Réduction encore plus grande de l'espace */
+  }
+  .description {
+    margin-left: -15px;
+  }
+
+  .like {
+    margin-right: -12px;
+  }
+  .daily-price {
+    margin-left: 10px;
+  }
+  #contact_modal header button img {
+    position: absolute;
+    right: 0;
+    top: 20px;
+  }
 }
