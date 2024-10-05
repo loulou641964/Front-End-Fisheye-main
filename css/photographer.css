@@ -36,6 +36,9 @@ h2.photographer-location {
 .media-item-container {
   text-align: center;
   position: relative;
+  width: 100%;
+  max-width: 300px;
+  margin-inline: auto;
 }
 
 #media-container img,
@@ -69,7 +72,6 @@ h2.photographer-location {
 .description {
   text-align: left;
   color: #901c1c;
-  margin-left: 25px;
 }
 
 .like {
@@ -78,7 +80,7 @@ h2.photographer-location {
   align-items: center;
   cursor: pointer;
   font-size: 13px;
-  margin-right: 31px;
+
   color: #d3573c;
 }
 
@@ -684,12 +686,11 @@ span#arrowUp {
   display: grid;
   grid-template-columns: repeat(3, 1fr);
   padding: 20px;
- 
 }
 
 @media (max-width: 1024px) {
   #media-container {
-    grid-template-columns: 1fr ;
+    grid-template-columns: 1fr 1fr;
     /* 1 colonne pour les tablettes */
   }
   #media-container img,
@@ -697,8 +698,6 @@ span#arrowUp {
     width: 100%; /* L'image occupe 100% de la largeur de son conteneur */
     margin-top: 2rem; /* Encore moins d'espace au-dessus sur les petits écrans */
   }
-
-  
 
   .cards-media-footer {
     font-size: 0.9rem;
@@ -718,8 +717,11 @@ span#arrowUp {
 
 /* Media queries pour les petits écrans */
 @media screen and (max-width: 768px) {
+  .logo-photographes {
+    margin-left: -35px;
+  }
   #media-container {
-    grid-template-columns: 1fr;
+    grid-template-columns: 1fr 1fr;
     margin-top: 35px;
   }
 
@@ -763,6 +765,15 @@ button.contact_button {
   position: absolute;
   right: 20px;
   top: 20px;
+}
+@media screen and (max-width: 630px) {
+  #media-container {
+    grid-template-columns: 1fr;
+    margin-top: 35px;
+  }
+  .media-item-container {
+    max-width: 280px;
+  }
 }
 
 /* Media queries pour les très petits écrans */

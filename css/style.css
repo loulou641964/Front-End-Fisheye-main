@@ -99,6 +99,7 @@ p.tagline {
     flex-direction: column;
     height: auto;
     padding: 20px;
+    margin-left: 2px;
   }
 
   h1 {
