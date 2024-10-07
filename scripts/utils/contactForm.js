@@ -1,4 +1,4 @@
-// Fonction pour afficher le modal de contact
+ // Fonction pour afficher le modal de contact
 function displayModal() {
   const modal = document.getElementById('contact_modal');
   const modalBackground = document.getElementById('modal-background');
@@ -66,3 +66,4 @@ document.addEventListener('DOMContentLoaded', () => {
 
 // Export des fonctions pour utilisation externe si nécessaire
 export { displayModal, closeModal };
+  
